@@ -1,0 +1,4 @@
+interface:
+  display_name: "Magic Hour Talking Media"
+  short_description: "Create stable talking photos and lip sync"
+  default_prompt: "Use $magic-hour-talking-media to make this portrait speak my audio naturally and verify the finished video."
