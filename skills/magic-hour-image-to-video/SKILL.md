@@ -4,7 +4,7 @@ description: Create a polished Magic Hour video from a still image by designing 
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Magic Hour image to video
@@ -23,7 +23,7 @@ Extract or infer:
 - details that must remain fixed, especially identity, geometry, packaging, logo, text, colors, clothing, and background
 - failure conditions such as a warped face, altered label, unwanted cut, or unreadable text
 
-Keep a short clip to one coherent beat. If the user wants several shots, treat each shot as its own reviewed start frame and video job.
+Keep a short clip to one coherent beat. If the user wants several shots, treat each shot as its own reviewed start frame and video job. Derive those frames from the same approved identity reference rather than chaining unreviewed edits. Choose motion that preserves the deliverable: a dolly changes subject scale and available copy space, while a locked camera with restrained light or environmental motion can preserve a hero layout.
 
 ## Build the start frame first
 
@@ -49,15 +49,15 @@ Write the motion prompt around change over time:
 - what stays fixed
 - timing and end state
 
-Avoid redescribing the entire still in new visual language. That invites the model to redesign the subject. For a product shot, a useful pattern is: `Slow dolly in while the product remains centered and unchanged; soft light moves across the surface; label and geometry stay sharp and legible; no cuts.`
+Avoid redescribing the entire still in new visual language. That invites the model to redesign the subject. For a product shot, a useful pattern is: `A restrained slow dolly in; the product stays in its approved position and remains fully in frame; preserve the copy area, label, and geometry; soft light moves across the surface; no cuts.` Do not demand a centered subject when the approved frame places it on the right.
 
-Use an end frame only when the current schema says the chosen model, resolution, and duration support it. Prefer the live recommended model for a general request. Select a specialized model only when its current schema describes the needed control. Use one output at the lowest supported resolution when the user gives no budget; confirm before higher-cost resolution or another paid attempt.
+Use an end frame only when the current schema says the chosen model, resolution, and duration support it. Prefer the live recommended model for a general request. Select a specialist only when its schema describes the needed control. Match resolution and duration to the requested deliverable. A short preview tests a short interval, not stability over a longer clip. Check the total still-plus-video cost against existing authorization and ask only when it does not cover the intended work.
 
 Submit the video once, retain its project ID, and call `wait_for_video_project`. A wait timeout is not a failed generation and does not justify resubmitting the creation call.
 
 ## Inspect and deliver
 
-After the project reports `complete`, use the returned download URL exactly as provided. Preview at least the first frame, midpoint, and last frame and check:
+After the project reports `complete`, use the returned download URL exactly as provided. Verify the downloaded dimensions, duration, and audio presence. Watch the full clip when playback is available, then inspect the first frame, midpoint, last frame, and any suspicious transition. Three still frames alone cannot prove the absence of flicker. Check:
 
 - the first frame matches the approved still
 - identity, product shape, logo, text, and clothing remain stable

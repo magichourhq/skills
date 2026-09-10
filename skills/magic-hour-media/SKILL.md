@@ -4,7 +4,7 @@ description: Generate, edit, and retrieve images, video, and audio when the user
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Magic Hour media
@@ -47,7 +47,7 @@ Before generating, translate the request into a short quality brief:
 
 Infer these from the user's project when possible. For a website hero, leave deliberate negative space where the interface places text. When exact identity, product geometry, packaging, or branding matters, prefer editing an authorized reference image over recreating it from text alone. For image-to-video, use the source image to define appearance and prompt mainly for subject motion, camera motion, timing, and what must stay fixed. Keep short videos to one coherent action unless the chosen duration and model support a more complex sequence.
 
-Choose the model from the live schema according to the requested result. Prefer the current recommended model for a general request. When the schema describes a model as better for the needed behavior—such as typography, identity preservation, reference control, motion, audio, or speed—use that evidence to select it. Do not select the cheapest or fastest model when the user prioritizes final quality. When no budget or resolution is specified, use the lowest supported resolution for one output. Confirm the credit cost before choosing a higher-cost resolution or making an additional paid attempt without an established budget. Preserve any resolution, model, and spending limit the user explicitly authorized.
+Choose the model from the live schema according to the requested result. Prefer the current recommended model for a general request. When the schema describes a model as better for the needed behavior—such as typography, identity preservation, reference control, motion, audio, or speed—use that evidence to select it. Do not select the cheapest or fastest model when the user prioritizes final quality. Match resolution to the placement and critical detail: a tiny preview cannot prove small text is accurate. Use a cheaper preview when it answers a specific appearance or motion question, and label it as a preview. Check the total cost against the existing authorized budget; ask only when that authorization does not cover the intended work. Preserve the user's model, resolution, and spending limit.
 
 Write a concrete prompt in natural language. Describe the subject and action first, then composition or camera, lighting and materials, style, and required constraints. Avoid conflicting styles, long adjective lists, and unsupported negative-prompt syntax. For edits, state the requested change and the elements that must remain unchanged. Request only missing inputs that materially affect the result. Preserve the user's chosen model and budget.
 
@@ -75,7 +75,7 @@ Proceed to download only after the project reports `complete`. On `error` or `ca
 
 Use `exact_download_urls[n]` or `downloads[n].url` exactly as returned. Preserve every signed query parameter; `expires_at` is separate metadata. For an expired URL, retrieve the existing project again before considering regeneration. Never attach the Magic Hour API key to a storage download or presigned upload request.
 
-When the user needs an asset in their application, download it into the requested project location, verify its actual media type and dimensions or duration, and use that local file. Avoid embedding an expiring signed URL into production code.
+When the user needs an asset in their application, download it into the requested project location, verify its actual media type and dimensions or duration, and use that local file. Requested dimensions are not proof of delivered dimensions. If the model ignores the ratio, use a crop only if it preserves the subject and required copy area; otherwise identify a supported reframing route within budget. Never stretch the image or label a wrong-size file as complete. Avoid embedding an expiring signed URL into production code.
 
 Preview the finished media whenever the environment supports it. Evaluate it against the quality brief before claiming success:
 

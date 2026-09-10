@@ -4,7 +4,7 @@ description: Create or edit a high-quality Magic Hour product image with control
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Magic Hour product visuals
@@ -32,7 +32,7 @@ For a hero, specify which side needs empty space for copy. For an ecommerce list
 - With a usable source that needs a new setting, cleanup, relighting, repositioning, or other controlled change, call `ai_image_editor_create_image`.
 - AI Image Editor requires an input image. Never route a prompt-only creation request to it.
 
-Use one image at the lowest supported resolution when the user gives no budget. Confirm before a higher-cost resolution, multiple variants, or another paid attempt. Prefer the live recommended model for a general request and choose a specialist only when the current schema describes the needed behavior.
+Use one image at a resolution that reveals the product's critical details and fits its placement. A low-resolution preview is useful for composition, not final label fidelity. Check cost against existing authorization and ask only when it does not cover the intended work. Prefer the live recommended model for a general request and choose a specialist only when the current schema describes the needed behavior.
 
 ## Write a production brief
 
@@ -50,17 +50,17 @@ Use direct visual language. A useful pattern is:
 
 `Premium 16:9 product hero photograph. One [product] in the right third, fully visible, with clean negative space across the left 40 percent. [Camera and material]. [Lighting, surface, and background]. Preserve [shape, colors, logo, and exact label]. No extra objects, duplicate text, warped geometry, unintended marks, or watermark.`
 
-For editing, describe the change first and then state what remains unchanged. Do not stack unrelated styles or ask one image to show several scenes.
+For editing, describe the change first and then state what remains unchanged. Compare against the original reference, not just the prompt: a prettier bottle with a different cap or viewpoint is still a failed preservation edit. Do not stack unrelated styles or ask one image to show several scenes. Keep promotional copy in a separate layout layer when a suitable tool is available; preserve text already printed on the product.
 
 ## Inspect before delivery
 
 Wait for the existing image project with `wait_for_image_project`. After it reports `complete`, use the exact returned download URL and inspect the actual output for:
 
-- correct aspect ratio, crop, product scale, and requested negative space
+- actual downloaded dimensions, aspect ratio, crop, product scale, and requested negative space; do not trust the requested ratio alone
 - straight edges, plausible materials, and coherent reflections and shadows
 - accurate product geometry, cap, handle, controls, packaging, and colors
 - one correct instance of required text or logo
-- no misspelling, duplicate label, invented brand-like mark, watermark, or distracting object
+- no misspelling, duplicate label, invented brand-like mark, or distracting object; disclose any service watermark and do not promise an unwatermarked file without checking eligibility
 - no anatomy or identity problem when a person is intentionally present
 
 If the result fails, change the smallest useful variable. Use AI Image Editor for a localized correction when the rest of the image is strong; regenerate when composition or product identity is fundamentally wrong. Another generation spends credits, so stay inside the user's authorized budget.

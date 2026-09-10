@@ -43,8 +43,18 @@ Before accepting the result, check that the label is correct, the product stays 
 | [`magic-hour-media`](skills/magic-hour-media) | General image, video, and audio creation or project recovery | Routes a request to the right Magic Hour tool and carries it through completion, inspection, and delivery. |
 | [`magic-hour-product-visuals`](skills/magic-hour-product-visuals) | Product shots, hero images, packaging visuals, and ad creative | Turns placement, geometry, branding, and rejection criteria into a production brief, then checks the finished image. |
 | [`magic-hour-image-to-video`](skills/magic-hour-image-to-video) | Product shots, characters, ads, and hero visuals that need controlled animation | Builds or edits the start frame first, fixes visual problems while they are still cheap to fix, then prompts primarily for motion. |
+| [`magic-hour-image-editing`](skills/magic-hour-image-editing) | Background changes, cleanup, relighting, and reframing of an existing image | Separates the requested change from protected details, compares against the original, and rejects identity drift or wrong-size files. |
+| [`magic-hour-campaign-kit`](skills/magic-hour-campaign-kit) | Coordinated assets for multiple placements | Branches each placement from one approved reference, preserves identity, budgets the complete set, and reviews the assets together. |
 
 The focused skills are deliberately narrow. Install `magic-hour-media` for broad requests and add a focused skill when that workflow is common in your work.
+
+### Turn one reference into a campaign
+
+Attach an approved product image and use:
+
+> Use magic-hour-campaign-kit to make a square catalog image on white and a vertical social image with clear space above the product for copy. Start both from this original reference. Preserve the cap, silhouette, material, and exact label. Check the current model options and total credit cost against my budget before starting. Inspect each downloaded file's actual dimensions and compare both images with the original. Deliver separate files and tell me about any drift or failed requirement.
+
+For a single change, use `magic-hour-image-editing`. For one product image from scratch, use `magic-hour-product-visuals`. The campaign skill coordinates a set; it does not make a batch of unrelated prompts.
 
 ## Validation
 
@@ -66,7 +76,13 @@ This is one illustrative comparison, not a controlled benchmark of skill install
 | Product visuals | In a matched signed-in comparison using Z-Image Turbo, 640px, 16:9, and one image, the brief generic prompt centered the bottle and rendered its label ambiguously. The skill-guided brief produced the requested left-side negative space, one clearly legible `AURORA` label, stronger product geometry, and controlled lighting. |
 | Image to video | In a matched signed-in comparison using LTX-2.5, 480p, 16:9, one second, and audio off, generic text-to-video duplicated the `AURORA` label and centered the product. The skill-guided start-frame workflow retained one correct label, intentional left-side negative space, stable bottle geometry, and a coherent dolly through the final frame. Earlier real API runs also completed image generation, image editing, and a playable H.264 image-to-video output. |
 
-All three skills also enforce the same operational invariants: one creation request per intended job, persisted project IDs, retrieval instead of duplicate paid retries, exact signed download URLs, and output review before a result is called complete.
+### Editing and campaign recovery
+
+The [AURORA editing case study](examples/aurora-edits) records all five attempts and 40 credits, including rejected outputs. Both Flux 2 Klein prompts returned 640×384 files despite a square setting; the longer prompt also changed the bottle's appearance more. Switching to Qwen Edit with the same guided prompt produced a 640×640 catalog image. The vertical edits produced the correct ratio and clear upper-third copy space, but failed a stricter midpoint placement requirement even after refinement. This supports checking actual files and disclosing failed criteria. It does **not** show that a longer prompt always wins.
+
+These are signed-in web-app generation checks, not an installed-agent MCP benchmark. We have not established a market-wide quality advantage or incremental customer revenue. The case study distinguishes the tested product-editing path from untested portrait, cleanup, and other editing cases.
+
+All five skills enforce the same operational invariants: one creation request per intended job, persisted project IDs, retrieval instead of duplicate paid retries, exact signed download URLs, and output review before a result is called complete.
 
 ## Contributing
 
