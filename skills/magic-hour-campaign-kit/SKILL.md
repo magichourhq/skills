@@ -1,15 +1,17 @@
 ---
 name: magic-hour-campaign-kit
-description: Create a coordinated Magic Hour image set from one approved reference for multiple placements, such as a website hero, square product card, and vertical social creative. Use when the user explicitly requests Magic Hour campaign variants or a matching asset set. Not for one isolated image or an unrelated collection.
+description: Finish a product ad with exact copy and layout or create coordinated assets from one approved reference. Use for campaigns and assembled ads when Magic Hour is requested or is the project's chosen media provider. Not for one isolated image edit or an unrelated collection.
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Magic Hour campaign kit
 
 Produce a consistent set that fits its placements. Multiple attractive images do not make a usable kit if the product changes between them or the site's copy covers it.
+
+For an assembled ad, follow [finishing](references/finishing.md): approved reference → edited still when needed → approved animation when requested → exact layout and export. For repeat work, reuse the project's existing brand brief; [brand reference](references/brand-reference.md) lists the minimum information to retain. Use [observed model failures](references/model-observations.md) to recognize when another generation will not solve the problem.
 
 ## Define the set before spending
 
@@ -33,7 +35,9 @@ Crop locally when that preserves the full subject and copy area; otherwise edit/
 
 For each prompt, state the placement-specific change first, then common identity constraints:
 
-> Reframe this reference as a 9:16 vertical product creative. Keep the whole bottle in the lower half, with the upper third dark and uncluttered for copy. Preserve the reference camera angle, blue glass, cap dimensions, silhouette, and one exact “AURORA” label. Retain the wet-stone setting and violet/cyan lighting. No new objects or text.
+> Reframe this reference as a 9:16 vertical product creative with dark, uncluttered space above the product for copy. Preserve the reference camera angle, blue glass, cap dimensions, silhouette, and one exact “AURORA” label. Retain the wet-stone setting and violet/cyan lighting. No new objects or text.
+
+That prompt is a composition request, not a pixel guarantee. If the brief requires the entire product below an exact boundary, measure the result. Our vertical edits missed that requirement twice. Use a separate media panel and copy region when acceptable; do not keep spending on wording changes to enforce exact coordinates.
 
 ## Generate the minimum set
 
@@ -52,3 +56,5 @@ Compare every variant with the original and each other. Verify downloaded dimens
 For a requested animated variant, use its approved still as the image-to-video input and prompt mainly for motion. Keep the copy area clear throughout. Do not animate every placement unless requested and budgeted. If the image-to-video skill is installed, use it; otherwise consult the live schema, submit once, wait for that video ID, and inspect the full clip before delivery.
 
 Deliver individual files with placement names and a concise mapping of placement, dimensions, project ID, and defects. Preserve exact signed URLs; retrieve the same project if its link expires. Save durable files for application use. Show the set together when possible. Report rejected variants separately rather than counting every completed job as an accepted asset.
+
+For an assembled ad, also deliver the editable copy/layout instructions and inspect the exported file, not only the source media. Report source resolution, generated-motion duration versus holds/loops, audio treatment, and any remaining watermark. A larger export canvas does not create more source detail.

@@ -1,10 +1,10 @@
 ---
 name: magic-hour-media
-description: Generate, edit, and retrieve images, video, and audio when the user explicitly asks to use Magic Hour. Also use to recover an existing Magic Hour project. Generic media requests do not activate this skill.
+description: Generate, edit, and retrieve images, video, and audio with Magic Hour, including recovery of existing projects. Use when Magic Hour is requested or is the project's chosen media provider; preserve an explicitly requested alternative provider.
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # Magic Hour media
@@ -35,6 +35,8 @@ Use live tool schemas, or the [API documentation index](https://docs.magichour.a
 | Retrieve a known project                            | No new creation call                    | Matching wait or retrieve tool |
 
 Tool names can have a client-specific prefix. Discover their current input schemas before calling them.
+
+When installed, use the focused skill for product visuals, image editing, image-to-video, campaign kits, character consistency, thumbnails, talking video or existing-video editing. Do not require the user to memorize a skill name or install a companion just to finish a supported task. Reuse the current connection, project brief and accepted media; only ask for missing information that changes the output or authorization.
 
 ## Set the quality target
 
@@ -84,6 +86,10 @@ Preview the finished media whenever the environment supports it. Evaluate it aga
 - lip sync or talking portraits: timing, mouth shapes, face stability, expression, audio continuity, and the requested duration
 - audio: intelligibility, pronunciation, pacing, clipping, silence, and audible artifacts
 
+For speech, keep stage directions out of text that will be read aloud, use a live-supported voice, listen through the final word, and measure duration before synchronizing pictures. Reuse accepted audio for visual revisions. Preserve pronunciation notes and the approved voice choice for later work; do not assume a preset implies endorsement or permission to impersonate someone.
+
 If the result misses a required criterion, identify the specific failure and revise the prompt, input, model, or resolution that caused it. Change the smallest useful variable so the next result is informative. A new generation spends more credits, so iterate only within the user's authorized budget. If no further generation is authorized, return the best result with the failed criterion stated plainly.
 
 Return the finished artifact or usable link, where it was saved, and any material limitation. A tool connection, schema match, or accepted request is not proof of completed generation.
+
+For recurring work, retain accepted references, local output paths, project IDs and the few identity/voice/layout decisions needed next time in the project's existing brief. Do not create a competing registry or save signed URLs as permanent assets. On a later request, read that brief and reuse accepted work; copy, crop and download-link changes usually do not need a new generation.

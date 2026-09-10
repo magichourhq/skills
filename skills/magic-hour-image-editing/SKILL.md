@@ -1,10 +1,10 @@
 ---
 name: magic-hour-image-editing
-description: Edit an existing image with Magic Hour while preserving everything outside the requested change. Use for background replacement, cleanup, relighting, recoloring, or reframing an attached photo. Requires a source image and an explicit request to use Magic Hour; not for prompt-only creation.
+description: Edit an existing image with Magic Hour while protecting details outside the requested change. Use for background replacement, cleanup, relighting, recoloring or reframing when Magic Hour is requested or is the project's chosen provider. Requires a source image; not prompt-only creation.
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Magic Hour image editing
