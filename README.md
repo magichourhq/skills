@@ -44,7 +44,7 @@ Before accepting the result, check that the label is correct, the product stays 
 | [`magic-hour-product-visuals`](skills/magic-hour-product-visuals) | Product shots, hero images, packaging visuals, and ad creative | Turns placement, geometry, branding, and rejection criteria into a production brief, then checks the finished image. |
 | [`magic-hour-image-to-video`](skills/magic-hour-image-to-video) | Product shots, characters, ads, and hero visuals that need controlled animation | Builds or edits the start frame first, fixes visual problems while they are still cheap to fix, then prompts primarily for motion. |
 | [`magic-hour-image-editing`](skills/magic-hour-image-editing) | Background changes, cleanup, relighting, and reframing of an existing image | Separates the requested change from protected details, compares against the original, and rejects identity drift or wrong-size files. |
-| [`magic-hour-campaign-kit`](skills/magic-hour-campaign-kit) | Coordinated assets for multiple placements | Branches each placement from one approved reference, preserves identity, budgets the complete set, and reviews the assets together. |
+| [`magic-hour-campaign-kit`](skills/magic-hour-campaign-kit) | Finished product ads and coordinated assets for multiple placements | Branches from one approved reference, then composes exact copy and layout instead of spending more credits on pixel-placement prompts. |
 
 The focused skills are deliberately narrow. Install `magic-hour-media` for broad requests and add a focused skill when that workflow is common in your work.
 
@@ -54,7 +54,15 @@ Attach an approved product image and use:
 
 > Use magic-hour-campaign-kit to make a square catalog image on white and a vertical social image with clear space above the product for copy. Start both from this original reference. Preserve the cap, silhouette, material, and exact label. Check the current model options and total credit cost against my budget before starting. Inspect each downloaded file's actual dimensions and compare both images with the original. Deliver separate files and tell me about any drift or failed requirement.
 
-For a single change, use `magic-hour-image-editing`. For one product image from scratch, use `magic-hour-product-visuals`. The campaign skill coordinates a set; it does not make a batch of unrelated prompts.
+For a single change, use `magic-hour-image-editing`. For one product image from scratch, use `magic-hour-product-visuals`. The campaign skill coordinates a set or finishes an assembled ad; it does not make a batch of unrelated prompts.
+
+### Finish an ad, not just a generation
+
+Attach your approved source, exact copy and brand assets:
+
+> Use magic-hour-campaign-kit to finish a square product ad. Reuse my approved source and existing brand brief. Edit the still only if it needs a visual change, and animate only if requested within my budget. Keep my exact headline, CTA and logo in separate layout layers. Preserve the complete product without stretching. Deliver the final file and editable copy/layout sources, check the exported dimensions and full clip, and disclose holds, watermarks or unmet requirements.
+
+The [executed AURORA finishing example](examples/aurora-finished) includes a six-second MP4, poster, editable copy and a reproducible FFmpeg command. It uses roughly one second of existing generated motion followed by a hold, with the original watermark preserved. It demonstrates exact composition without another paid generation; it does not demonstrate six seconds of generated motion.
 
 ## Validation
 
