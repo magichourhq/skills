@@ -48,7 +48,7 @@ No photo? Use this instead:
 
 > Use magic-hour-product-visuals to create one 16:9 hero image of an original cobalt-blue perfume bottle labeled AURORA on wet stone, product on the right and left third clear for my headline. This is a fictional product. Check connection, account eligibility and the cost of one image first. Once I authorize that cost, generate, inspect and save the actual output. Ask before a paid retry.
 
-Connection success means `ping` returns `pong`; authenticated readiness requires an account read. Activation means you receive and accept a usable file. Installation, authentication and a queued project ID are intermediate steps. If the first result fails a requirement, keep its project ID and explain the failure before spending again.
+Check both `ping` and `account_retrieve`. Tool discovery can work before authentication, and `ping` can return `pong` even with an invalid API key; the account read checks actual API authorization. Activation means you receive and accept a usable file. Installation, authentication and a queued project ID are intermediate steps. If the first result fails a requirement, keep its project ID and explain the failure before spending again.
 
 ## Continue without starting over
 
@@ -62,6 +62,7 @@ Keep source files, accepted outputs and project IDs in the same project. Retain 
 | --- | --- |
 | Skill not listed | Confirm the install directory and selected agent; start a fresh session there |
 | Tools absent | Check the creation endpoint, enable the server, restart the session |
+| Tools listed, but `ping` says `Authentication required` | The server is reachable; supply the credential in the agent's launch environment, then restart that session |
 | `ping` works but generation is unauthorized | Check the key in the agent's launch environment; ping alone does not authenticate |
 | Insufficient credits or unavailable tier/model | Choose a supported option within budget; do not upgrade automatically |
 | Local image path rejected | The agent must request an upload URL and PUT the bytes, then use `file_path` |

@@ -2,7 +2,7 @@
 
 ## Existing MCP connection
 
-The creation server is `https://mcp.magichour.ai/`. Call `ping` to confirm discovery, then use an authenticated read such as `account_retrieve` when needed. An anonymous `ping` does not prove that generation credentials work.
+The creation server is `https://mcp.magichour.ai/`. Discover tools, call `ping`, then use `account_retrieve` before the first paid job to check actual API authorization. Discovery can work without credentials. A missing bearer token produces `Authentication required`; an invalid token can still receive `pong` from `ping` while the account read returns `401`. Do not reinstall skills to fix a credential error or treat `pong` alone as authenticated readiness.
 
 For client-specific authentication, follow the maintained [MCP user guide](https://github.com/magichourhq/magic-hour-mcp/blob/main/user.md). Claude custom connectors currently require OAuth client ID `magic-hour-mcp`; do not assume dynamic client registration. API-key bearer authentication is available in compatible clients.
 
