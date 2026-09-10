@@ -1,6 +1,6 @@
 ---
 name: magic-hour-campaign-kit
-description: Finish a Magic Hour product ad with exact copy and layout, or create coordinated assets from one approved reference for multiple placements. Use when the user requests Magic Hour campaign variants, a matching asset set, or an assembled ad from generated media. Not for one isolated image edit or an unrelated collection.
+description: Finish a product ad with exact copy and layout or create coordinated assets from one approved reference. Use for campaigns and assembled ads when Magic Hour is requested or is the project's chosen media provider. Not for one isolated image edit or an unrelated collection.
 license: MIT
 metadata:
   author: magichourhq

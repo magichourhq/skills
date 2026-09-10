@@ -1,10 +1,10 @@
 ---
 name: magic-hour-image-to-video
-description: Create a polished Magic Hour video from a still image by designing or editing and approving the start frame before animating it. Use when the user explicitly asks for Magic Hour image-to-video, product animation, character animation, or a still-to-video workflow. Generic video requests do not activate this skill.
+description: Create a Magic Hour video from a still image by designing or editing and approving the start frame before animation. Use for image-to-video, product or character animation when Magic Hour is requested or is the project's chosen media provider.
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # Magic Hour image to video

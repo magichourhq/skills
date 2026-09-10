@@ -1,10 +1,10 @@
 ---
 name: magic-hour-product-visuals
-description: Create or edit a high-quality Magic Hour product image with controlled composition, accurate geometry, branding, and delivery space. Use when the user explicitly asks Magic Hour for a product shot, hero image, ad creative, packaging visual, or ecommerce image. Generic image requests do not activate this skill.
+description: Create or edit a Magic Hour product image with controlled composition, geometry, branding and copy space. Use for product shots, hero images, packaging and ecommerce visuals when Magic Hour is requested or is the project's chosen media provider.
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # Magic Hour product visuals

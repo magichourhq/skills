@@ -1,101 +1,84 @@
-# Magic Hour skills
+# Magic Hour AI media skills
 
-Installable agent skills for creating images, video, and audio with [Magic Hour](https://magichour.ai). Each skill encodes a concrete workflow, quality checks, and safe handling for paid asynchronous generations.
+Create and edit images, animate approved references, make talking videos, and finish campaign assets from your AI agent. These skills use [Magic Hour's creation MCP](https://github.com/magichourhq/magic-hour-mcp) or [API](https://docs.magichour.ai/api-reference), with workflows for preserving identity, fixing failed outputs and reusing accepted work.
 
-## Install
-
-Install the full cookbook and choose your agent:
+**Start with one useful asset.** Install the cookbook, [connect once](docs/quickstart.md#connect-once), then paste a starter below. Works with Codex, Claude Code and other agents supported by the skills installer. Skills are free to install; generation uses Magic Hour credits.
 
 ```sh
-npx skills add magichourhq/skills --skill '*'
+npx skills add magichourhq/skills
 ```
 
-Or install one workflow:
+Choose your agent and desired skills in the installer. [Exact Codex/Claude Code commands, setup and troubleshooting →](docs/quickstart.md)
 
-```sh
-npx skills add magichourhq/skills --skill magic-hour-image-to-video
-```
+## Choose your workflow
 
-These skills work with the hosted Magic Hour creation MCP at `https://mcp.magichour.ai/` or the [Magic Hour API](https://docs.magichour.ai/api-reference). Generation consumes Magic Hour credits.
-
-For a specific agent, append `--agent codex` or `--agent claude-code`. Install from your project directory, then start a new agent session. Follow the [connection guide](https://github.com/magichourhq/magic-hour-mcp/blob/main/user.md) and verify that Magic Hour's `ping` returns `pong`; installing a skill does not connect your account.
-
-## Start with one product animation
-
-Attach a product photo you have permission to use, install `magic-hour-image-to-video`, and paste:
-
-> Use magic-hour-image-to-video to make a 16:9 product hero video from this photo. Keep the product on the right and leave the left third clear for copy. Preserve its exact shape, colors, logo, and label. If the still needs changes, use AI Image Editor and show me the result before animating it. Use one slow dolly in, no cuts, and no audio. Read the current options and show me the credit cost for one short preview before submitting. After I approve the budget and frame, generate once, inspect the beginning, middle, and end, and deliver the downloadable video. Ask before spending on another attempt.
-
-Without a source photo, ask the agent to generate a still with AI Image Generator first. AI Image Editor requires an input image. Approve the appearance before spending credits on animation.
-
-Prefer a one-time trial? Run this command and paste its output into your agent, followed by the request above. It downloads the skill and prints instructions without installing it; account setup is still required.
-
-```sh
-npx skills use magichourhq/skills@magic-hour-image-to-video
-```
-
-Before accepting the result, check that the label is correct, the product stays recognizable throughout, the copy area stays clear, the camera follows the brief, and the downloaded video plays. Judge the result against your usual workflow, including total credits and retries needed to get a usable asset.
-
-## Cookbook
-
-| Skill | Use it for | Why it exists |
+| I want to… | Skill | What it adds beyond a tool call |
 | --- | --- | --- |
-| [`magic-hour-media`](skills/magic-hour-media) | General image, video, and audio creation or project recovery | Routes a request to the right Magic Hour tool and carries it through completion, inspection, and delivery. |
-| [`magic-hour-product-visuals`](skills/magic-hour-product-visuals) | Product shots, hero images, packaging visuals, and ad creative | Turns placement, geometry, branding, and rejection criteria into a production brief, then checks the finished image. |
-| [`magic-hour-image-to-video`](skills/magic-hour-image-to-video) | Product shots, characters, ads, and hero visuals that need controlled animation | Builds or edits the start frame first, fixes visual problems while they are still cheap to fix, then prompts primarily for motion. |
-| [`magic-hour-image-editing`](skills/magic-hour-image-editing) | Background changes, cleanup, relighting, and reframing of an existing image | Separates the requested change from protected details, compares against the original, and rejects identity drift or wrong-size files. |
-| [`magic-hour-campaign-kit`](skills/magic-hour-campaign-kit) | Finished product ads and coordinated assets for multiple placements | Branches from one approved reference, then composes exact copy and layout instead of spending more credits on pixel-placement prompts. |
+| Create or recover general media | [magic-hour-media](skills/magic-hour-media) | Select the operation, finish asynchronous jobs and retrieve files without duplicate paid retries |
+| Make a product shot or website hero | [magic-hour-product-visuals](skills/magic-hour-product-visuals) | Preserve geometry and labels, plan copy space and inspect the delivered file |
+| Edit an existing image | [magic-hour-image-editing](skills/magic-hour-image-editing) | Separate changes from protected details and recover from drift or wrong dimensions |
+| Animate an approved image | [magic-hour-image-to-video](skills/magic-hour-image-to-video) | Fix the still before motion, control the camera and inspect temporal consistency |
+| Finish an ad or matching campaign set | [magic-hour-campaign-kit](skills/magic-hour-campaign-kit) | Reuse a brand reference, compose exact copy and deliver finished placements |
+| Keep a character consistent across scenes | [magic-hour-character-consistency](skills/magic-hour-character-consistency) | Separate identity from pose/style references and review continuity across shots |
+| Make a thumbnail or episode cover | [magic-hour-thumbnails](skills/magic-hour-thumbnails) | Build a truthful visual hook, preserve references and judge readability at feed size |
+| Make a talking portrait or lip-sync clip | [magic-hour-talking-video](skills/magic-hour-talking-video) | Approve speech first, match timing and caption the final cut |
+| Edit or repurpose existing footage | [magic-hour-video-editing](skills/magic-hour-video-editing) | Choose generative edits versus precise local changes and preserve action/audio |
 
-The focused skills are deliberately narrow. Install `magic-hour-media` for broad requests and add a focused skill when that workflow is common in your work.
+Install one: `npx skills add magichourhq/skills --skill magic-hour-image-editing`. Install all: `npx skills add magichourhq/skills --skill '*'`. Each skill works independently; you do not need the whole collection for a single job.
 
-### Turn one reference into a campaign
+## Try a real job
 
-Attach an approved product image and use:
+Attach your source media and use the matching prompt. The agent should use the current tool schema and your existing budget, not ask you to fill in API parameters.
 
-> Use magic-hour-campaign-kit to make a square catalog image on white and a vertical social image with clear space above the product for copy. Start both from this original reference. Preserve the cap, silhouette, material, and exact label. Check the current model options and total credit cost against my budget before starting. Inspect each downloaded file's actual dimensions and compare both images with the original. Deliver separate files and tell me about any drift or failed requirement.
+**Product photo → catalog image**
 
-For a single change, use `magic-hour-image-editing`. For one product image from scratch, use `magic-hour-product-visuals`. The campaign skill coordinates a set or finishes an assembled ad; it does not make a batch of unrelated prompts.
+> Use magic-hour-image-editing to make this product photo a square catalog image on white. Preserve its shape, material and exact label. Verify the connection and cost of one image first. Once I authorize that cost, complete the edit, inspect the downloaded dimensions and identity, and save the result here. Ask before another paid attempt.
 
-### Finish an ad, not just a generation
+**Reference → edited still → video**
 
-Attach your approved source, exact copy and brand assets:
+> Use magic-hour-image-to-video to make a product hero video from this reference. Keep the product on the right and the left third clear for copy. If needed, use AI Image Editor to fix the still before animating. Preserve the exact label and geometry. Use a locked camera with subtle light movement, no cuts or audio. Check the total still-plus-video cost against my budget, inspect the complete clip, and deliver the actual video.
 
-> Use magic-hour-campaign-kit to finish a square product ad. Reuse my approved source and existing brand brief. Edit the still only if it needs a visual change, and animate only if requested within my budget. Keep my exact headline, CTA and logo in separate layout layers. Preserve the complete product without stretching. Deliver the final file and editable copy/layout sources, check the exported dimensions and full clip, and disclose holds, watermarks or unmet requirements.
+**Recurring character → new scene**
 
-The [executed AURORA finishing example](examples/aurora-finished) includes a six-second MP4, poster, editable copy and a reproducible FFmpeg command. It uses roughly one second of existing generated motion followed by a hold, with the original watermark preserved. It demonstrates exact composition without another paid generation; it does not demonstrate six seconds of generated motion.
+> Use magic-hour-character-consistency with my approved character image. Make the next scene in the same series: the character tending a greenhouse. Keep identity, proportions and rendering style; change only the setting and pose. Compare the output with the original before any animation. Retain the accepted reference for the next episode.
 
-## Validation
+**Speech + portrait → talking clip**
 
-We publish the proof boundary rather than treating a schema check as a successful generation.
+> Use magic-hour-talking-video with my portrait and recording. Preserve the full speech through the last word. Measure the audio first, choose a supported talking-photo interval, then inspect mouth timing and face stability. Add captions only after the clean video passes. Check the total cost before starting.
 
-### See the actual outputs
+For covers, existing footage and assembled ads, open the matching skill above. [Workflow decisions and common questions →](docs/workflow-guide.md)
 
-| Brief generic image prompt | Guided product brief / approved video start frame |
-| --- | --- |
-| ![Generic AURORA bottle image](examples/aurora/generic-image.png) | ![Guided AURORA bottle image with clearer label and left-side space](examples/aurora/guided-image.png) |
+## Inspect the actual outputs
 
-[Watch the generic text-to-video output](examples/aurora/generic-video.mp4) · [Watch the guided image-to-video output](examples/aurora/guided-video.mp4) · [Exact prompts, settings, costs, and limitations](examples/aurora/README.md)
+These are original Magic Hour web-app outputs plus a local finishing example. Every case links to inputs, exact prompts, settings and limitations.
 
-This is one illustrative comparison, not a controlled benchmark of skill installation or a measured customer improvement. The guided prompts contain additional requirements, and the guided video includes a paid start-frame step. Both paths used the same image model or video model family and output settings. Longer clips, other subjects, and actual agent-driven MCP execution require separate validation.
+| Approved product still | Edited catalog image | Finished layout |
+| --- | --- | --- |
+| ![Blue AURORA bottle with space for copy](examples/aurora/guided-image.png) | ![AURORA bottle edited onto a square white background](examples/aurora-edits/catalog-qwen.png) | ![Square AURORA ad with exact headline and CTA](examples/aurora-finished/poster.png) |
+| [Image + motion comparison](examples/aurora) | [All five editing attempts](examples/aurora-edits) | [MP4 + editable copy + render recipe](examples/aurora-finished) |
 
-| Workflow | Evidence as of September 10, 2026 |
-| --- | --- |
-| General media | Skill structure validated, public installation tested from an exact Git commit, current MCP tool names checked against live discovery, and a signed-in Magic Hour image generation completed and downloaded. Direct creation through the hosted MCP remains a separate integration check. |
-| Product visuals | In a matched signed-in comparison using Z-Image Turbo, 640px, 16:9, and one image, the brief generic prompt centered the bottle and rendered its label ambiguously. The skill-guided brief produced the requested left-side negative space, one clearly legible `AURORA` label, stronger product geometry, and controlled lighting. |
-| Image to video | In a matched signed-in comparison using LTX-2.5, 480p, 16:9, one second, and audio off, generic text-to-video duplicated the `AURORA` label and centered the product. The skill-guided start-frame workflow retained one correct label, intentional left-side negative space, stable bottle geometry, and a coherent dolly through the final frame. Earlier real API runs also completed image generation, image editing, and a playable H.264 image-to-video output. |
+The guided video retains one readable label where the generic example duplicates it. Two editing attempts ignored the square setting; switching models corrected it. Two vertical edits still missed exact placement, which informed the separate layout step. Those failures are included, not discarded.
 
-### Editing and campaign recovery
+The finished ad has about one second of generated motion followed by a hold, six seconds total, and preserves the source watermark. It is a composition demonstration. These examples share one synthetic product; they do not establish general superiority. New character, thumbnail, talking-video and video-editing workflows have live tool/schema checks but still need published authenticated output comparisons. [Full evidence coverage →](docs/workflow-guide.md#what-evidence-is-published)
 
-The [AURORA editing case study](examples/aurora-edits) records all five attempts and 40 credits, including rejected outputs. Both Flux 2 Klein prompts returned 640×384 files despite a square setting; the longer prompt also changed the bottle's appearance more. Switching to Qwen Edit with the same guided prompt produced a 640×640 catalog image. The vertical edits produced the correct ratio and clear upper-third copy space, but failed a stricter midpoint placement requirement even after refinement. This supports checking actual files and disclosing failed criteria. It does **not** show that a longer prompt always wins.
+## Make the next job easier
 
-These are signed-in web-app generation checks, not an installed-agent MCP benchmark. We have not established a market-wide quality advantage or incremental customer revenue. The case study distinguishes the tested product-editing path from untested portrait, cleanup, and other editing cases.
+Keep approved references, clean masters, exact copy, voice choices, project IDs and accepted layout decisions in your project. On the next job, ask the skill to reuse that work and change only what the new brief requires. A new headline, crop or download link should not require paying to recreate an accepted product. [Reusable brand reference →](skills/magic-hour-campaign-kit/references/brand-reference.md)
 
-All five skills enforce the same operational invariants: one creation request per intended job, persisted project IDs, retrieval instead of duplicate paid retries, exact signed download URLs, and output review before a result is called complete.
+## Questions
 
-## Contributing
+**Do I need both a skill and MCP?** The skill provides workflow instructions. The MCP executes Magic Hour tools. Use the API instead if your project already integrates it. Installing a skill does not authenticate your account.
 
-Add a skill only when it owns a distinct user job and has evidence beyond plausible prompt advice. Keep current model lists and pricing out of skill text; agents should read live schemas because those values change.
+**Which model should I use?** Choose current supported settings for the task and budget. Model lists and pricing change; the agent reads live schemas. [Observed failures and routing decisions →](skills/magic-hour-campaign-kit/references/model-observations.md)
+
+**Why create or edit an image before video?** It lets you correct identity, composition and label problems before paying for motion. The approved still becomes the video input. [Detailed decision guide →](docs/workflow-guide.md#should-i-use-text-to-video-or-image-to-video)
+
+**Something failed?** Keep the project ID. A polling timeout or expired URL usually needs retrieval, not a duplicate generation. [Troubleshooting →](docs/quickstart.md#unstick-the-first-run)
+
+## Contribute a useful workflow
+
+Start with a distinct user job, a reproducible failure or an output that improves a real task. Include source provenance, settings, all attempts/costs, accepted and failed criteria, and honest validation limits. Keep skill instructions concise and self-contained. Do not add model-price catalogs or claim quality, citations or revenue results without evidence. [Report an issue](https://github.com/magichourhq/skills/issues).
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE). Example provenance and any production limitations are recorded with each case.
