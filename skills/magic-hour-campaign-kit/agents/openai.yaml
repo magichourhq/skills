@@ -1,0 +1,4 @@
+interface:
+  display_name: "Magic Hour Campaign Kit"
+  short_description: "Build matching assets for different placements"
+  default_prompt: "Use $magic-hour-campaign-kit to turn my approved reference into a coordinated set for my requested placements, preserving the subject and exact label."
