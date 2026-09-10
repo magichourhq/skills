@@ -1,0 +1,68 @@
+---
+name: magic-hour-product-visuals
+description: Create or edit a high-quality Magic Hour product image with controlled composition, accurate geometry, branding, and delivery space. Use when the user explicitly asks Magic Hour for a product shot, hero image, ad creative, packaging visual, or ecommerce image. Generic image requests do not activate this skill.
+license: MIT
+metadata:
+  author: magichourhq
+  version: "1.0.0"
+---
+
+# Magic Hour product visuals
+
+Deliver a product image that fits its intended placement and preserves the details that make the product recognizable. Treat a project ID as an intermediate result and inspect the finished image before calling it complete.
+
+Generation consumes Magic Hour credits. Use a connected Magic Hour creation MCP at `https://mcp.magichour.ai/` when available. Otherwise read `references/setup.md`. Discover the current schema before choosing a model, resolution, image count, or cost.
+
+## Define the deliverable
+
+Extract or infer:
+
+- where the image will appear, such as a product page, ad, marketplace listing, or website hero
+- aspect ratio, resolution, crop tolerance, and required negative space
+- product shape, material, finish, color, label, logo, and exact text
+- camera angle, scale in frame, surface, background, lighting, and shadow
+- details that must remain unchanged
+- visible failures that make the image unusable
+
+For a hero, specify which side needs empty space for copy. For an ecommerce listing, keep the full product inside the frame with a clean silhouette. When exact product identity, packaging, or branding matters, use an authorized reference and edit it rather than recreating it from text.
+
+## Choose generation or editing
+
+- With no source image, call `ai_image_generator_create_image`.
+- With a usable source that needs a new setting, cleanup, relighting, repositioning, or other controlled change, call `ai_image_editor_create_image`.
+- AI Image Editor requires an input image. Never route a prompt-only creation request to it.
+
+Use one image at the lowest supported resolution when the user gives no budget. Confirm before a higher-cost resolution, multiple variants, or another paid attempt. Prefer the live recommended model for a general request and choose a specialist only when the current schema describes the needed behavior.
+
+## Write a production brief
+
+Write the prompt in this order:
+
+1. intended image type and aspect ratio
+2. one product with material, shape, color, and orientation
+3. exact composition and space allocation
+4. lighting, surface, background, shadow, and reflection
+5. required label, logo, or text in quotation marks
+6. elements that must remain fixed
+7. concrete rejection conditions
+
+Use direct visual language. A useful pattern is:
+
+`Premium 16:9 product hero photograph. One [product] in the right third, fully visible, with clean negative space across the left 40 percent. [Camera and material]. [Lighting, surface, and background]. Preserve [shape, colors, logo, and exact label]. No extra objects, duplicate text, warped geometry, unintended marks, or watermark.`
+
+For editing, describe the change first and then state what remains unchanged. Do not stack unrelated styles or ask one image to show several scenes.
+
+## Inspect before delivery
+
+Wait for the existing image project with `wait_for_image_project`. After it reports `complete`, use the exact returned download URL and inspect the actual output for:
+
+- correct aspect ratio, crop, product scale, and requested negative space
+- straight edges, plausible materials, and coherent reflections and shadows
+- accurate product geometry, cap, handle, controls, packaging, and colors
+- one correct instance of required text or logo
+- no misspelling, duplicate label, invented brand-like mark, watermark, or distracting object
+- no anatomy or identity problem when a person is intentionally present
+
+If the result fails, change the smallest useful variable. Use AI Image Editor for a localized correction when the rest of the image is strong; regenerate when composition or product identity is fundamentally wrong. Another generation spends credits, so stay inside the user's authorized budget.
+
+When the product image will become video, approve the still first and then use `$magic-hour-image-to-video`. Return the finished image or usable link, its saved location when applicable, the project ID, and any material limitation.
