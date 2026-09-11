@@ -8,7 +8,15 @@ Use [Face Swap](../skills/magic-hour-face-swap) to change a face while preservin
 
 ## Can I make music videos or a singing character?
 
-Start with the selected audio phrase. A visible performance uses Talking Photo or Lip Sync; new audio-guided visuals use Audio-to-Video; precisely timed sequences require an available compositor. These tools have different guarantees. See [music and performance](../skills/magic-hour-media/references/music.md) for timing, source reuse and the checks still needed before claiming synchronized output.
+Start with the selected audio phrase. The [Music Video skill](../skills/magic-hour-music-video) distinguishes the web song-to-scene product, MCP Audio-to-Video, audio-sync Animation, and portrait/performance lip sync. The web workflow is not an equivalent dedicated MCP endpoint in the current schema. Precisely timed cuts require the appropriate tool or an available compositor; inspect the actual soundtrack and picture before claiming synchronization.
+
+## How do I put my whole person in a photo?
+
+Use [Body Swap](../skills/magic-hour-body-swap) with a person reference and destination image. Match visible body extent, pose, scale and lighting; inspect hands and contact with the scene. Use Face Swap when only the face should change. The body endpoint does not expose a mask or point selector, so multiple possible targets need a more controlled route.
+
+## Can the MCP extend or upscale my video?
+
+Those dedicated video endpoints are absent from the public schema as checked September 11, 2026. The [finishing guide](../skills/magic-hour-video-editing/references/extend-upscale.md) prepares the actual files for the web tools and explains how to inspect the result. A held frame is not new motion, and ordinary resizing is not AI video enhancement. Recheck live tool support before assuming this limitation is permanent.
 
 ## How do I keep a product or character consistent in AI video?
 

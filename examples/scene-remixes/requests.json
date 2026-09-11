@@ -1,0 +1,247 @@
+{
+  "run_date_utc": "2026-09-11",
+  "notes": "Actual generation inputs with exact prompts. Signed URLs and private upload paths replaced by explicit upload placeholders. Use the bundled filenames or sibling midnight-remix inputs; local filenames are not API file_path values. Select the detected left face by inspecting its preview and use the returned path; <detected:cast-left> is not a literal API value. Reproduction may vary; these are historical charges, not price quotes.",
+  "total_generation_credits_charged": 1890,
+  "face_detection": {
+    "tool": "face_detection_detect_faces",
+    "task_id": "24bc24c2-eab0-4936-a02e-b59750fc12ca",
+    "status": "complete",
+    "credits_charged": 0,
+    "inputs": {
+      "assets": {
+        "target_file_path": "<uploaded:cast.png>"
+      }
+    },
+    "selection": "The inspected left-face preview was used; no mapping was made for the right face.",
+    "previews": ["detected-left.png", "detected-right.png"]
+  },
+  "jobs": [
+    {
+      "tool": "ai_image_generator_create_image",
+      "project_id": "cmtwmsg5a00t6mb01138vzuve",
+      "created_at": "2026-09-11T07:24:54.334Z",
+      "status": "complete",
+      "credits_charged": 50,
+      "output": "cast.png",
+      "inputs": {
+        "model": "nano-banana-2-lite",
+        "resolution": "1k",
+        "aspect_ratio": "16:9",
+        "image_count": 1,
+        "style": {
+          "prompt": "Cinematic photograph of two original fictional adults standing side by side on a moonlit rooftop, waist-up with a wide gap between their faces. On the left: a woman age 30 with warm olive skin, straight black shoulder-length hair, round glasses, and a teal bomber jacket. On the right: a man age 40 with light skin, shaved head, clean-shaven face and burgundy jacket. Both face camera, neutral closed mouths, unobstructed clearly visible faces. Keep their bodies separate, hands naturally at their sides. Distant soft city lights, even soft frontal light on both faces, no other people. Landscape 16:9. No text, signs or logos."
+        }
+      }
+    },
+    {
+      "tool": "ai_image_editor_create_image",
+      "project_id": "cmtwmvpxr00ukmb01fgjves3u",
+      "created_at": "2026-09-11T07:27:26.991Z",
+      "status": "complete",
+      "credits_charged": 50,
+      "output": "person.png",
+      "inputs": {
+        "model": "nano-banana-2-lite",
+        "resolution": "1k",
+        "aspect_ratio": "9:16",
+        "image_count": 1,
+        "assets": {
+          "image_file_paths": [
+            "<uploaded:../midnight-remix/alternate-face.png>"
+          ]
+        },
+        "style": {
+          "prompt": "Keep this exact fictional adult man's face, short curly hair, moustache and beard. Expand the composition to a straight-on waist-up portrait, showing his plain black crewneck shirt, both arms and relaxed hands naturally at his sides. Preserve age and skin tone. One person, neutral closed mouth, uniform grey studio background, soft even light. Vertical 9:16, complete head with breathing room above it. No text, logos, accessories, other people or changes to facial identity."
+        }
+      }
+    },
+    {
+      "tool": "animation_create_video",
+      "project_id": "cmtwmwqy8028llv01f2idndos",
+      "created_at": "2026-09-11T07:28:14.960Z",
+      "status": "complete",
+      "credits_charged": 96,
+      "output": "audio-sync-animation.mp4",
+      "inputs": {
+        "assets": {
+          "audio_source": "file",
+          "audio_file_path": "<uploaded:rooftop-theme.wav>",
+          "image_file_path": "<uploaded:../midnight-remix/keyframe.png>"
+        },
+        "end_seconds": 8,
+        "fps": 12,
+        "height": 1024,
+        "width": 576,
+        "style": {
+          "art_style": "Synthwave",
+          "camera_effect": "Pulse - Audio Sync",
+          "prompt_type": "custom",
+          "prompt": "An impossible midnight railway platform with luminous golden koi swimming through the air, deep teal architecture, warm gold reflections, a surreal synthwave dream. Evolving waves of gold light travel through the platform in time with the instrumental phrase. Keep the space readable, no text.",
+          "transition_speed": 3
+        }
+      }
+    },
+    {
+      "tool": "audio_to_video_create_video",
+      "project_id": "cmtwmwrjc008omi01q4z6apf9",
+      "created_at": "2026-09-11T07:28:15.720Z",
+      "status": "complete",
+      "credits_charged": 384,
+      "output": "audio-guided-video.mp4",
+      "inputs": {
+        "assets": {
+          "audio_file_path": "<uploaded:rooftop-theme.wav>",
+          "image_file_path": "<uploaded:../midnight-remix/character.png>"
+        },
+        "start_seconds": 0,
+        "end_seconds": 8,
+        "resolution": "720p",
+        "style": {
+          "prompt": "A cinematic instrumental music visual: the original white fox conductor in a blue jacket and orange waistcoat waits on a moonlit rooftop as warm golden ribbons of light flow gently around him. Keep the character recognizable and the face unobstructed. A slow camera push and restrained reaction build toward a glowing skyline at the end of the eight-second phrase. No singing, no dialogue, no lettering, no cuts."
+        }
+      }
+    },
+    {
+      "tool": "video_to_video_create_video",
+      "project_id": "cmtwmxasp02q7h401s1vslohu",
+      "created_at": "2026-09-11T07:28:40.681Z",
+      "status": "complete",
+      "credits_charged": 300,
+      "output": "restyle.mp4",
+      "inputs": {
+        "assets": {
+          "video_source": "file",
+          "video_file_path": "<uploaded:../midnight-remix/performance.mp4>"
+        },
+        "start_seconds": 0,
+        "end_seconds": 5,
+        "fps_resolution": "FULL",
+        "style": {
+          "art_style": "Ink",
+          "version": "v2",
+          "prompt_type": "custom",
+          "prompt": "A woman with a blunt dark bob and amber coat looks toward luminous koi on a midnight train platform. Expressive black ink contours, restrained gold highlights, deep teal washes. Keep the person, head turns and fish recognizable."
+        }
+      }
+    },
+    {
+      "tool": "body_swap_create_image",
+      "project_id": "cmtwn0lln006jni0162j81wue",
+      "created_at": "2026-09-11T07:31:14.651Z",
+      "status": "complete",
+      "credits_charged": 50,
+      "output": "body-swap.png",
+      "inputs": {
+        "assets": {
+          "person_file_path": "<uploaded:person.png>",
+          "scene_file_path": "<uploaded:../midnight-remix/keyframe.png>"
+        },
+        "resolution": "1k"
+      }
+    },
+    {
+      "tool": "character_replace_create_video",
+      "project_id": "cmtwn0m87006lni01dhjk3avo",
+      "created_at": "2026-09-11T07:31:15.463Z",
+      "status": "complete",
+      "credits_charged": 480,
+      "output": "character-animate.mp4",
+      "inputs": {
+        "assets": {
+          "image_file_path": "<uploaded:../midnight-remix/character.png>",
+          "video_file_path": "<uploaded:../midnight-remix/performance.mp4>"
+        },
+        "start_seconds": 0,
+        "end_seconds": 5,
+        "resolution": "720p",
+        "style": {
+          "mode": "animate",
+          "selection_mode": "auto"
+        }
+      }
+    },
+    {
+      "tool": "face_swap_photo_create_image",
+      "project_id": "cmtwn2vw400htlx01r4hk4mbi",
+      "created_at": "2026-09-11T07:33:01.300Z",
+      "status": "complete",
+      "credits_charged": 10,
+      "output": "selective-face-swap.png",
+      "inputs": {
+        "assets": {
+          "target_file_path": "<uploaded:cast.png>",
+          "face_swap_mode": "individual-faces",
+          "face_mappings": [
+            {
+              "original_face": "<detected:cast-left>",
+              "new_face": "<uploaded:../midnight-remix/alternate-face.png>"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "tool": "ai_image_editor_create_image",
+      "project_id": "cmtwn9v0u00l2j801vhzmtv6l",
+      "created_at": "2026-09-11T07:38:26.766Z",
+      "status": "complete",
+      "credits_charged": 50,
+      "output": "body-repair.png",
+      "inputs": {
+        "model": "nano-banana-2-lite",
+        "resolution": "1k",
+        "aspect_ratio": "9:16",
+        "image_count": 1,
+        "assets": {
+          "image_file_paths": [
+            "<uploaded:../midnight-remix/keyframe.png>",
+            "<uploaded:person.png>"
+          ]
+        },
+        "style": {
+          "prompt": "Image 1 is the destination scene; image 2 is the exact fictional person to insert. Replace ONLY the woman in image 1 with the man from image 2. Preserve his exact facial identity, age, short tightly curled hair, moustache, short beard and plain black crewneck shirt. Keep the camera angle, side-platform location, architecture, roof, wet tiles, lighting, visible koi positions and count from image 1 unchanged. Put his upper body at the woman's existing position and scale; relaxed arms at his sides, natural anatomy. Match the scene's light on his body without redesigning the environment or making him younger. Do not center him between train tracks, add fish or recompose the scene. One person only. No text."
+        }
+      }
+    },
+    {
+      "tool": "image_to_video_create_video",
+      "project_id": "cmtwnd3sl03a1oh01dgsu2tuz",
+      "created_at": "2026-09-11T07:40:58.101Z",
+      "status": "complete",
+      "credits_charged": 240,
+      "output": "body-motion.mp4",
+      "inputs": {
+        "assets": {
+          "image_file_path": "<uploaded:body-repair.png>"
+        },
+        "end_seconds": 5,
+        "model": "ltx-2.3",
+        "resolution": "720p",
+        "audio": false,
+        "style": {
+          "prompt": "Keep the man facing the camera, his head and body still, with a relaxed closed-mouth expression. The large golden koi beside his right shoulder swims slowly upward and away, gently moving its fins. Smaller distant koi drift along the existing train platform. Locked camera. Preserve his exact face, short curly hair, moustache, beard, black shirt and the current setting. No head turn, new people, dialogue, text or cuts. End with his face still clearly visible and the nearby fish above the shoulder."
+        }
+      }
+    },
+    {
+      "tool": "ai_video_editor_create_video",
+      "project_id": "cmtwnm9vw014zmb01iabf0k0e",
+      "created_at": "2026-09-11T07:48:05.901Z",
+      "status": "complete",
+      "credits_charged": 180,
+      "output": "restyle-repair.mp4",
+      "inputs": {
+        "assets": {
+          "video_file_path": "<uploaded:../midnight-remix/performance.mp4>"
+        },
+        "start_seconds": 0,
+        "end_seconds": 5,
+        "resolution": "720p",
+        "model": "ltx-2.3",
+        "style": {
+          "prompt": "Render the entire source shot as a hand-drawn black-ink-on-white-paper animation. Solid black contours, visible crosshatching, flat white paper, strictly monochrome, no photographic skin or glossy materials. Preserve the woman's head turns, body position, bob haircut, coat silhouette, fish positions and source camera timing. The fish and railway platform must also be drawn in ink. Do not change the cast or add text, cuts, objects or camera moves."
+        }
+      }
+    }
+  ]
+}

@@ -4,6 +4,8 @@ Maintained by Magic Hour. Last updated: **2026-09-11 UTC**. This page separates 
 
 ## What has actually been generated and inspected?
 
+The [scene-remix case](../examples/scene-remixes) extends coverage to selective photo face replacement, body placement and repair, Character Replace animate mode, Animation and Audio-to-Video, Video-to-Video with a Video Editor repair, plus a finished music cut from accepted footage. Eleven generation jobs charged 1,890 credits. It records actual outputs and specific limitations; auditory review remains outstanding. See the [complete use-case map](use-cases.md) for all creation and finishing routes, including explicit web handoffs.
+
 | Case                                      | Inspect and reproduce                                                                       | What the case supports                                                                              | Limit                                                                                                   |
 | ----------------------------------------- | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
 | Personal image → scene → motion           | [Midnight remix inputs, export and all requests](../examples/midnight-remix)                | The edited portrait stays recognizable through a generated reaction in a new setting                | Head turns and final pose miss strict motion direction; frame review does not prove temporal smoothness |
@@ -20,7 +22,7 @@ Maintained by Magic Hour. Last updated: **2026-09-11 UTC**. This page separates 
 
 ## Which advanced workflows still need output validation?
 
-Multi-character scenes, new character angles, multi-person face mapping, Character Replace animate mode, music-video generation, body swap, multilingual speech and subtitles still need published output validation. Talking Photo, Lip Sync and Video Editor now have actual outputs in the midnight case, with the specific failed or unreviewed criteria recorded there. Multi-shot identity stability, broader subjects and real-customer coverage also remain outstanding. These examples do not establish end-to-end comparative superiority.
+Multi-person tracking through video cuts, complex choreography/contact, multilingual speech and subtitle quality still need published output validation. The scene-remix case adds a two-person photo mapping example and animate-mode output; those do not prove difficult video tracking or dance transfer. The web Music Video Generator, Video Extender and Video Upscaler are not exercised by these MCP cases. Listening, music/speech synchronization, multi-shot identity stability, broader subjects and real-customer coverage remain outstanding. These examples do not establish end-to-end comparative superiority.
 
 ## Do skills improve output over using an MCP directly?
 
