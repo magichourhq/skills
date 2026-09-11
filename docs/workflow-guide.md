@@ -32,11 +32,12 @@ Choose from the [live schema](https://docs.magichour.ai/api-reference/openapi.js
 
 ## What evidence is published?
 
-| Workflow | Current evidence | Still missing |
-| --- | --- | --- |
-| Product image and image-to-video | Original files, exact prompts, settings, project IDs and historical costs | Controlled installed-agent comparison; broader subjects and durations |
-| Product editing and campaign reframing | All five attempts, including wrong ratios, drift and failed placement | Broader real-product and portrait coverage |
-| Final ad composition | Executed FFmpeg recipe, editable copy, deterministic export | Destination-platform acceptance and audience response |
-| Character continuity, thumbnails, talking video, generative video editing and subtitles | Live creation-tool discovery and request-schema review | Authenticated output runs and visual/audio quality comparisons |
+| Workflow                                                          | Current evidence                                                                                                                                   | Still missing                                                         |
+| ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- |
+| Product image and image-to-video                                  | Original files, exact prompts, settings, project IDs and historical costs                                                                          | Controlled installed-agent comparison; broader subjects and durations |
+| Product editing and campaign reframing                            | All five attempts, including wrong ratios, drift and failed placement                                                                              | Broader real-product and portrait coverage                            |
+| Final ad composition                                              | Executed FFmpeg recipe, editable copy, deterministic export                                                                                        | Destination-platform acceptance and audience response                 |
+| Character continuity                                              | [Five authenticated MCP outputs](../examples/nori-character), two paired prompt comparisons, exact prompts, IDs and charged credits; mixed results | More characters, repeated runs, blind review and animation            |
+| Thumbnails, talking video, generative video editing and subtitles | Live creation-tool discovery and request-schema review                                                                                             | Authenticated output runs and visual/audio quality comparisons        |
 
 To compare a skill with your usual MCP workflow, use the same brief, source, allowed tools, model settings and spending ceiling. Count failed attempts and total cost, hide workflow labels during quality review where practical, and judge task completion, fidelity, timing and export usability. Repeat across different subjects before reporting a general advantage. Downloading or installing a skill is not evidence of retained use, customer revenue or search citations.

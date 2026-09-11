@@ -12,17 +12,17 @@ Choose your agent and desired skills in the installer. [Exact Codex/Claude Code 
 
 ## Choose your workflow
 
-| I want to… | Skill | What it adds beyond a tool call |
-| --- | --- | --- |
-| Create or recover general media | [magic-hour-media](skills/magic-hour-media) | Select the operation, finish asynchronous jobs and retrieve files without duplicate paid retries |
-| Make a product shot or website hero | [magic-hour-product-visuals](skills/magic-hour-product-visuals) | Preserve geometry and labels, plan copy space and inspect the delivered file |
-| Edit an existing image | [magic-hour-image-editing](skills/magic-hour-image-editing) | Separate changes from protected details and recover from drift or wrong dimensions |
-| Animate an approved image | [magic-hour-image-to-video](skills/magic-hour-image-to-video) | Fix the still before motion, control the camera and inspect temporal consistency |
-| Finish an ad or matching campaign set | [magic-hour-campaign-kit](skills/magic-hour-campaign-kit) | Reuse a brand reference, compose exact copy and deliver finished placements |
-| Keep a character consistent across scenes | [magic-hour-character-consistency](skills/magic-hour-character-consistency) | Separate identity from pose/style references and review continuity across shots |
-| Make a thumbnail or episode cover | [magic-hour-thumbnails](skills/magic-hour-thumbnails) | Build a truthful visual hook, preserve references and judge readability at feed size |
-| Make a talking portrait or lip-sync clip | [magic-hour-talking-video](skills/magic-hour-talking-video) | Approve speech first, match timing and caption the final cut |
-| Edit or repurpose existing footage | [magic-hour-video-editing](skills/magic-hour-video-editing) | Choose generative edits versus precise local changes and preserve action/audio |
+| I want to…                                | Skill                                                                       | What it adds beyond a tool call                                                                  |
+| ----------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| Create or recover general media           | [magic-hour-media](skills/magic-hour-media)                                 | Select the operation, finish asynchronous jobs and retrieve files without duplicate paid retries |
+| Make a product shot or website hero       | [magic-hour-product-visuals](skills/magic-hour-product-visuals)             | Preserve geometry and labels, plan copy space and inspect the delivered file                     |
+| Edit an existing image                    | [magic-hour-image-editing](skills/magic-hour-image-editing)                 | Separate changes from protected details and recover from drift or wrong dimensions               |
+| Animate an approved image                 | [magic-hour-image-to-video](skills/magic-hour-image-to-video)               | Fix the still before motion, control the camera and inspect temporal consistency                 |
+| Finish an ad or matching campaign set     | [magic-hour-campaign-kit](skills/magic-hour-campaign-kit)                   | Reuse a brand reference, compose exact copy and deliver finished placements                      |
+| Keep a character consistent across scenes | [magic-hour-character-consistency](skills/magic-hour-character-consistency) | Separate identity from pose/style references and review continuity across shots                  |
+| Make a thumbnail or episode cover         | [magic-hour-thumbnails](skills/magic-hour-thumbnails)                       | Build a truthful visual hook, preserve references and judge readability at feed size             |
+| Make a talking portrait or lip-sync clip  | [magic-hour-talking-video](skills/magic-hour-talking-video)                 | Approve speech first, match timing and caption the final cut                                     |
+| Edit or repurpose existing footage        | [magic-hour-video-editing](skills/magic-hour-video-editing)                 | Choose generative edits versus precise local changes and preserve action/audio                   |
 
 Install one: `npx skills add magichourhq/skills --skill magic-hour-image-editing`. Install all: `npx skills add magichourhq/skills --skill '*'`. Each skill works independently; you do not need the whole collection for a single job.
 
@@ -50,16 +50,18 @@ For covers, existing footage and assembled ads, open the matching skill above. [
 
 ## Inspect the actual outputs
 
-These are original Magic Hour web-app outputs plus a local finishing example. Every case links to inputs, exact prompts, settings and limitations.
+These are original Magic Hour web-app and authenticated MCP outputs plus a local finishing example. Every case links to inputs, exact prompts, settings and limitations.
 
-| Approved product still | Edited catalog image | Finished layout |
-| --- | --- | --- |
+| Approved product still                                                      | Edited catalog image                                                                           | Finished layout                                                                      |
+| --------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
 | ![Blue AURORA bottle with space for copy](examples/aurora/guided-image.png) | ![AURORA bottle edited onto a square white background](examples/aurora-edits/catalog-qwen.png) | ![Square AURORA ad with exact headline and CTA](examples/aurora-finished/poster.png) |
-| [Image + motion comparison](examples/aurora) | [All five editing attempts](examples/aurora-edits) | [MP4 + editable copy + render recipe](examples/aurora-finished) |
+| [Image + motion comparison](examples/aurora)                                | [All five editing attempts](examples/aurora-edits)                                             | [MP4 + editable copy + render recipe](examples/aurora-finished)                      |
 
 The guided video retains one readable label where the generic example duplicates it. Two editing attempts ignored the square setting; switching models corrected it. Two vertical edits still missed exact placement, which informed the separate layout step. Those failures are included, not discarded.
 
-The finished ad has about one second of generated motion followed by a hold, six seconds total, and preserves the source watermark. It is a composition demonstration. These examples share one synthetic product; they do not establish general superiority. New character, thumbnail, talking-video and video-editing workflows have live tool/schema checks but still need published authenticated output comparisons. [Full evidence coverage →](docs/workflow-guide.md#what-evidence-is-published)
+The [Nori character case](examples/nori-character) adds five real MCP outputs: an original robot and two paired scene comparisons. The shorter prompt preserved details better in the greenhouse; added identity instructions helped in the garden. All attempts, exact prompts and 45 charged credits are recorded, including the rejected output with extra scarf ends.
+
+The finished ad has about one second of generated motion followed by a hold, six seconds total, and preserves the source watermark. It is a composition demonstration. The product cases use one synthetic product and the character case uses one robot; they do not establish general superiority. Thumbnail, talking-video and video-editing workflows have live tool/schema checks but still need published authenticated output comparisons. [Full evidence coverage →](docs/workflow-guide.md#what-evidence-is-published)
 
 ## Make the next job easier
 
