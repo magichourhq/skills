@@ -12,6 +12,8 @@ Choose your agent and desired skills in the installer. [Exact Codex/Claude Code 
 
 ## Choose your workflow
 
+Prefer a native plugin? See [Claude Code and Codex plugin installation, plus Cursor packaging](docs/native-install.md). The plugin uses the same skills and your existing Magic Hour connection.
+
 | I want to…                                | Skill                                                                       | What it adds beyond a tool call                                                                  |
 | ----------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
 | Create or recover general media           | [magic-hour-media](skills/magic-hour-media)                                 | Select the operation, finish asynchronous jobs and retrieve files without duplicate paid retries |

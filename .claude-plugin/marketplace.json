@@ -1,0 +1,8 @@
+{
+  "name": "magic-hour",
+  "owner": { "name": "Magic Hour" },
+  "metadata": {
+    "description": "Magic Hour's reusable AI media creation and editing workflows."
+  },
+  "plugins": [{ "name": "magic-hour", "source": "./" }]
+}
