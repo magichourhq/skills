@@ -4,21 +4,23 @@ description: Make Magic Hour talking portraits or lip-synced videos from approve
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Magic Hour talking video
 
 Approve the spoken result before paying to animate a face. Lip sync cannot fix a mispronounced name or a sentence cut off by the timeline.
 
+Use the supplied portrait, speech and language without asking for them again. Choose technical settings and perform delegated creative checks yourself; respect requested script/voice approvals and the existing total budget. Show the finished clip first, with an outstanding listening or language check made explicit. For recurring presenters or language versions, read [speech and localization](references/localization.md).
+
 ## Select the source and route
 
-| Input and intent | Route |
-| --- | --- |
-| Portrait plus speech | `ai_talking_photo_create_talking_photo` |
-| Existing speaker video plus replacement speech | `lip_sync_create_video` |
-| Script with no recording | `ai_voice_generator_create_audio`, review audio, then the relevant video route |
-| Voiceover on unrelated footage, no visible speaker | Compose narration over footage; do not add lip-sync generation |
+| Input and intent                                   | Route                                                                          |
+| -------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Portrait plus speech                               | `ai_talking_photo_create_talking_photo`                                        |
+| Existing speaker video plus replacement speech     | `lip_sync_create_video`                                                        |
+| Script with no recording                           | `ai_voice_generator_create_audio`, review audio, then the relevant video route |
+| Voiceover on unrelated footage, no visible speaker | Compose narration over footage; do not add lip-sync generation                 |
 
 Use authorized portrait, video and voice material. A preset's availability does not establish a speaker's endorsement. Prefer supplied speech when its performance is already accepted. For a portrait, favor a visible, unobstructed mouth and an angle suitable for the requested result; a stylized face or extreme profile needs its own quality check.
 

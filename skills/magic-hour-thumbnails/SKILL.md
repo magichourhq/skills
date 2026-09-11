@@ -4,12 +4,14 @@ description: Create readable, truthful video thumbnails and covers with Magic Ho
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Magic Hour thumbnails
 
 Make the actual topic legible in a small image. Visual drama is useful only if the viewer can identify the subject and the promised content exists in the video.
+
+Infer the hook from supplied content and recommend one composition; do not require a technical prompt or a long creative interview. Honor existing spending authorization and delegated creative decisions while respecting requested draft approvals. Show the finished cover first. For concept selection, editable headlines and series reuse, read [cover design](references/cover-design.md).
 
 ## Find the honest visual hook
 
@@ -37,4 +39,4 @@ Use the creation MCP at `https://mcp.magichour.ai/`; [connection guide](https://
 
 Upload local inputs through `video_assets_generate_presigned_url`, PUT raw bytes without the API bearer token to storage, and use `file_path`. Create once, retain the ID, then `wait_for_image_project`; a wait timeout means retrieve the same job. Do not repeat an ambiguous creation request. Preserve signed URLs and save the final file locally.
 
-Deliver the cover, editable copy, dimensions and any rejected requirement. Reuse the accepted series palette, type hierarchy and crop rules for the next episode, while changing the visual hook to match that episode. This skill's generation path is schema-reviewed; thumbnail quality and audience response are not yet benchmarked.
+Deliver the cover, editable copy, dimensions and any rejected requirement. Reuse the accepted series palette, type hierarchy and crop rules for the next episode, while changing the visual hook to match that episode. The [Nori case](https://github.com/magichourhq/skills/tree/main/examples/nori-thumbnail) publishes two authenticated image edits and a finished layout; broader thumbnail quality and audience response remain unmeasured.

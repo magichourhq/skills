@@ -4,12 +4,14 @@ description: Edit an existing image with Magic Hour while protecting details out
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # Magic Hour image editing
 
 Deliver the requested change without redesigning the source. A convincing image can still be a failed edit if it changes the subject's face, shape, label, or other protected detail.
+
+Infer the edit from the supplied image and plain-language request; recommend one treatment if needed. Choose technical settings yourself, reuse existing spending authorization and inspect the result before delivery. Do not insert draft approvals when the user delegated creative decisions. Show the image first and retain technical records in the project. For relighting, new backgrounds or difficult aspect ratios, read [faithful edits](references/faithful-edits.md).
 
 ## Establish the edit boundary
 
@@ -47,11 +49,11 @@ Compare the completed result beside the source, including a close view of protec
 
 If it fails, name the failure. Revise from the original when identity drifted; use an accepted edit for minor cleanup only after its protected details pass inspection. Do not chain unreviewed edits. Stop at the budget limit and disclose unresolved defects.
 
-| Failure | Change on the next authorized attempt |
-| --- | --- |
-| Wrong dimensions despite a ratio setting | Verify model support; use a safe crop or a different supported reframing route, not another adjective-heavy prompt. |
+| Failure                                                    | Change on the next authorized attempt                                                                                 |
+| ---------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| Wrong dimensions despite a ratio setting                   | Verify model support; use a safe crop or a different supported reframing route, not another adjective-heavy prompt.   |
 | Correct setting but altered face, cap, label, or viewpoint | Return to the original, remove competing appearance instructions, and consider a model with better reference control. |
-| Correct identity but wrong placement | Keep model and source; specify subject scale and a clear boundary for the copy area. |
-| Floating object or retained old reflection | Describe the new contact surface and shadow/reflection treatment; keep unrelated details fixed. |
+| Correct identity but wrong placement                       | Keep model and source; specify subject scale and a clear boundary for the copy area.                                  |
+| Floating object or retained old reflection                 | Describe the new contact surface and shadow/reflection treatment; keep unrelated details fixed.                       |
 
 Use the exact download URL, retrieve the same project if it expires, and save a durable file when requested. Return the edited image, project ID, and limitations. If you cannot inspect the image, say so rather than reporting it as verified.

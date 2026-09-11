@@ -4,10 +4,12 @@ description: Edit or repurpose existing footage with Magic Hour, choosing betwee
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Magic Hour video editing
+
+Start from the requested change and inspect the existing master. Choose editing settings and a suitable layout yourself when delegated; reuse the current budget and respect requested draft approvals. Show the exported video first and keep technical records with the project. For shorter cuts, alternate placements and copy/audio revisions, read [repurpose a master](references/repurpose.md).
 
 Keep the footage the user already likes. Choose the operation that changes the requested property without unnecessarily regenerating motion, identity or speech.
 
@@ -15,12 +17,12 @@ Keep the footage the user already likes. Choose the operation that changes the r
 
 Read the source's actual duration, dimensions, frame rate and audio streams. Watch the relevant interval. Record the requested change and what must survive: subject identity, actions, timing, dialogue, original sound, frame shape or a specific object. A short clip with several cuts may need separate edits; do not assume the model maintains continuity through every cut.
 
-| Requested change | Operation |
-| --- | --- |
-| Change scene appearance, materials or visual style | `ai_video_editor_create_video` using the original footage |
-| Add speech captions | `auto_subtitle_generator_create_video` after picture edits |
+| Requested change                                        | Operation                                                       |
+| ------------------------------------------------------- | --------------------------------------------------------------- |
+| Change scene appearance, materials or visual style      | `ai_video_editor_create_video` using the original footage       |
+| Add speech captions                                     | `auto_subtitle_generator_create_video` after picture edits      |
 | Trim, resize, reframe, add exact copy/logo, or assemble | Available compositor such as FFmpeg or an existing video editor |
-| Change a visible speaker's speech | Lip-sync route, not a generic visual-edit prompt |
+| Change a visible speaker's speech                       | Lip-sync route, not a generic visual-edit prompt                |
 
 Do not use a generative edit to perform a lossless requirement. It can redraw unrequested regions and does not guarantee pixel-preserved backgrounds, logos or faces. Do not claim tracking, masks or object-isolated controls unless the chosen tool exposes them.
 

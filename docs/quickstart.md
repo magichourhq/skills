@@ -1,6 +1,14 @@
 # Install Magic Hour skills and make your first useful asset
 
-You need an agent that supports skills, Node.js/npm for `npx`, and a Magic Hour account with an API key and enough credits for the requested generation. Skill installation is free; generation is billed by Magic Hour. No server hosting or repository clone is required.
+You need an agent that supports skills and a [Magic Hour account with an API key](https://magichour.ai/developer). Installation is free; media generation uses credits. No server hosting, code writing or repository clone is required.
+
+## Let your agent handle setup
+
+In Codex or Claude Code, paste the [setup request](../README.md#start-here). The agent can install skills and configure the connection when it has local command/configuration access. You handle account sign-in and any credential entry it cannot securely perform. This is assisted setup, not a claim that installation also signs you in.
+
+The agent should detect its client, check whether Node.js/npm and the skills already exist, use the matching command below, and preserve other connections. If Node.js is missing, explain that prerequisite and use the client's permitted installation flow. If your credential is already in an authorized secret store or private local file, use the client's supported authentication mechanism without printing it. Otherwise guide you to the client's secure credential flow; never request the key in chat or store it in project files.
+
+When setup succeeds, continue to your creative request. A session restart may be necessary for newly installed skills or tools. Do not repeat setup on each generation.
 
 ## Install for your agent
 
@@ -42,13 +50,15 @@ For **Claude's custom connector**, use the [maintained connection guide](https:/
 
 Attach a product photo you are entitled to use, then paste:
 
-> Use magic-hour-image-editing to make this product photo a square catalog image on white. Preserve its actual shape, material, cap and exact label. First verify the Magic Hour connection and authenticated account eligibility. Tell me the cost of one suitable image before generating; do not buy credits. Once I authorize that cost, complete the edit, inspect its actual dimensions and identity, save the image to this project, and show it. Ask before another paid attempt.
+> Make this product photo a square catalog image on white. Preserve its actual shape, material, cap and exact label. Choose the creative details and suitable settings, inspect the finished image, save it to this project and show it. Use my existing spending limit; if I haven't set one, ask before generating. Do not buy credits.
 
 No photo? Use this instead:
 
-> Use magic-hour-product-visuals to create one 16:9 hero image of an original cobalt-blue perfume bottle labeled AURORA on wet stone, product on the right and left third clear for my headline. This is a fictional product. Check connection, account eligibility and the cost of one image first. Once I authorize that cost, generate, inspect and save the actual output. Ask before a paid retry.
+> Create one wide hero image of an original cobalt-blue perfume bottle labeled AURORA on wet stone, product on the right and left third clear for my headline. This is a fictional product. Choose the lighting and settings, inspect and save the image. Use my existing spending limit; if I haven't set one, ask before generating.
 
-Check both `ping` and `account_retrieve`. Tool discovery can work before authentication, and `ping` can return `pong` even with an invalid API key; the account read checks actual API authorization. Activation means you receive and accept a usable file. Installation, authentication and a queued project ID are intermediate steps. If the first result fails a requirement, keep its project ID and explain the failure before spending again.
+The agent should check `account_retrieve` before the first paid job. Tool discovery and even a successful `ping` can work with an invalid key; the account read checks actual API authorization. You are ready when you receive a usable file, not just an installation message or project ID. The agent should inspect the result and repair a specific failure within your authorized budget; it should stop and explain if further spending is not covered.
+
+For example, **“Up to 300 credits for this job, including repairs; choose the creative details”** establishes a ceiling, not an instruction to spend it all. Use a limit appropriate to your account and requested media. If you want to approve each draft, say so; otherwise the agent should perform the creative checks you delegated and continue.
 
 ## Continue without starting over
 
@@ -58,16 +68,16 @@ Keep source files, accepted outputs and project IDs in the same project. Retain 
 
 ## Unstick the first run
 
-| What happened | Next action |
-| --- | --- |
-| Skill not listed | Confirm the install directory and selected agent; start a fresh session there |
-| Tools absent | Check the creation endpoint, enable the server, restart the session |
+| What happened                                           | Next action                                                                                                 |
+| ------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| Skill not listed                                        | Confirm the install directory and selected agent; start a fresh session there                               |
+| Tools absent                                            | Check the creation endpoint, enable the server, restart the session                                         |
 | Tools listed, but `ping` says `Authentication required` | The server is reachable; supply the credential in the agent's launch environment, then restart that session |
-| `ping` works but generation is unauthorized | Check the key in the agent's launch environment; ping alone does not authenticate |
-| Insufficient credits or unavailable tier/model | Choose a supported option within budget; do not upgrade automatically |
-| Local image path rejected | The agent must request an upload URL and PUT the bytes, then use `file_path` |
-| Wait timed out | Retrieve the same project ID; do not submit another paid job |
-| Download URL expired | Retrieve the existing project for a fresh exact URL |
-| Wrong size or distorted subject | Inspect the actual file; crop only if requirements survive, otherwise repair within budget |
+| `ping` works but generation is unauthorized             | Check the key in the agent's launch environment; ping alone does not authenticate                           |
+| Insufficient credits or unavailable tier/model          | Choose a supported option within budget; do not upgrade automatically                                       |
+| Local image path rejected                               | The agent must request an upload URL and PUT the bytes, then use `file_path`                                |
+| Wait timed out                                          | Retrieve the same project ID; do not submit another paid job                                                |
+| Download URL expired                                    | Retrieve the existing project for a fresh exact URL                                                         |
+| Wrong size or distorted subject                         | Inspect the actual file; crop only if requirements survive, otherwise repair within budget                  |
 
 For help, [open an issue](https://github.com/magichourhq/skills/issues) with your agent, skill, failed step, expected result and redacted error. Never include keys, private account data or signed URLs. To update one installed workflow, run e.g. `npx skills update magic-hour-image-editing`. `npx skills update` without names can update other installed skills too, so review its scope.
