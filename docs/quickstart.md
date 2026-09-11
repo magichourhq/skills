@@ -48,13 +48,13 @@ For **Claude's custom connector**, use the [maintained connection guide](https:/
 
 ## Make one useful result
 
-Attach a product photo you are entitled to use, then paste:
+Attach a portrait or character image you are entitled to use, then paste:
 
-> Make this product photo a square catalog image on white. Preserve its actual shape, material, cap and exact label. Choose the creative details and suitable settings, inspect the finished image, save it to this project and show it. Use my existing spending limit; if I haven't set one, ask before generating. Do not buy credits.
+> Turn this photo into a short scene with golden fish swimming through the air around me. Keep me recognizable. Choose the creative details, edit and inspect the still if needed, then animate it. Save and show the finished video. Use my existing spending limit; if I haven't set one, ask before generating. Do not buy credits.
 
 No photo? Use this instead:
 
-> Create one wide hero image of an original cobalt-blue perfume bottle labeled AURORA on wet stone, product on the right and left third clear for my headline. This is a fictional product. Choose the lighting and settings, inspect and save the image. Use my existing spending limit; if I haven't set one, ask before generating.
+> Make a short vertical video of an elevator opening onto the moon. No specific identity is needed. Choose the direction and settings, leave time to see the reveal, inspect and save the video. Use my existing spending limit; if I haven't set one, ask before generating.
 
 The agent should check `account_retrieve` before the first paid job. Tool discovery and even a successful `ping` can work with an invalid key; the account read checks actual API authorization. You are ready when you receive a usable file, not just an installation message or project ID. The agent should inspect the result and repair a specific failure within your authorized budget; it should stop and explain if further spending is not covered.
 
@@ -62,9 +62,9 @@ For example, **“Up to 300 credits for this job, including repairs; choose the 
 
 ## Continue without starting over
 
-> Reuse the accepted source and brief from this project. Make only the requested change: a vertical version with the product below my headline. Reuse the original logo and exact copy. Check whether local layout can do this before another paid edit. Keep the existing accepted files and save the new version separately.
+> Reuse the accepted clip and brief from this project. Make only the requested change: a shorter vertical cut with this exact caption. Check whether local editing can do this without another generation. Keep the accepted files and save the new version separately.
 
-Keep source files, accepted outputs and project IDs in the same project. Retain only useful identity, voice, copy and layout decisions; credentials never belong in that brief. For animation, edit the approved still first if needed, then animate it with a motion-focused prompt. A new headline or crop should not require rebuilding the product.
+Keep source files, accepted outputs and project IDs in the same project. Retain only useful identity, voice, copy and layout decisions; credentials never belong in that brief. For animation, edit the approved still first if needed, then animate it with a motion-focused prompt. A new caption or crop should not require regenerating accepted footage.
 
 ## Unstick the first run
 

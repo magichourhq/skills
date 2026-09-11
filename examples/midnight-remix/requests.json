@@ -1,0 +1,233 @@
+{
+  "run_date_utc": "2026-09-11",
+  "notes": "Generation-affecting settings and exact prompts. Cosmetic job names omitted. Input URLs replaced with explicit upload placeholders; these local filenames are not accepted API file_path values. Upload the bundled files and substitute returned file_path values before reproducing. No seeds were supplied. Credit charges are historical observations, not current price quotes.",
+  "total_credits_charged": 1750,
+  "jobs": [
+    {
+      "tool": "ai_image_generator_create_image",
+      "project_id": "cmtwkl5uf0019km01nlenqtux",
+      "created_at": "2026-09-11T06:23:15.159Z",
+      "status": "complete",
+      "credits_charged": 50,
+      "output": "portrait.png",
+      "inputs": {
+        "model": "nano-banana-2-lite",
+        "resolution": "1k",
+        "aspect_ratio": "9:16",
+        "image_count": 1,
+        "style": {
+          "prompt": "Photoreal cinematic portrait of an original fictional adult woman around 28, short straight dark bob with blunt fringe, warm brown eyes, light olive skin, no makeup filter, wearing a plain amber yellow raincoat over a dark shirt. Waist-up, standing straight with shoulders and both hands visible relaxed at her sides, facing the camera, unobstructed face, neutral curious expression, closed mouth. Simple empty charcoal grey train-platform wall behind her. Soft overcast light, realistic skin texture, 50mm portrait lens. Vertical 9:16 frame with head comfortably below the top edge. One person only. No text, symbols, brand logos or watermark."
+        }
+      }
+    },
+    {
+      "tool": "ai_image_editor_create_image",
+      "project_id": "cmtwkma82003win019mxgb1go",
+      "created_at": "2026-09-11T06:24:07.490Z",
+      "status": "complete",
+      "credits_charged": 50,
+      "output": "keyframe.png",
+      "inputs": {
+        "model": "nano-banana-2-lite",
+        "resolution": "1k",
+        "aspect_ratio": "9:16",
+        "image_count": 1,
+        "assets": {
+          "image_file_paths": ["<uploaded:portrait.png>"]
+        },
+        "style": {
+          "prompt": "Transform only the setting around this same fictional woman into an impossible midnight railway platform where luminous golden koi fish swim through the air. Keep her exact face, blunt dark bob, amber raincoat, pose, proportions and hands. One large elegant golden koi is visible to the upper right of her shoulder, safely separate from her face; smaller fish recede down the empty platform. Reflections on wet dark tiles, deep teal shadows, warm gold rim light from the fish, cinematic photoreal practical-effects feeling. She remains clearly recognizable and mostly front facing, waist-up in the lower center of the same vertical 9:16 composition. No other people, no text, no signs, no graphics. The fish have ordinary complete anatomy and no human faces."
+        }
+      }
+    },
+    {
+      "tool": "ai_image_generator_create_image",
+      "project_id": "cmtwknc3y020noh01fxdmnl0c",
+      "created_at": "2026-09-11T06:24:56.590Z",
+      "status": "complete",
+      "credits_charged": 50,
+      "output": "alternate-face.png",
+      "inputs": {
+        "model": "nano-banana-2-lite",
+        "resolution": "1k",
+        "aspect_ratio": "1:1",
+        "image_count": 1,
+        "style": {
+          "prompt": "Studio headshot of an original fictional adult man age 35 with medium brown skin, short tightly curled black hair, a broad nose, strong cheekbones, a neatly trimmed moustache and short beard. Friendly neutral closed-mouth expression, both eyes visible, looking straight into camera, no glasses or accessories. Plain black crewneck shirt and uniform mid-grey background. Soft balanced frontal lighting, high-detail natural skin, photoreal, square crop head and upper shoulders, no text or logos."
+        }
+      }
+    },
+    {
+      "tool": "text_to_video_create_video",
+      "project_id": "cmtwkncp0020poh01rr9bk4ih",
+      "created_at": "2026-09-11T06:24:57.349Z",
+      "status": "complete",
+      "credits_charged": 240,
+      "output": "moon-elevator.mp4",
+      "inputs": {
+        "model": "ltx-2.3",
+        "resolution": "720p",
+        "aspect_ratio": "9:16",
+        "end_seconds": 5,
+        "audio": false,
+        "style": {
+          "prompt": "A single photoreal five-second vertical shot, camera locked at eye level inside a plain brushed-steel elevator looking at its closed double doors. During the first two seconds the doors slide apart, revealing a vast silent lunar landscape immediately outside: pale grey moon dust, one distant mountain ridge and a large blue Earth hanging against deep black space. The last three seconds hold on this impossible view, with a few fine dust motes floating slowly in the light. The elevator stays completely still; straight metal door geometry, realistic cold light from the moon spilling onto the floor. No people, no captions, no numbers, no logos, no camera move, no cuts. One clear reveal."
+        }
+      }
+    },
+    {
+      "tool": "image_to_video_create_video",
+      "project_id": "cmtwkrjso0027m801600v3hmv",
+      "created_at": "2026-09-11T06:28:13.176Z",
+      "status": "complete",
+      "credits_charged": 240,
+      "output": "performance.mp4",
+      "inputs": {
+        "model": "ltx-2.3",
+        "resolution": "720p",
+        "end_seconds": 5,
+        "audio": false,
+        "assets": {
+          "image_file_path": "<uploaded:keyframe.png>"
+        },
+        "style": {
+          "prompt": "Single uninterrupted shot from the supplied frame. The large golden koi on the right swims slowly upward beside the woman's shoulder, its tail and fins flowing naturally. The woman first holds the camera's gaze, then turns her eyes and head slightly toward the fish with a small surprised smile. The distant koi drift gently along the platform. Camera makes a very slow push in, keeping her complete face and the nearby fish separated and visible. Preserve her face, dark blunt bob, amber coat, body proportions, teal platform and golden light. No new people, no dialogue, no cuts, no text, no face covering. End with the woman calmly watching the fish."
+        }
+      }
+    },
+    {
+      "tool": "ai_voice_generator_create_audio",
+      "project_id": "cmtwktmsc01tzko01pg2k6i5r",
+      "created_at": "2026-09-11T06:29:50.364Z",
+      "status": "complete",
+      "credits_charged": 5,
+      "output": "speech.wav",
+      "inputs": {
+        "style": {
+          "prompt": "Welcome aboard. The next stop is the moon.",
+          "voice_name": "GLaDOS"
+        }
+      }
+    },
+    {
+      "tool": "face_swap_create_video",
+      "project_id": "cmtwkw80y01zznu01uq775znq",
+      "created_at": "2026-09-11T06:31:51.202Z",
+      "status": "complete",
+      "credits_charged": 120,
+      "output": "face-swap.mp4",
+      "inputs": {
+        "assets": {
+          "video_source": "file",
+          "video_file_path": "<uploaded:performance.mp4>",
+          "image_file_path": "<uploaded:alternate-face.png>",
+          "face_swap_mode": "all-faces"
+        },
+        "start_seconds": 0,
+        "end_seconds": 5,
+        "style": {
+          "version": "v2"
+        }
+      }
+    },
+    {
+      "tool": "ai_talking_photo_create_talking_photo",
+      "project_id": "cmtwkw8th003wm801zgekv0s0",
+      "created_at": "2026-09-11T06:31:52.229Z",
+      "status": "complete",
+      "credits_charged": 190,
+      "output": "talking-photo.mp4",
+      "inputs": {
+        "assets": {
+          "image_file_path": "<uploaded:keyframe.png>",
+          "audio_file_path": "<uploaded:speech.wav>"
+        },
+        "start_seconds": 0,
+        "end_seconds": 3.920042,
+        "max_resolution": 720,
+        "style": {
+          "generation_mode": "realistic"
+        }
+      }
+    },
+    {
+      "tool": "ai_image_generator_create_image",
+      "project_id": "cmtwkw9jf023soh01kq0zjbiv",
+      "created_at": "2026-09-11T06:31:53.163Z",
+      "status": "complete",
+      "credits_charged": 50,
+      "output": "character.png",
+      "inputs": {
+        "model": "nano-banana-2-lite",
+        "resolution": "1k",
+        "aspect_ratio": "9:16",
+        "image_count": 1,
+        "style": {
+          "prompt": "Original cinematic fantasy character reference: an adult anthropomorphic arctic fox train conductor, upright humanoid body, expressive fox face with white fur and pointed ears, dark blue conductor jacket with brass buttons over an orange waistcoat, white furry paws relaxed at the sides. Straight-on waist-up medium portrait, complete head ears shoulders torso and both paws visible, one character only, plain dark grey studio background, soft even light, high quality tactile fur and fabric, live-action movie creature aesthetic. Vertical 9:16, no text, logos, hat, accessories or other subjects."
+        }
+      }
+    },
+    {
+      "tool": "character_replace_create_video",
+      "project_id": "cmtwl05ay004fmb01h4fqif70",
+      "created_at": "2026-09-11T06:34:54.298Z",
+      "status": "complete",
+      "credits_charged": 480,
+      "output": "character-replace.mp4",
+      "inputs": {
+        "assets": {
+          "image_file_path": "<uploaded:character.png>",
+          "video_file_path": "<uploaded:performance.mp4>"
+        },
+        "start_seconds": 0,
+        "end_seconds": 5,
+        "resolution": "720p",
+        "style": {
+          "mode": "replace",
+          "selection_mode": "auto"
+        }
+      }
+    },
+    {
+      "tool": "ai_video_editor_create_video",
+      "project_id": "cmtwl05ya020onq0137w35il0",
+      "created_at": "2026-09-11T06:34:55.138Z",
+      "status": "complete",
+      "credits_charged": 180,
+      "output": "video-edit.mp4",
+      "inputs": {
+        "assets": {
+          "video_file_path": "<uploaded:performance.mp4>"
+        },
+        "start_seconds": 0,
+        "end_seconds": 5,
+        "resolution": "720p",
+        "model": "ltx-2.3",
+        "style": {
+          "prompt": "Restyle this entire shot as a hand-painted watercolor and fine ink animation, with rich teal washes and luminous gold fish. Preserve the woman's recognizable face, blunt bob and amber raincoat, her head turns, the fish movement, the camera movement and the original shot timing. Keep the same scene, people count and composition. No new actions, no new objects, no cuts or text."
+        }
+      }
+    },
+    {
+      "tool": "lip_sync_create_video",
+      "project_id": "cmtwl06lk005mm8012130ia13",
+      "created_at": "2026-09-11T06:34:55.976Z",
+      "status": "complete",
+      "credits_charged": 95,
+      "output": "lip-sync.mp4",
+      "inputs": {
+        "assets": {
+          "audio_file_path": "<uploaded:speech.wav>",
+          "video_source": "file",
+          "video_file_path": "<uploaded:performance.mp4>"
+        },
+        "start_seconds": 0,
+        "end_seconds": 3.920042,
+        "max_fps_limit": 24,
+        "style": {
+          "generation_mode": "standard"
+        }
+      }
+    }
+  ]
+}

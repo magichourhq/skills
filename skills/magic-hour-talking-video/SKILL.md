@@ -1,10 +1,10 @@
 ---
 name: magic-hour-talking-video
-description: Make Magic Hour talking portraits or lip-synced videos from approved speech, with audio-first timing and optional captions. Use for presenter clips, narrated avatars, or matching an existing speaker video to supplied audio; not generic text-to-video.
+description: Make a portrait speak, react or perform supplied audio with Magic Hour, or lip-sync an existing video to replacement speech. Use for character dialogue, talking photos, presenters and language versions with audio-first timing; not generic text-to-video.
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # Magic Hour talking video
@@ -32,6 +32,8 @@ Listen to the completed audio for pronunciation, pacing, silence and the final w
 
 For talking photo, pass `assets.image_file_path` and `assets.audio_file_path`. The interval describes the input audio. Select the current generation mode for the requirement: the schema distinguishes likeness-oriented and prompt-controlled modes, and scene prompts may be ignored in other modes. Check the mode's duration limit.
 
+For a character reaction or punchline, infer the intended delivery from the supplied performance; preserve its pauses and final word. Choose `realistic` when likeness is the priority. Use `prompted` only when its scene/motion control is needed; its prompt is ignored in realistic mode. A singing portrait needs its own mouth/timing review on the actual sung audio. Do not claim singing quality from a spoken example or generate a new soundtrack when one was supplied.
+
 For lip sync, provide `assets.audio_file_path`, `assets.video_source` and its corresponding video field. Check the selected interval and whether enough source video exists. Do not loop a speaking face or cut the last sentence to hide a mismatch. Inspect the resulting alignment rather than assuming audio and video offsets behave identically across endpoints.
 
 ## Create, caption and inspect
@@ -44,4 +46,6 @@ Add captions only after the picture and speech are accepted. The subtitle endpoi
 
 Watch and listen to the whole result. Check mouth closures against audible consonants, sync after pauses, jaw/teeth artifacts, face stability during turns, audio continuity and the complete final word. Static frames cannot prove lip sync. If playback or hearing is unavailable, disclose that validation gap rather than declaring a pass.
 
-Deliver the video, approved audio/script, project IDs, and optional captioned version. Retain the accepted portrait, voice choice and pronunciation notes for the next clip. The endpoint mapping is schema-reviewed; a published authenticated talking-video quality run remains outstanding.
+Probe the downloaded file before captioning or assembly. Our [Talking Photo and Lip Sync runs](https://github.com/magichourhq/skills/tree/main/examples/midnight-remix) include the full-duration audio streams, but show changed dimensions, a frame-rate mismatch with project metadata and a Lip Sync video stream slightly shorter than its audio. Preserve the last word; do not use the shorter stream as an automatic trim boundary. Those examples have frame and stream checks, with listening and synchronization review still outstanding.
+
+Deliver the video, approved audio/script, project IDs, and optional captioned version. Retain the accepted portrait, voice choice and pronunciation notes for the next clip. Caption and multilingual quality still need separate validation.

@@ -4,7 +4,7 @@ description: Generate, edit, and retrieve images, video, and audio with Magic Ho
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.3.0"
+  version: "1.4.0"
 ---
 
 # Magic Hour media
@@ -15,7 +15,7 @@ Requires network access and either a connected Magic Hour MCP server or a Magic 
 
 ## Work from the user's goal
 
-Accept ordinary requests such as “make a clean photo for my store.” Infer the placement and creative direction from supplied context; recommend one direction when needed. Ask only for missing information that changes the result or spending authority, not model names, schema fields or a completed prompt template. When creative choices are delegated, inspect and accept suitable intermediate assets yourself and continue. Respect requested review points and the existing budget. Lead delivery with the actual media; keep IDs and technical records in the project unless they are needed to explain a failure.
+Accept ordinary requests such as “put me in this clip,” “make my character do this” or “turn this portrait into an impossible scene.” Infer the placement and creative direction from supplied context; recommend one direction when needed. Ask only for missing information that changes the result or spending authority, not model names, schema fields or a completed prompt template. When creative choices are delegated, inspect and accept suitable intermediate assets yourself and continue. Respect requested review points and the existing budget. Lead delivery with the actual media; keep IDs and technical records in the project unless they are needed to explain a failure. For transformations or recreating a visual format, read [the remix workflow](references/remix.md); for music, read [music and performance](references/music.md).
 
 ## Connect to the right service
 
@@ -27,23 +27,27 @@ Use live tool schemas, or the [API documentation index](https://docs.magichour.a
 
 ## Choose the workflow
 
-| User goal                                           | Creation tool                           | Completion tool                |
-| --------------------------------------------------- | --------------------------------------- | ------------------------------ |
-| Product shot, hero image, illustration, thumbnail   | `ai_image_generator_create_image`       | `wait_for_image_project`       |
-| Edit an existing image while preserving its content | `ai_image_editor_create_image`          | `wait_for_image_project`       |
-| Animate a supplied image                            | `image_to_video_create_video`           | `wait_for_video_project`       |
-| Generate video from a text description              | `text_to_video_create_video`            | `wait_for_video_project`       |
-| Match an existing video's mouth movement to audio   | `lip_sync_create_video`                 | `wait_for_video_project`       |
-| Animate a portrait using supplied speech            | `ai_talking_photo_create_talking_photo` | `wait_for_video_project`       |
-| Generate speech from text                           | `ai_voice_generator_create_audio`       | `wait_for_audio_project`       |
-| Restyle existing footage                            | `ai_video_editor_create_video`          | `wait_for_video_project`       |
-| Caption the final picture and speech                | `auto_subtitle_generator_create_video`  | `wait_for_video_project`       |
-| Exact headline, crop, trim or assembled layout      | Available local editor/compositor       | Inspect the exported file      |
-| Retrieve a known project                            | No new creation call                    | Matching wait or retrieve tool |
+| User goal                                           | Creation tool                                              | Completion tool                |
+| --------------------------------------------------- | ---------------------------------------------------------- | ------------------------------ |
+| Product shot, hero image, illustration, thumbnail   | `ai_image_generator_create_image`                          | `wait_for_image_project`       |
+| Edit an existing image while preserving its content | `ai_image_editor_create_image`                             | `wait_for_image_project`       |
+| Animate a supplied image                            | `image_to_video_create_video`                              | `wait_for_video_project`       |
+| Put a supplied face into existing footage           | `face_swap_create_video`                                   | `wait_for_video_project`       |
+| Replace a whole character or transfer a performance | `character_replace_create_video`                           | `wait_for_video_project`       |
+| Generate video from a text description              | `text_to_video_create_video`                               | `wait_for_video_project`       |
+| Match an existing video's mouth movement to audio   | `lip_sync_create_video`                                    | `wait_for_video_project`       |
+| Animate a portrait using supplied speech            | `ai_talking_photo_create_talking_photo`                    | `wait_for_video_project`       |
+| Generate speech from text                           | `ai_voice_generator_create_audio`                          | `wait_for_audio_project`       |
+| Create visuals from a supplied soundtrack           | `audio_to_video_create_video`                              | `wait_for_video_project`       |
+| Replace a face or body in a still photo             | `face_swap_photo_create_image` or `body_swap_create_image` | `wait_for_image_project`       |
+| Restyle existing footage                            | `ai_video_editor_create_video`                             | `wait_for_video_project`       |
+| Caption the final picture and speech                | `auto_subtitle_generator_create_video`                     | `wait_for_video_project`       |
+| Exact headline, crop, trim or assembled layout      | Available local editor/compositor                          | Inspect the exported file      |
+| Retrieve a known project                            | No new creation call                                       | Matching wait or retrieve tool |
 
 Tool names can have a client-specific prefix. Discover their current input schemas before calling them.
 
-When installed, use the focused skill for product visuals, image editing, image-to-video, campaign kits, character consistency, thumbnails, talking video or existing-video editing. Do not require the user to memorize a skill name or install a companion just to finish a supported task. Reuse the current connection, project brief and accepted media; only ask for missing information that changes the output or authorization.
+When installed, use the focused skill for image-to-video, face swap, text-to-video, image editing, talking video, character replace, existing-video editing, product visuals, campaign kits, character consistency or thumbnails. Distinguish face-only identity changes from whole-character replacement, and a portrait's new speech from an existing video's performance. Do not require the user to memorize a skill name or install a companion just to finish a supported task. Reuse the current connection, project brief and accepted media; only ask for missing information that changes the output or authorization.
 
 ## Set the quality target
 

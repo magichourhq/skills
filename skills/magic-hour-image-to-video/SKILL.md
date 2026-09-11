@@ -1,10 +1,10 @@
 ---
 name: magic-hour-image-to-video
-description: Create a Magic Hour video from a still image by designing or editing and approving the start frame before animation. Use for image-to-video, product or character animation when Magic Hour is requested or is the project's chosen media provider.
+description: Animate a portrait, character, artwork or scene with Magic Hour, editing and inspecting the start frame when needed before motion. Use for image-to-video, transformations, reveals and character animation when Magic Hour is requested or is the project's chosen media provider.
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.3.0"
+  version: "1.4.0"
 ---
 
 # Magic Hour image to video
@@ -13,7 +13,7 @@ Produce a usable short video by solving appearance in a still frame first and mo
 
 Generation consumes Magic Hour credits. Use a connected Magic Hour creation MCP at `https://mcp.magichour.ai/` when available. Otherwise read `references/setup.md` for the API route. Discover the current schemas before choosing a model, duration, resolution, or price.
 
-Choose the shot direction from the brief; do not ask a nontechnical user for model fields or a motion-prompt template. Honor the existing budget. When creative decisions are delegated, inspect and accept the still yourself, then continue to video unless draft approval was requested. Show the clip first and keep technical records in the project. For stories with several beats, read [multi-shot direction](references/multi-shot.md).
+Choose the shot direction from the brief; do not ask a nontechnical user for model fields or a motion-prompt template. Honor the existing budget. When creative decisions are delegated, inspect and accept the still yourself, then continue to video unless draft approval was requested. Show the clip first and keep technical records in the project. For transformations and reveals, read [directing the moment](references/transformations.md); for stories with several beats, read [multi-shot direction](references/multi-shot.md).
 
 ## Define the shot
 
@@ -51,7 +51,7 @@ Write the motion prompt around change over time:
 - what stays fixed
 - timing and end state
 
-Avoid redescribing the entire still in new visual language. That invites the model to redesign the subject. For a product shot, a useful pattern is: `A restrained slow dolly in; the product stays in its approved position and remains fully in frame; preserve the copy area, label, and geometry; soft light moves across the surface; no cuts.` Do not demand a centered subject when the approved frame places it on the right.
+Avoid redescribing the entire still in new visual language. That invites the model to redesign the subject. For a reaction shot: `The fish swims slowly beside her shoulder; she notices it and turns slightly with a surprised smile. A slow push in keeps her face and the fish separate. Preserve identity, clothes and scene. No cuts.` A product layout may instead need a locked subject and protected copy area. Do not demand a centered subject when the approved frame places it on the right.
 
 Use an end frame only when the current schema says the chosen model, resolution, and duration support it. Prefer the live recommended model for a general request. Select a specialist only when its schema describes the needed control. Match resolution and duration to the requested deliverable. A short preview tests a short interval, not stability over a longer clip. Check the total still-plus-video cost against existing authorization and ask only when it does not cover the intended work.
 
@@ -69,5 +69,7 @@ After the project reports `complete`, use the returned download URL exactly as p
 - any generated audio is intentional and coherent
 
 If one required criterion fails, identify it and change the smallest relevant input: start frame for appearance problems, motion prompt for movement problems, or model/resolution only when the live schema supports the needed behavior. Do not spend credits on another attempt outside the user's budget.
+
+In the [portrait-to-koi example](https://github.com/magichourhq/skills/tree/main/examples/midnight-remix), identity stayed recognizable but a requested slight turn became a larger turn in both directions. Keep the accepted still when correcting that motion. If the downloaded canvas differs slightly from the requested ratio, inspect the full action path before a local crop; do not regenerate an otherwise accepted take only to remove edge pixels.
 
 Return the finished video or usable link, the saved location when applicable, the image and video project IDs, and any material limitation.
