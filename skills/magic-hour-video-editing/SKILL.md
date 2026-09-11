@@ -4,7 +4,7 @@ description: Edit or repurpose existing footage with Magic Hour, choosing betwee
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # Magic Hour video editing
@@ -20,6 +20,8 @@ Read the source's actual duration, dimensions, frame rate and audio streams. Wat
 | Requested change                                        | Operation                                                       |
 | ------------------------------------------------------- | --------------------------------------------------------------- |
 | Change scene appearance, materials or visual style      | `ai_video_editor_create_video` using the original footage       |
+| Put another face into the same performance              | Face Swap with deliberate cast mapping                          |
+| Replace the body/character or transfer its performance  | Character Replace with the appropriate replace/animate mode     |
 | Add speech captions                                     | `auto_subtitle_generator_create_video` after picture edits      |
 | Trim, resize, reframe, add exact copy/logo, or assemble | Available compositor such as FFmpeg or an existing video editor |
 | Change a visible speaker's speech                       | Lip-sync route, not a generic visual-edit prompt                |
@@ -33,6 +35,8 @@ Select an interval within the current model's minimum and maximum length. Descri
 > Change only the room's appearance to a warm, sunlit illustration. Preserve the person's action of placing the cup on the table, the camera position, shot timing, cup count and framing. No cuts, new characters or added text.
 
 That prompt is a requested constraint, not a guarantee. Inspect cup contact, hands, occlusion, faces and cuts in the output. If the model changes required action or identity, return to the original source and narrow the change or choose a live-supported alternative within budget. Do not chain unreviewed edited clips.
+
+For an alternate-world remix, separate the effect from the action: change the setting to moonlit ruins while preserving the original walk, camera and timing. Keep a strong reference moment visible before the payoff. Do not add a new face or costume to a background-only request. Split distinct shots only when needed for controlled edits, and inspect the reconstructed joins and sound.
 
 For a vertical version, check the entire motion path before cropping. If a tracked subject or important context will leave the crop, use a designed contained layout when the brief permits, or use an editor that actually supports the required tracking. Do not stretch, invent missing edge content, or assume one crop works across camera cuts.
 
@@ -48,4 +52,6 @@ Use the creation MCP at `https://mcp.magichour.ai/`; [setup](https://github.com/
 
 For local footage, obtain `video_assets_generate_presigned_url`, PUT raw bytes to `upload_url` without the API bearer token, then use `file_path`. Submit once, retain the ID and `wait_for_video_project`. Resume the same job after a wait timeout; do not repeat an ambiguous creation. Preserve signed URLs exactly and download durable files.
 
-Decode the final export, verify its actual dimensions/duration/audio, and inspect full playback including transitions. Compare against the original, not just the last intermediate. Deliver the clean master, requested derivatives, edit decisions and unresolved defects. Reuse accepted edits for future crops/copy changes; regenerate only when the visual brief changes. Generative edits and caption quality are schema-reviewed but not yet validated in a published authenticated run.
+Decode the final export, verify its actual dimensions/duration/audio, and inspect full playback including transitions. Compare against the original, not just the last intermediate. Our [illustrated video-edit example](https://github.com/magichourhq/skills/tree/main/examples/midnight-remix) changes the visual style but also shifts the opening head turn. Use the original as the timing reference; a pleasing style is not proof of faithful action.
+
+Deliver the clean master, requested derivatives, edit decisions and unresolved defects. Reuse accepted edits for future crops/copy changes; regenerate only when the visual brief changes. Caption quality and preservation of supplied source audio still require their own output validation.

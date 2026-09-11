@@ -4,7 +4,7 @@ description: Edit an existing image with Magic Hour while protecting details out
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.2.0"
+  version: "1.3.0"
 ---
 
 # Magic Hour image editing
@@ -29,6 +29,8 @@ Keep the source as the identity reference. If multiple references are supported,
 Use this order: requested edit; output framing; protected details; shadows/reflections; rejection conditions. Keep the prompt proportional to the edit. Do not add cinematic styling to a simple cleanup.
 
 > Replace only the wet stone and dark setting with a clean white studio background and a soft contact shadow. Reframe to a square with the complete bottle centered and breathing room on every edge. Preserve the reference bottle's silhouette, cap dimensions, blue glass, camera angle, and single label reading “AURORA”. Remove the colored background light while keeping the blue material recognizable. No extra objects, duplicated labels, or new text.
+
+For a personal transformation, use the same change/preserve boundary: “Move this person into a midnight platform with golden fish swimming through the air. Keep their face, hair, coat and pose. Place the nearest fish beside the shoulder without covering the face. Match the new lighting.” Preserve the person's actual features; do not add beauty, age or body changes unless requested. If video is next, solve the final canvas, visible limbs and effect placement here before paying for motion.
 
 Do not paste the original generation prompt wholesale: it may request the background being replaced. Keep promotional copy in a separate layout layer when a suitable tool is available. Text already printed on the subject is protected content.
 

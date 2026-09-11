@@ -14,6 +14,8 @@ Reviewed September 11, 2026 UTC against [Higgsfield's public skills repository a
 
 ## What do the skills add to the MCP?
 
+For personal transformations, use [Image-to-Video](../skills/magic-hour-image-to-video), [Face Swap](../skills/magic-hour-face-swap), [Text-to-Video](../skills/magic-hour-text-to-video) and [Character Replace](../skills/magic-hour-character-replace). The [midnight remix case](../examples/midnight-remix) records actual operation outputs, costs and failed requirements. These are Magic Hour demonstrations, not matched Higgsfield runs.
+
 The MCP supplies generation and editing tools. A skill chooses a coherent workflow around them: inspect an accepted still before motion, reuse original references, preserve exact copy in editable layers, complete asynchronous jobs without duplicate paid retries, and deliver the requested files. The [AURORA kit](../examples/aurora-listing) demonstrates several outputs from one new generation. The [Nori explainer](../examples/nori-explainer) demonstrates assembled image, speech and motion assets, with its failures and review limits included.
 
 These examples establish specific delivered artifacts, not a general quality ranking. Compare services using the same brief, references, allowed tools, budget and success criteria; include every failed attempt and judge the final exported media. Installs, stars and skill counts do not establish customer value.

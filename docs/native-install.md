@@ -13,9 +13,9 @@ Run in Claude Code:
 
 Restart or reload plugins as your client requests. Ask:
 
-> Use Magic Hour to turn this product photo into a finished image. Help me connect if needed, verify my account, and use my existing budget. Choose the creative details and deliver the actual file.
+> Use Magic Hour to turn this portrait into an impossible scene and animate it. Help me connect if needed, verify my account, and use my existing budget. Choose the creative details, keep me recognizable and deliver the actual video.
 
-Plugin skills are namespaced. For an explicit invocation, use `/magic-hour:magic-hour-product-visuals`. Other skills follow the same `magic-hour:<skill-name>` format. [Claude Code's plugin reference](https://code.claude.com/docs/en/plugins-reference) describes discovery and invocation.
+Plugin skills are namespaced. For an explicit invocation, use `/magic-hour:magic-hour-image-to-video`. Other skills follow the same `magic-hour:<skill-name>` format. [Claude Code's plugin reference](https://code.claude.com/docs/en/plugins-reference) describes discovery and invocation.
 
 ## Codex
 

@@ -2,6 +2,14 @@
 
 The skill adds production decisions around Magic Hour's tools: which source to reuse, what to fix before motion, when a generation is unnecessary, how to judge an output, and how to continue without losing accepted work. The MCP executes jobs; a successful tool call alone does not answer those questions.
 
+## How do I put myself into a video or make my character perform?
+
+Use [Face Swap](../skills/magic-hour-face-swap) to change a face while preserving the existing performance and body. Use [Character Replace](../skills/magic-hour-character-replace) when the body/costume/character should change, or when a reference character should perform source motion. For a newly imagined scene, edit the supplied portrait into the intended start frame and animate it. The [remix guide](../skills/magic-hour-media/references/remix.md) explains how to choose without learning API fields.
+
+## Can I make music videos or a singing character?
+
+Start with the selected audio phrase. A visible performance uses Talking Photo or Lip Sync; new audio-guided visuals use Audio-to-Video; precisely timed sequences require an available compositor. These tools have different guarantees. See [music and performance](../skills/magic-hour-media/references/music.md) for timing, source reuse and the checks still needed before claiming synchronized output.
+
 ## How do I keep a product or character consistent in AI video?
 
 Start with an authorized reference. Use AI Image Editor to change setting or composition while preserving identity. Inspect the still, then feed that exact approved image into image-to-video. For additional shots, return to the same identity anchor and review each still. Describe motion separately from appearance. See [image to video](../skills/magic-hour-image-to-video) and [character consistency](../skills/magic-hour-character-consistency).
@@ -20,7 +28,7 @@ Read the downloaded dimensions. Crop only if the complete subject and required c
 
 ## How do I make a talking video without cutting off the speech?
 
-Finish the script and audio first. Listen to pronunciation and the final word, measure duration, then choose the supported talking-photo or lip-sync interval. Add captions after the final picture cut. Keep the clean master and approved audio. See [talking video](../skills/magic-hour-talking-video); its published output-quality validation is still pending.
+Finish the script and audio first. Listen to pronunciation and the final word, measure duration, then choose the supported talking-photo or lip-sync interval. Add captions after the final picture cut. Keep the clean master and approved audio. Our [Talking Photo and Lip Sync outputs](../examples/midnight-remix) include full-duration audio streams, but metadata cannot prove pronunciation or synchronization; their listening review remains outstanding. See [talking video](../skills/magic-hour-talking-video).
 
 ## When should I avoid another AI generation?
 
