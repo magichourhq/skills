@@ -1,12 +1,18 @@
 {
   "name": "magic-hour",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Create and finish AI media with reusable Magic Hour workflows and inspectable output examples.",
   "author": { "name": "Magic Hour", "url": "https://magichour.ai" },
   "homepage": "https://github.com/magichourhq/skills",
   "repository": "https://github.com/magichourhq/skills",
   "license": "MIT",
-  "keywords": ["ai-media", "image-generation", "video-editing", "mcp"],
+  "keywords": [
+    "ai-media",
+    "image-generation",
+    "video-generation",
+    "creator-video",
+    "mcp"
+  ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Magic Hour",
@@ -19,7 +25,8 @@
     "defaultPrompt": [
       "Animate this photo into an impossible scene while keeping me recognizable.",
       "Put my face into this clip and preserve the performance.",
-      "Make my character perform the action in this video."
+      "Make my character perform the action in this video.",
+      "Study this reference and make an original finished short with my media."
     ]
   }
 }

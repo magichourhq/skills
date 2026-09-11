@@ -2,6 +2,8 @@
 
 Animate your photo. Put yourself in a scene. Give your character a performance. Turn an impossible idea into a video. Tell your AI agent what you want; these skills guide the creative decisions, run [Magic Hour's creation MCP](https://github.com/magichourhq/magic-hour-mcp) or [API](https://docs.magichour.ai/api-reference), inspect the result and save files you can reuse.
 
+[![Skills.sh installs](https://skills.sh/b/magichourhq/skills)](https://skills.sh/magichourhq/skills)
+
 [See actual outputs and reproducible examples](docs/evidence.md) · [Explore advanced recipes](#go-further) · [Get your first result](docs/quickstart.md)
 
 [Find your use case: photo animation, face/body swaps, music, performance, editing and finishing →](docs/use-cases.md)
@@ -16,7 +18,7 @@ One scene, three treatments: [animate the photo](examples/midnight-remix/remix.m
 
 > Set up the official Magic Hour skills from https://github.com/magichourhq/skills for this project and connect the Magic Hour creation MCP. Reuse any existing connection. Handle the installation and configuration you can access; guide me through only the sign-in or secure credential step that needs me. Never ask me to paste a key into chat. Verify the connection with an authenticated account read. Then help me make one useful asset from my brief; use my existing budget or ask for a spending limit before generating.
 
-Your agent needs permission to run local commands. You need a [Magic Hour account and API key](https://magichour.ai/developer); no code writing, server hosting or repository clone is required. Skills are free to install; generation uses credits. [Step-by-step setup and supported clients →](docs/quickstart.md)
+Your agent needs permission to run local commands. You need a [Magic Hour account and API key](https://magichour.ai/developer?tab=api-keys&utm_source=agent_skills&utm_medium=referral&utm_id=skills_repo); no code writing, server hosting or repository clone is required. Skills are free to install; generation uses credits. [Step-by-step setup and supported clients →](docs/quickstart.md)
 
 **Prefer the install command?**
 
@@ -24,38 +26,47 @@ Your agent needs permission to run local commands. You need a [Magic Hour accoun
 npx skills add magichourhq/skills
 ```
 
-Choose your agent and desired skills. Already connected and installed? Attach a photo and ask: **“Turn this into a short scene where something impossible happens around me. Keep me recognizable. You choose the direction, work within my budget and show me the finished video.”** No model names or API parameters needed. If you only want one general entry point, install `magic-hour-media`; it can route the job without requiring the rest.
+Want one broad video entry point? `npx skills add magichourhq/skills --skill ai-video-generation`. Browse the highest-use routes directly on Skills.sh: [Image-to-Video](https://skills.sh/magichourhq/skills/magic-hour-image-to-video), [Video Face Swap](https://skills.sh/magichourhq/skills/magic-hour-face-swap), [Text-to-Video](https://skills.sh/magichourhq/skills/magic-hour-text-to-video), [AI Image Editor](https://skills.sh/magichourhq/skills/magic-hour-image-editing), and [Talking Photo](https://skills.sh/magichourhq/skills/magic-hour-talking-video).
+
+Choose your agent and desired skills. Already connected and installed? Attach a photo and ask: **“Turn this into a short scene where something impossible happens around me. Keep me recognizable. You choose the direction, work within my budget and show me the finished video.”** No model names or API parameters needed. For one broad video entry point, install `ai-video-generation`. For mixed image, video and audio work, install `magic-hour-media`.
 
 ## Choose your workflow
 
 Prefer a native plugin? See [Claude Code and Codex plugin installation, plus Cursor packaging](docs/native-install.md). The plugin uses the same skills and your existing Magic Hour connection.
 
-| I want to…                                  | Skill                                                                       | What it adds beyond a tool call                                                                  |
-| ------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| Create or recover general media             | [magic-hour-media](skills/magic-hour-media)                                 | Select the operation, finish asynchronous jobs and retrieve files without duplicate paid retries |
-| Animate my photo or create a transformation | [magic-hour-image-to-video](skills/magic-hour-image-to-video)               | Fix and inspect the still before motion; direct the action, reveal and end state                 |
-| Put my face into an existing clip           | [magic-hour-face-swap](skills/magic-hour-face-swap)                         | Select the intended cast, preserve the performance and inspect faces through turns               |
-| Turn an idea into a video                   | [magic-hour-text-to-video](skills/magic-hour-text-to-video)                 | Build a readable setup and payoff; choose when an identity reference is necessary                |
-| Transform or edit my image                  | [magic-hour-image-editing](skills/magic-hour-image-editing)                 | Separate requested changes from protected features and prepare a useful animation frame          |
-| Make a talking portrait or lip-sync clip    | [magic-hour-talking-video](skills/magic-hour-talking-video)                 | Approve speech first, match timing and caption the final cut                                     |
-| Make my character perform this action       | [magic-hour-character-replace](skills/magic-hour-character-replace)         | Choose replace versus animate, select the subject and preserve the supplied performance          |
-| Edit or repurpose existing footage          | [magic-hour-video-editing](skills/magic-hour-video-editing)                 | Choose generative edits versus precise local changes and preserve action/audio                   |
-| Make a music video or release teaser        | [magic-hour-music-video](skills/magic-hour-music-video)                     | Choose song-to-scene, audio-guided visuals, animation or performance; preserve the full phrase   |
-| Put my whole person into a scene photo      | [magic-hour-body-swap](skills/magic-hour-body-swap)                         | Keep person and destination inputs distinct; inspect scale, lighting, limbs and contact          |
-| Create original artwork or an artist image  | [magic-hour-media](skills/magic-hour-media)                                 | Choose new generation versus reference editing and inspect composition and anatomy               |
-| Keep a character consistent across scenes   | [magic-hour-character-consistency](skills/magic-hour-character-consistency) | Separate identity from pose/style references and review continuity across shots                  |
-| Make a thumbnail or episode cover           | [magic-hour-thumbnails](skills/magic-hour-thumbnails)                       | Build a truthful visual hook, preserve references and judge readability at feed size             |
-| Make a product shot or website hero         | [magic-hour-product-visuals](skills/magic-hour-product-visuals)             | Preserve geometry and labels, plan copy space and inspect the delivered file                     |
-| Finish an ad or matching campaign set       | [magic-hour-campaign-kit](skills/magic-hour-campaign-kit)                   | Reuse a brand reference, compose exact copy and deliver finished placements                      |
-| Build or apply a brand kit                  | [magic-hour-brand-kit](skills/magic-hour-brand-kit)                         | Deliver exact identity rules, editable sources and finished applications                         |
-| Create a product listing image set          | [magic-hour-marketplace-images](skills/magic-hour-marketplace-images)       | Preserve the actual product and compose useful images from verified facts                        |
-| Turn a source into a narrated explainer     | [magic-hour-explainer-video](skills/magic-hour-explainer-video)             | Ground the script, finish speech, reuse a visual identity and assemble the complete cut          |
+| I want to…                                  | Skill                                                                       | What it adds beyond a tool call                                                                   |
+| ------------------------------------------- | --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| Create any finished AI video                | [ai-video-generation](skills/ai-video-generation)                           | Route a plain-language brief across core tools, inspect it and deliver the finished file          |
+| Rework a reference into my creator short    | [creator-video-remix](skills/creator-video-remix)                           | Extract the hook and timing, choose an original transformation and finish a reusable vertical cut |
+| Create or recover general media             | [magic-hour-media](skills/magic-hour-media)                                 | Select the operation, finish asynchronous jobs and retrieve files without duplicate paid retries  |
+| Animate my photo or create a transformation | [magic-hour-image-to-video](skills/magic-hour-image-to-video)               | Fix and inspect the still before motion; direct the action, reveal and end state                  |
+| Put my face into an existing clip           | [magic-hour-face-swap](skills/magic-hour-face-swap)                         | Select the intended cast, preserve the performance and inspect faces through turns                |
+| Turn an idea into a video                   | [magic-hour-text-to-video](skills/magic-hour-text-to-video)                 | Build a readable setup and payoff; choose when an identity reference is necessary                 |
+| Transform or edit my image                  | [magic-hour-image-editing](skills/magic-hour-image-editing)                 | Separate requested changes from protected features and prepare a useful animation frame           |
+| Make a talking portrait or lip-sync clip    | [magic-hour-talking-video](skills/magic-hour-talking-video)                 | Approve speech first, match timing and caption the final cut                                      |
+| Make my character perform this action       | [magic-hour-character-replace](skills/magic-hour-character-replace)         | Choose replace versus animate, select the subject and preserve the supplied performance           |
+| Edit or repurpose existing footage          | [magic-hour-video-editing](skills/magic-hour-video-editing)                 | Choose generative edits versus precise local changes and preserve action/audio                    |
+| Make a music video or release teaser        | [magic-hour-music-video](skills/magic-hour-music-video)                     | Choose song-to-scene, audio-guided visuals, animation or performance; preserve the full phrase    |
+| Put my whole person into a scene photo      | [magic-hour-body-swap](skills/magic-hour-body-swap)                         | Keep person and destination inputs distinct; inspect scale, lighting, limbs and contact           |
+| Create original artwork or an artist image  | [magic-hour-media](skills/magic-hour-media)                                 | Choose new generation versus reference editing and inspect composition and anatomy                |
+| Keep a character consistent across scenes   | [magic-hour-character-consistency](skills/magic-hour-character-consistency) | Separate identity from pose/style references and review continuity across shots                   |
+| Make a thumbnail or episode cover           | [magic-hour-thumbnails](skills/magic-hour-thumbnails)                       | Build a truthful visual hook, preserve references and judge readability at feed size              |
+| Make a product shot or website hero         | [magic-hour-product-visuals](skills/magic-hour-product-visuals)             | Preserve geometry and labels, plan copy space and inspect the delivered file                      |
+| Finish an ad or matching campaign set       | [magic-hour-campaign-kit](skills/magic-hour-campaign-kit)                   | Reuse a brand reference, compose exact copy and deliver finished placements                       |
+| Build or apply a brand kit                  | [magic-hour-brand-kit](skills/magic-hour-brand-kit)                         | Deliver exact identity rules, editable sources and finished applications                          |
+| Create a product listing image set          | [magic-hour-marketplace-images](skills/magic-hour-marketplace-images)       | Preserve the actual product and compose useful images from verified facts                         |
+| Turn a source into a narrated explainer     | [magic-hour-explainer-video](skills/magic-hour-explainer-video)             | Ground the script, finish speech, reuse a visual identity and assemble the complete cut           |
+| Review generated media before delivery      | [ai-media-quality-review](skills/ai-media-quality-review)                   | Produce metadata, contact sheets and diagnostics, then record pass, fail or unverified criteria   |
 
 Install one: `npx skills add magichourhq/skills --skill magic-hour-image-editing`. Install all: `npx skills add magichourhq/skills --skill '*'`. Each skill works independently; you do not need the whole collection for a single job.
 
 ## Try a real job
 
 Attach your source media and use the matching prompt. The agent should use the current tool schema and your existing budget, not ask you to fill in API parameters.
+
+**Reference video → original creator short**
+
+> Study this reference video's opening, pacing, action and payoff. Create an original version with my face or character and a different creative world. Use the right Magic Hour routes, keep the final cut vertical, inspect the full result and deliver the finished video within my budget.
 
 **Portrait → impossible scene → video**
 
@@ -133,6 +144,8 @@ The finished ad has about one second of generated motion followed by a hold, six
 ## Make the next job easier
 
 Keep approved references, clean masters, exact copy, voice choices, project IDs and accepted decisions in your project. On the next job, ask “use my other face,” “change the ending” or “make the next episode” and reuse everything unaffected. A new caption, crop or download link should not require paying to recreate accepted footage. Commercial projects can also use the [reusable brand reference](skills/magic-hour-campaign-kit/references/brand-reference.md).
+
+Before publishing, run the [quality-review skill](skills/ai-media-quality-review) on the final file. Its contact sheet and media diagnostics speed up review; visual judgment, full-speed viewing and listening still determine acceptance.
 
 ## Questions
 
