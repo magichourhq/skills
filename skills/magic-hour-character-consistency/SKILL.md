@@ -4,12 +4,14 @@ description: Keep a recurring character recognizable across Magic Hour images, s
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # Magic Hour character consistency
 
 Make the same character survive changes of scene, pose, and camera. A repeated name or seed does not establish visual identity.
+
+Reuse the existing character and series context. Choose staging and technical settings yourself when delegated; do not make the user fill out a character template or repeatedly approve in-budget work. Respect requested review points and show the accepted scenes first. For a cast, new angle or recurring episode, read [series continuity](references/series.md).
 
 ## Establish the anchor
 

@@ -4,7 +4,7 @@ description: Create a Magic Hour video from a still image by designing or editin
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.2.0"
+  version: "1.3.0"
 ---
 
 # Magic Hour image to video
@@ -12,6 +12,8 @@ metadata:
 Produce a usable short video by solving appearance in a still frame first and motion second. A project ID or queued job is incomplete unless the user asked only to submit it.
 
 Generation consumes Magic Hour credits. Use a connected Magic Hour creation MCP at `https://mcp.magichour.ai/` when available. Otherwise read `references/setup.md` for the API route. Discover the current schemas before choosing a model, duration, resolution, or price.
+
+Choose the shot direction from the brief; do not ask a nontechnical user for model fields or a motion-prompt template. Honor the existing budget. When creative decisions are delegated, inspect and accept the still yourself, then continue to video unless draft approval was requested. Show the clip first and keep technical records in the project. For stories with several beats, read [multi-shot direction](references/multi-shot.md).
 
 ## Define the shot
 

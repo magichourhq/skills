@@ -4,7 +4,7 @@ description: Generate, edit, and retrieve images, video, and audio with Magic Ho
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.2.0"
+  version: "1.3.0"
 ---
 
 # Magic Hour media
@@ -12,6 +12,10 @@ metadata:
 Deliver a usable image, video, or audio result. A queued project ID is an intermediate result unless the user asked only to submit a job.
 
 Requires network access and either a connected Magic Hour MCP server or a Magic Hour API key with an HTTPS-capable runtime. Generation consumes Magic Hour credits.
+
+## Work from the user's goal
+
+Accept ordinary requests such as “make a clean photo for my store.” Infer the placement and creative direction from supplied context; recommend one direction when needed. Ask only for missing information that changes the result or spending authority, not model names, schema fields or a completed prompt template. When creative choices are delegated, inspect and accept suitable intermediate assets yourself and continue. Respect requested review points and the existing budget. Lead delivery with the actual media; keep IDs and technical records in the project unless they are needed to explain a failure.
 
 ## Connect to the right service
 
@@ -32,6 +36,9 @@ Use live tool schemas, or the [API documentation index](https://docs.magichour.a
 | Match an existing video's mouth movement to audio   | `lip_sync_create_video`                 | `wait_for_video_project`       |
 | Animate a portrait using supplied speech            | `ai_talking_photo_create_talking_photo` | `wait_for_video_project`       |
 | Generate speech from text                           | `ai_voice_generator_create_audio`       | `wait_for_audio_project`       |
+| Restyle existing footage                            | `ai_video_editor_create_video`          | `wait_for_video_project`       |
+| Caption the final picture and speech                | `auto_subtitle_generator_create_video`  | `wait_for_video_project`       |
+| Exact headline, crop, trim or assembled layout      | Available local editor/compositor       | Inspect the exported file      |
 | Retrieve a known project                            | No new creation call                    | Matching wait or retrieve tool |
 
 Tool names can have a client-specific prefix. Discover their current input schemas before calling them.

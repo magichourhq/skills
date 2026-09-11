@@ -4,12 +4,14 @@ description: Finish a product ad with exact copy and layout or create coordinate
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.1.0"
+  version: "1.2.0"
 ---
 
 # Magic Hour campaign kit
 
 Produce a consistent set that fits its placements. Multiple attractive images do not make a usable kit if the product changes between them or the site's copy covers it.
+
+Infer the creative direction from the brand and placement context; recommend one treatment instead of making the customer specify model fields. Reuse existing budget and accepted decisions. When creative choices are delegated, check intermediate assets yourself and continue to finished files; respect any requested review points. Present the set before technical records.
 
 For an assembled ad, follow [finishing](references/finishing.md): approved reference → edited still when needed → approved animation when requested → exact layout and export. For repeat work, reuse the project's existing brand brief; [brand reference](references/brand-reference.md) lists the minimum information to retain. Use [observed model failures](references/model-observations.md) to recognize when another generation will not solve the problem.
 
@@ -17,11 +19,11 @@ For an assembled ad, follow [finishing](references/finishing.md): approved refer
 
 Use the requested placements, not a default batch. For each, record aspect ratio, subject position and scale, copy area, background, and file dimensions. Read the user's actual layout or template when available; do not invent universal social safe-area dimensions.
 
-| Example placement | Composition | Must stay clear |
-| --- | --- | --- |
-| Wide website hero | Complete product on the right | Left third for heading and CTA |
-| Square catalog card | Complete product centered, clean background | Breathing room at every edge |
-| Vertical social creative | Product below the upper copy area | Requested headline and platform-overlay regions |
+| Example placement        | Composition                                 | Must stay clear                                 |
+| ------------------------ | ------------------------------------------- | ----------------------------------------------- |
+| Wide website hero        | Complete product on the right               | Left third for heading and CTA                  |
+| Square catalog card      | Complete product centered, clean background | Breathing room at every edge                    |
+| Vertical social creative | Product below the upper copy area           | Requested headline and platform-overlay regions |
 
 Lock common identity: source image, shape, proportions, materials, colors, cap, logo, and exact label. Distinguish that from deliberate setting and layout changes. Different backgrounds must not accidentally create different products.
 

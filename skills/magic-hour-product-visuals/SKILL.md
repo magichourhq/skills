@@ -4,7 +4,7 @@ description: Create or edit a Magic Hour product image with controlled compositi
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.2.0"
+  version: "1.3.0"
 ---
 
 # Magic Hour product visuals
@@ -12,6 +12,8 @@ metadata:
 Deliver a product image that fits its intended placement and preserves the details that make the product recognizable. Treat a project ID as an intermediate result and inspect the finished image before calling it complete.
 
 Generation consumes Magic Hour credits. Use a connected Magic Hour creation MCP at `https://mcp.magichour.ai/` when available. Otherwise read `references/setup.md`. Discover the current schema before choosing a model, resolution, image count, or cost.
+
+Infer the treatment from the customer's intended use; recommend one direction instead of asking them to choose technical parameters. Honor existing budget and delegated creative decisions, inspect intermediate results yourself and continue unless the user requested draft approval. Show the finished image first; retain technical records with the project. For catalog, lifestyle, detail, in-hand or coordinated sets, read [reference photoshoot](references/photoshoot.md).
 
 ## Define the deliverable
 
@@ -65,4 +67,4 @@ Wait for the existing image project with `wait_for_image_project`. After it repo
 
 If the result fails, change the smallest useful variable. Use AI Image Editor for a localized correction when the rest of the image is strong; regenerate when composition or product identity is fundamentally wrong. Another generation spends credits, so stay inside the user's authorized budget.
 
-When the product image will become video, approve the still first and then use `$magic-hour-image-to-video`. Return the finished image or usable link, its saved location when applicable, the project ID, and any material limitation.
+When the product image will become video, accept the still first and use the image-to-video skill when installed. Otherwise discover `image_to_video_create_video`, pass the accepted image, prompt for motion, retain the ID, wait and inspect the complete clip. Do not require another skill installation to finish a supported request. Return the finished artifact, its saved location and any material limitation; retain project IDs for recovery.
