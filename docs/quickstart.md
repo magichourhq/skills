@@ -1,6 +1,6 @@
 # Install Magic Hour skills and make your first useful asset
 
-You need an agent that supports skills and a [Magic Hour account with an API key](https://magichour.ai/developer). Installation is free; media generation uses credits. No server hosting, code writing or repository clone is required.
+You need an agent that supports skills and a [Magic Hour account with an API key](https://magichour.ai/developer?tab=api-keys&utm_source=agent_skills&utm_medium=referral&utm_id=skills_quickstart). Installation is free; media generation uses credits. No server hosting, code writing or repository clone is required.
 
 ## Let your agent handle setup
 
@@ -28,7 +28,7 @@ For another supported agent, run `npx skills add magichourhq/skills` and select 
 
 Already using the Magic Hour creation MCP? Keep that connection and skip to the first-result prompt. The creation endpoint is `https://mcp.magichour.ai/`. The docs endpoint, `https://docs.magichour.ai/mcp`, only searches documentation.
 
-Get your key from [Magic Hour Developer](https://magichour.ai/developer). Keep it out of chat and committed files. Set `MAGIC_HOUR_API_KEY` securely in the environment that launches your agent. A terminal variable is not automatically available to an already-running desktop app.
+Get your key from [Magic Hour Developer](https://magichour.ai/developer?tab=api-keys&utm_source=agent_skills&utm_medium=referral&utm_id=skills_quickstart). Keep it out of chat and committed files. Set `MAGIC_HOUR_API_KEY` securely in the environment that launches your agent. A terminal variable is not automatically available to an already-running desktop app.
 
 **Codex CLI**, from that same environment:
 
