@@ -1,0 +1,38 @@
+# Find the right Magic Hour workflow
+
+Describe the finished result and attach the media you already have. The agent should choose the route, reuse your connection and spending limit, and deliver an inspected file. This map covers creation, personal remixes, performance, music and finishing; it does not imply identical web-app and MCP capabilities.
+
+| I want to…                                         | Start with                                    | Workflow                                                                                                      | What must be checked                                                                                   |
+| -------------------------------------------------- | --------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| Bring my photo, artwork or character to life       | Image and intended action                     | [Image-to-Video](../skills/magic-hour-image-to-video)                                                         | Inspect appearance before motion; preserve identity and the intended ending                            |
+| Put my face in a clip                              | Face reference and source performance         | [Video Face Swap](../skills/magic-hour-face-swap)                                                             | Select the intended cast; check turns, bystanders and sound                                            |
+| Turn an impossible idea into a video               | A brief with flexible identity                | [Text-to-Video](../skills/magic-hour-text-to-video)                                                           | Clear setup/payoff, action, geometry and unwanted text                                                 |
+| Change my image's world, outfit or composition     | Original image and requested change           | [AI Image Editor](../skills/magic-hour-image-editing)                                                         | Separate changed details from protected identity; inspect the final canvas                             |
+| Make a portrait speak or react to audio            | Portrait and recording/script                 | [Talking Photo](../skills/magic-hour-talking-video)                                                           | Complete speech, mouth movement and final word                                                         |
+| Make my character perform someone else's motion    | Character reference and performance           | [Character Replace](../skills/magic-hour-character-replace)                                                   | Choose replace versus animate; check action, body and actual duration                                  |
+| Change the look of existing footage                | Original video and edit instruction           | [Video Editor](../skills/magic-hour-video-editing)                                                            | Compare source action and identity; preserve the intended audio                                        |
+| Make a music video or release teaser               | Song, selected phrase and optional references | [Music Video](../skills/magic-hour-music-video)                                                               | Distinguish the web song-to-scene workflow, MCP audio-guided visuals, audio-sync animation and singing |
+| Change a performer's words or language             | Existing video and replacement recording      | [Lip Sync](../skills/magic-hour-talking-video)                                                                | Match the selected source interval; listen and inspect synchronization                                 |
+| Place my whole person in another scene             | Person and destination images                 | [Body Swap](../skills/magic-hour-body-swap)                                                                   | Body framing, placement, scale, shadows and contact; no invented mask control                          |
+| Create original artwork, a portrait or cover image | Brief and any required references             | [Image creation](../skills/magic-hour-media)                                                                  | Use generation for new imagery, editing for exact references; compose exact lettering separately       |
+| Change one face in a photo                         | Source identity and destination photo         | [Photo Face Swap](../skills/magic-hour-face-swap)                                                             | Correct source/target fields and detected face mapping; preserve other people                          |
+| Make a clip longer                                 | Accepted clip and intended ending             | [Extend a video](../skills/magic-hour-video-editing/references/extend-upscale.md#extend-the-action)           | Current web handoff; inspect continuation and audio at the join                                        |
+| Turn footage into a stylized animation             | Source video and desired style                | [Video-to-Video](../skills/magic-hour-video-editing/references/restyle.md)                                    | Select prompt mode and frame rate deliberately; check temporal/identity drift                          |
+| Improve final video resolution                     | Accepted final cut and target size            | [Video Upscaler](../skills/magic-hour-video-editing/references/extend-upscale.md#improve-final-delivery-size) | Current web handoff; verify actual detail, cadence and sound                                           |
+
+## Start with the result, not a parameter form
+
+- **My scene:** “Put me in this setting, keep my identity and outfit, then animate a short reaction.”
+- **My cast:** “Replace only the person on the left with my face; keep the other person unchanged.”
+- **My performance:** “Make this character do the action in my video. Keep the character's own setting.”
+- **My track:** “Make a release teaser for this chorus, keep the full phrase and use these artist references.”
+- **My footage:** “Give this clip an ink-animation look, then deliver the final vertical cut with its original sound.”
+- **My final export:** “Keep this accepted video and make the requested duration and size changes. Explain any web step you cannot execute.”
+
+Reuse the current budget. If none exists, the agent should ask for a limit before paid generation. A known clip, source reference, recorded voice or creative decision should not have to be supplied again on every revision.
+
+## What is supported and proven?
+
+The routing above was checked against the [public OpenAPI](https://docs.magichour.ai/api-reference/openapi.json) and connected creation tools on **September 11, 2026**. Music Video Generator's full web workflow, Video Extender and Video Upscaler do not have equivalent dedicated endpoints in that schema. The skills prepare an honest handoff and continue from the result instead of inventing API calls. Recheck live support before treating this dated observation as permanent.
+
+[Published output evidence](evidence.md) distinguishes actual files, visual checks, known misses and outstanding listening/comparison work. A recipe is not a quality guarantee; a completed generation is not automatically an accepted result.

@@ -4,7 +4,7 @@ description: Replace a subject in an existing video or transfer its performance 
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Magic Hour character replace
@@ -39,6 +39,8 @@ Upload local inputs through `video_assets_generate_presigned_url`, PUT raw bytes
 Review the whole result beside both inputs: correct target, recognizable character, intended mode, head/body proportions, hands and feet, source gesture timing, contact with objects, occlusion boundaries, background and audio. Multiple attractive frames cannot establish a preserved performance. Check every cut; a changed face or extra limb is a failed requirement.
 
 Measure the actual output interval and dimensions before assembly. Our [replace-mode example](https://github.com/magichourhq/skills/tree/main/examples/midnight-remix) kept a recognizable fox character but returned 5.375 seconds for a 0–5-second request. Compare the same source moments; do not assume matching frame numbers or silently retime a required performance.
+
+The [animate-mode example](https://github.com/magichourhq/skills/tree/main/examples/scene-remixes) uses the same reference and performance but keeps the reference's studio setting, while replace mode keeps the source station. Use that difference to honor “keep my character's world” versus “put my character in this footage.” Both require timing and full-playback review; one simple head turn does not establish dance or complex-contact quality.
 
 If the wrong person changes, fix subject selection. If body shape fails, improve framing/reference compatibility or simplify the source interval. If the scene changes unexpectedly, verify the mode before spending again. Repair only the failed shot within budget. Do not describe all motion as faithfully transferred merely because the job completed.
 

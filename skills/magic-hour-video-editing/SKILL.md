@@ -4,12 +4,14 @@ description: Edit or repurpose existing footage with Magic Hour, choosing betwee
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.2.0"
+  version: "1.3.0"
 ---
 
 # Magic Hour video editing
 
 Start from the requested change and inspect the existing master. Choose editing settings and a suitable layout yourself when delegated; reuse the current budget and respect requested draft approvals. Show the exported video first and keep technical records with the project. For shorter cuts, alternate placements and copy/audio revisions, read [repurpose a master](references/repurpose.md).
+
+For a stylized reinterpretation, read [Video-to-Video controls](references/restyle.md). For a longer ending or higher-resolution final video, read [extension and upscaling](references/extend-upscale.md), including the current web handoffs and continuity checks.
 
 Keep the footage the user already likes. Choose the operation that changes the requested property without unnecessarily regenerating motion, identity or speech.
 
@@ -20,6 +22,7 @@ Read the source's actual duration, dimensions, frame rate and audio streams. Wat
 | Requested change                                        | Operation                                                       |
 | ------------------------------------------------------- | --------------------------------------------------------------- |
 | Change scene appearance, materials or visual style      | `ai_video_editor_create_video` using the original footage       |
+| Apply a supported animation/art style to the source     | `video_to_video_create_video` with deliberate prompt/FPS mode   |
 | Put another face into the same performance              | Face Swap with deliberate cast mapping                          |
 | Replace the body/character or transfer its performance  | Character Replace with the appropriate replace/animate mode     |
 | Add speech captions                                     | `auto_subtitle_generator_create_video` after picture edits      |

@@ -4,7 +4,7 @@ description: Put a supplied face into an existing video or photo with Magic Hour
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # Magic Hour face swap
@@ -27,7 +27,9 @@ For a specific person in a cast, use `face_detection_detect_faces` on the exact 
 
 If cropping or trimming creates a new source asset, run detection against that asset before mapping. `start_seconds` and `end_seconds` refer to the submitted video's timeline; a locally trimmed file starts at zero. Preserve output duration and sound intentionally rather than assuming trim offsets behave the same across tools.
 
-For photos, use `face_swap_photo_create_image` and its own current schema, then `wait_for_image_project`; do not pass video-only fields.
+For photos, use `face_swap_photo_create_image` and then `wait_for_image_project`. Its fields differ from video: `assets.source_file_path` supplies the new face and `assets.target_file_path` is the destination photo for `all-faces`. For `individual-faces`, pass the target and inspected `face_mappings` instead. Do not copy the video tool's `image_file_path` into this schema. Check the other people as well as the replaced face. A detected crop is a mapping identifier, not a substitute for the user's original identity reference.
+
+The [two-person photo example](https://github.com/magichourhq/skills/tree/main/examples/scene-remixes) includes both detection previews and a selective replacement. Only the inspected left face was mapped; the other person was visually retained. This validates that photo workflow, not multi-person tracking through video cuts.
 
 ## Run and inspect
 

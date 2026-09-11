@@ -4,6 +4,8 @@ Animate your photo. Put yourself in a scene. Give your character a performance. 
 
 [See actual outputs and reproducible examples](docs/evidence.md) · [Explore advanced recipes](#go-further) · [Get your first result](docs/quickstart.md)
 
+[Find your use case: photo animation, face/body swaps, music, performance, editing and finishing →](docs/use-cases.md)
+
 [![Animate a portrait, change its face, or replace the performer with a fox conductor](examples/midnight-remix/preview.gif)](examples/midnight-remix)
 
 One scene, three treatments: [animate the photo](examples/midnight-remix/remix.mp4), [change the face](examples/midnight-remix/face-swap.mp4), or [replace the character](examples/midnight-remix/character-replace.mp4). Actual MCP outputs; [all inputs, prompts, costs and limitations](examples/midnight-remix).
@@ -38,7 +40,9 @@ Prefer a native plugin? See [Claude Code and Codex plugin installation, plus Cur
 | Make a talking portrait or lip-sync clip    | [magic-hour-talking-video](skills/magic-hour-talking-video)                 | Approve speech first, match timing and caption the final cut                                     |
 | Make my character perform this action       | [magic-hour-character-replace](skills/magic-hour-character-replace)         | Choose replace versus animate, select the subject and preserve the supplied performance          |
 | Edit or repurpose existing footage          | [magic-hour-video-editing](skills/magic-hour-video-editing)                 | Choose generative edits versus precise local changes and preserve action/audio                   |
-| Make visuals for my music                   | [magic-hour-media: music](skills/magic-hour-media/references/music.md)      | Choose performance versus audio-guided visuals and preserve the selected musical phrase          |
+| Make a music video or release teaser        | [magic-hour-music-video](skills/magic-hour-music-video)                     | Choose song-to-scene, audio-guided visuals, animation or performance; preserve the full phrase   |
+| Put my whole person into a scene photo      | [magic-hour-body-swap](skills/magic-hour-body-swap)                         | Keep person and destination inputs distinct; inspect scale, lighting, limbs and contact          |
+| Create original artwork or an artist image  | [magic-hour-media](skills/magic-hour-media)                                 | Choose new generation versus reference editing and inspect composition and anatomy               |
 | Keep a character consistent across scenes   | [magic-hour-character-consistency](skills/magic-hour-character-consistency) | Separate identity from pose/style references and review continuity across shots                  |
 | Make a thumbnail or episode cover           | [magic-hour-thumbnails](skills/magic-hour-thumbnails)                       | Build a truthful visual hook, preserve references and judge readability at feed size             |
 | Make a product shot or website hero         | [magic-hour-product-visuals](skills/magic-hour-product-visuals)             | Preserve geometry and labels, plan copy space and inspect the delivered file                     |
@@ -73,6 +77,14 @@ Attach your source media and use the matching prompt. The agent should use the c
 
 > Make a talking clip from my portrait and recording, with captions. Keep the full speech through the last word. Handle timing, check the face and mouth movement, then caption the final cut. Save both clean and captioned versions. Include both steps in my budget.
 
+**My song → release teaser**
+
+> Make a visual for this chorus using my artist reference. Keep the full musical phrase. Choose a direction and the right route within my budget, handle the setup you can access, and tell me precisely if a web step is needed. Save the video and references so we can make the next cut without starting over.
+
+**My person + a destination → scene photo**
+
+> Put me into this scene. Keep my identity and outfit, make the pose, size and lighting fit, and inspect hands and contact with the scene. Use my existing budget and deliver the image. Animate it only if I ask for video.
+
 The agent should carry each request through to the file, make delegated creative choices and explain any failed requirement. It should reuse your budget and accepted work instead of repeatedly asking the same questions.
 
 ## Go further
@@ -98,6 +110,8 @@ These are instructions for real jobs, with inputs, creative decisions, recovery 
 ## Inspect the actual outputs
 
 **Midnight remixes:** [Original portraits, a floating-koi scene, generated performance and moon-elevator reveal](examples/midnight-remix) provide a reproducible starting point for personal transformations and recasting. The case records exact inputs, all jobs, charged credits and failed criteria. These are fictional demo subjects, not customer media or evidence of virality.
+
+**Scene and music remixes:** [Selective photo face mapping, body placement and repair, music routes, character motion transfer and a finished eight-second music cut](examples/scene-remixes) extend those inputs. The case retains misses such as body/scene drift and Animation identity changes, so users can choose the right route before spending.
 
 **Brand kit and listing set:** [AURORA's 2K catalog edit, exact-copy layouts, editable SVG and three-page brand guide](examples/aurora-listing) turn one 200-credit generation into several deliverables. **Narrated explainer:** [Nori's complete video, original speech, generated motion and editable timeline](examples/nori-explainer) shows reference reuse and full-cut assembly. The case records imperfect motion control and the outstanding audio listening review.
 

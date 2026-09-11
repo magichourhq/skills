@@ -4,7 +4,7 @@ description: Generate, edit, and retrieve images, video, and audio with Magic Ho
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.4.0"
+  version: "1.5.0"
 ---
 
 # Magic Hour media
@@ -29,7 +29,7 @@ Use live tool schemas, or the [API documentation index](https://docs.magichour.a
 
 | User goal                                           | Creation tool                                              | Completion tool                |
 | --------------------------------------------------- | ---------------------------------------------------------- | ------------------------------ |
-| Product shot, hero image, illustration, thumbnail   | `ai_image_generator_create_image`                          | `wait_for_image_project`       |
+| Original artwork, portrait, cover or product image  | `ai_image_generator_create_image`                          | `wait_for_image_project`       |
 | Edit an existing image while preserving its content | `ai_image_editor_create_image`                             | `wait_for_image_project`       |
 | Animate a supplied image                            | `image_to_video_create_video`                              | `wait_for_video_project`       |
 | Put a supplied face into existing footage           | `face_swap_create_video`                                   | `wait_for_video_project`       |
@@ -39,15 +39,19 @@ Use live tool schemas, or the [API documentation index](https://docs.magichour.a
 | Animate a portrait using supplied speech            | `ai_talking_photo_create_talking_photo`                    | `wait_for_video_project`       |
 | Generate speech from text                           | `ai_voice_generator_create_audio`                          | `wait_for_audio_project`       |
 | Create visuals from a supplied soundtrack           | `audio_to_video_create_video`                              | `wait_for_video_project`       |
+| Evolving visuals with audio-sync camera effects     | `animation_create_video`                                   | `wait_for_video_project`       |
 | Replace a face or body in a still photo             | `face_swap_photo_create_image` or `body_swap_create_image` | `wait_for_image_project`       |
 | Restyle existing footage                            | `ai_video_editor_create_video`                             | `wait_for_video_project`       |
+| Reinterpret footage in an animation/art style       | `video_to_video_create_video`                              | `wait_for_video_project`       |
 | Caption the final picture and speech                | `auto_subtitle_generator_create_video`                     | `wait_for_video_project`       |
 | Exact headline, crop, trim or assembled layout      | Available local editor/compositor                          | Inspect the exported file      |
 | Retrieve a known project                            | No new creation call                                       | Matching wait or retrieve tool |
 
 Tool names can have a client-specific prefix. Discover their current input schemas before calling them.
 
-When installed, use the focused skill for image-to-video, face swap, text-to-video, image editing, talking video, character replace, existing-video editing, product visuals, campaign kits, character consistency or thumbnails. Distinguish face-only identity changes from whole-character replacement, and a portrait's new speech from an existing video's performance. Do not require the user to memorize a skill name or install a companion just to finish a supported task. Reuse the current connection, project brief and accepted media; only ask for missing information that changes the output or authorization.
+For full-person photo placement, distinguish Body Swap's `person_file_path` and `scene_file_path` from face-only replacement. For Video-to-Video, a custom prompt is ignored under the default prompt mode. Music Video Generator's web scene-assembly workflow, Video Extender and Video Upscaler have no equivalent dedicated endpoints in the public schema as checked September 11, 2026. Recheck support; when still absent, prepare the accepted inputs and direct web handoff instead of inventing tools. The [complete use-case map](https://github.com/magichourhq/skills/blob/main/docs/use-cases.md) links those workflows.
+
+When installed, use the focused skill for image-to-video, face/body swap, text-to-video, image editing, talking video, character replace, music video, existing-video editing, product visuals, campaign kits, character consistency or thumbnails. Distinguish face-only identity changes from whole-character replacement, and a portrait's new speech from an existing video's performance. Do not require the user to memorize a skill name or install a companion just to finish a supported task. Reuse the current connection, project brief and accepted media; only ask for missing information that changes the output or authorization.
 
 ## Set the quality target
 
