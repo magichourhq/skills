@@ -23,6 +23,9 @@ Choose your agent and desired skills in the installer. [Exact Codex/Claude Code 
 | Make a thumbnail or episode cover         | [magic-hour-thumbnails](skills/magic-hour-thumbnails)                       | Build a truthful visual hook, preserve references and judge readability at feed size             |
 | Make a talking portrait or lip-sync clip  | [magic-hour-talking-video](skills/magic-hour-talking-video)                 | Approve speech first, match timing and caption the final cut                                     |
 | Edit or repurpose existing footage        | [magic-hour-video-editing](skills/magic-hour-video-editing)                 | Choose generative edits versus precise local changes and preserve action/audio                   |
+| Build or apply a brand kit                | [magic-hour-brand-kit](skills/magic-hour-brand-kit)                         | Deliver exact identity rules, editable sources and finished applications                         |
+| Create a product listing image set        | [magic-hour-marketplace-images](skills/magic-hour-marketplace-images)       | Preserve the actual product and compose useful images from verified facts                        |
+| Turn a source into a narrated explainer   | [magic-hour-explainer-video](skills/magic-hour-explainer-video)             | Ground the script, finish speech, reuse a visual identity and assemble the complete cut          |
 
 Install one: `npx skills add magichourhq/skills --skill magic-hour-image-editing`. Install all: `npx skills add magichourhq/skills --skill '*'`. Each skill works independently; you do not need the whole collection for a single job.
 
@@ -50,6 +53,8 @@ For covers, existing footage and assembled ads, open the matching skill above. [
 
 ## Inspect the actual outputs
 
+**Brand kit and listing set:** [AURORA's 2K catalog edit, exact-copy layouts, editable SVG and three-page brand guide](examples/aurora-listing) turn one 200-credit generation into several deliverables. **Narrated explainer:** [Nori's complete video, original speech, generated motion and editable timeline](examples/nori-explainer) shows reference reuse and full-cut assembly. The case records imperfect motion control and the outstanding audio listening review.
+
 These are original Magic Hour web-app and authenticated MCP outputs plus a local finishing example. Every case links to inputs, exact prompts, settings and limitations.
 
 | Approved product still                                                      | Edited catalog image                                                                           | Finished layout                                                                      |
@@ -68,6 +73,8 @@ The finished ad has about one second of generated motion followed by a hold, six
 Keep approved references, clean masters, exact copy, voice choices, project IDs and accepted layout decisions in your project. On the next job, ask the skill to reuse that work and change only what the new brief requires. A new headline, crop or download link should not require paying to recreate an accepted product. [Reusable brand reference →](skills/magic-hour-campaign-kit/references/brand-reference.md)
 
 ## Questions
+
+**How does this compare with Higgsfield's skills?** See the [dated capability and evidence comparison](docs/capability-coverage.md), including workflows we can demonstrate and backend capabilities these instructions do not provide.
 
 **Do I need both a skill and MCP?** The skill provides workflow instructions. The MCP executes Magic Hour tools. Use the API instead if your project already integrates it. Installing a skill does not authenticate your account.
 
