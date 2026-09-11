@@ -1,6 +1,6 @@
 # Magic Hour AI media skills
 
-Turn a product photo into an ad, an illustration into a video, or a portrait and recording into a talking clip. Tell your AI agent what you want; these nine skills guide the creative decisions, run [Magic Hour's creation MCP](https://github.com/magichourhq/magic-hour-mcp) or [API](https://docs.magichour.ai/api-reference), inspect the result and save files you can reuse.
+Turn a product photo into an ad, an illustration into a video, or a portrait and recording into a talking clip. Tell your AI agent what you want; these skills guide the creative decisions, run [Magic Hour's creation MCP](https://github.com/magichourhq/magic-hour-mcp) or [API](https://docs.magichour.ai/api-reference), inspect the result and save files you can reuse.
 
 [See actual outputs and reproducible examples](docs/evidence.md) · [Explore advanced recipes](#go-further) · [Get your first result](docs/quickstart.md)
 
