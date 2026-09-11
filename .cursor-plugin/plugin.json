@@ -1,0 +1,11 @@
+{
+  "name": "magic-hour",
+  "version": "1.0.0",
+  "description": "Create and finish AI media with reusable Magic Hour workflows and inspectable output examples.",
+  "author": { "name": "Magic Hour" },
+  "homepage": "https://github.com/magichourhq/skills",
+  "repository": "https://github.com/magichourhq/skills",
+  "license": "MIT",
+  "keywords": ["ai-media", "image-generation", "video-editing", "mcp"],
+  "skills": "./skills/"
+}
