@@ -4,7 +4,7 @@ description: Create finished AI videos with Magic Hour from a prompt, image, fac
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.0.0"
+  version: "1.1.0"
 ---
 
 # AI video generation with Magic Hour
@@ -46,4 +46,4 @@ Create once, retain the project ID and resume the same wait after a timeout. Dow
 
 Compare the output with the brief and inputs: setup/payoff, first and last frames, identity, geometry, action, camera, temporal consistency, sound, dimensions, duration and requested canvas. A completed job is not an accepted result. Repair the smallest failed requirement within budget while returning to the last accepted source. Do not feed a rejected generation into the next stage.
 
-Finish deterministic work such as exact captions, trim, crop and assembly after picture approval. Deliver the final file first, then its saved location and material limitations. Retain accepted references and project IDs so the next video can continue without recreating them.
+Finish deterministic work such as exact captions, trim, crop and assembly after picture approval. Deliver the final file first, then its saved location and material limitations. Retain accepted references, project IDs, exact prompts/settings and charged credits in the existing project notes so the next video can continue without recreating them. Save a returned project ID before waiting; distinguish file-ready time, review completion and explicit user acceptance. Keep this record private and never send feedback automatically.

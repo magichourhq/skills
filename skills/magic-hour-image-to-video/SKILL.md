@@ -4,7 +4,7 @@ description: Animate a portrait, character, artwork or scene with Magic Hour, ed
 license: MIT
 metadata:
   author: magichourhq
-  version: "1.4.0"
+  version: "1.5.0"
 ---
 
 # Magic Hour image to video
@@ -14,6 +14,8 @@ Produce a usable short video by solving appearance in a still frame first and mo
 Generation consumes Magic Hour credits. Use a connected Magic Hour creation MCP at `https://mcp.magichour.ai/` when available. Otherwise read `references/setup.md` for the API route. Discover the current schemas before choosing a model, duration, resolution, or price.
 
 Choose the shot direction from the brief; do not ask a nontechnical user for model fields or a motion-prompt template. Honor the existing budget. When creative decisions are delegated, inspect and accept the still yourself, then continue to video unless draft approval was requested. Show the clip first and keep technical records in the project. For transformations and reveals, read [directing the moment](references/transformations.md); for stories with several beats, read [multi-shot direction](references/multi-shot.md).
+
+For a first result or setup recovery, read [first video and next edit](references/first-video.md). It defines the account check, combined budget, recoverable job record and reusable deliverable.
 
 ## Define the shot
 
@@ -49,7 +51,7 @@ Write the motion prompt around change over time:
 - camera motion, or explicitly state that the camera is locked
 - environmental motion such as fabric, steam, hair, light, or particles
 - what stays fixed
-- timing and end state
+- timing and end state, including a held final exposure when no fade is wanted
 
 Avoid redescribing the entire still in new visual language. That invites the model to redesign the subject. For a reaction shot: `The fish swims slowly beside her shoulder; she notices it and turns slightly with a surprised smile. A slow push in keeps her face and the fish separate. Preserve identity, clothes and scene. No cuts.` A product layout may instead need a locked subject and protected copy area. Do not demand a centered subject when the approved frame places it on the right.
 
@@ -64,7 +66,7 @@ After the project reports `complete`, use the returned download URL exactly as p
 - the first frame matches the approved still
 - identity, product shape, logo, text, and clothing remain stable
 - motion follows the requested direction and speed
-- the camera does not drift or cut unexpectedly
+- the camera does not drift or cut unexpectedly; inspect the actual final frame for an unwanted fade or lost subject, even when black-frame diagnostics are clean
 - no warping, flicker, melting, duplicate objects, or abrupt final-frame collapse appears
 - any generated audio is intentional and coherent
 

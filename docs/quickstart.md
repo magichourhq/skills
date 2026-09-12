@@ -16,13 +16,13 @@ Run from the project where you want to create media. Choose **one** command:
 
 ```sh
 # Codex
-npx skills add magichourhq/skills --skill '*' --agent codex
+npx skills add magichourhq/skills --skill magic-hour-image-to-video --agent codex
 
 # Claude Code
-npx skills add magichourhq/skills --skill '*' --agent claude-code
+npx skills add magichourhq/skills --skill magic-hour-image-to-video --agent claude-code
 ```
 
-For another supported agent, run `npx skills add magichourhq/skills` and select it. To install just one workflow, replace `'*'` with its exact skill name from the [cookbook](../README.md#choose-your-workflow). Start a new agent session after installation.
+For another supported agent, run `npx skills add magichourhq/skills` and select it. These commands install only the photo-to-video workflow. For a different job, replace `magic-hour-image-to-video` with its exact skill name from the [cookbook](../README.md#choose-your-workflow). Install the full collection only when wanted with `--skill '*'`. Start a new agent session after installation.
 
 ## Connect once
 
@@ -48,6 +48,8 @@ For **Claude's custom connector**, use the [maintained connection guide](https:/
 
 ## Make one useful result
 
+Start with one photo and one short scene. No photo available for a trial? Use our [fictional portrait](../examples/midnight-remix/portrait.png); you do not need to generate a starting image first. Five minutes is a setup target, not a render-time guarantee: account setup, queues, chosen models and repairs affect elapsed time.
+
 Attach a portrait or character image you are entitled to use, then paste:
 
 > Turn this photo into a short scene with golden fish swimming through the air around me. Keep me recognizable. Choose the creative details, edit and inspect the still if needed, then animate it. Save and show the finished video. Use my existing spending limit; if I haven't set one, ask before generating. Do not buy credits.
@@ -59,6 +61,8 @@ No photo? Use this instead:
 The agent should check `account_retrieve` before the first paid job. Tool discovery and even a successful `ping` can work with an invalid key; the account read checks actual API authorization. You are ready when you receive a usable file, not just an installation message or project ID. The agent should inspect the result and repair a specific failure within your authorized budget; it should stop and explain if further spending is not covered.
 
 For example, **“Up to 300 credits for this job, including repairs; choose the creative details”** establishes a ceiling, not an instruction to spend it all. Use a limit appropriate to your account and requested media. If you want to approve each draft, say so; otherwise the agent should perform the creative checks you delegated and continue.
+
+The agent should follow the [first-video flow](../skills/magic-hour-image-to-video/references/first-video.md), save a small private continuation record beside your media, and distinguish a file being ready from your accepting it. No feedback is sent automatically.
 
 ## Continue without starting over
 
@@ -80,4 +84,4 @@ Keep source files, accepted outputs and project IDs in the same project. Retain 
 | Download URL expired                                    | Retrieve the existing project for a fresh exact URL                                                         |
 | Wrong size or distorted subject                         | Inspect the actual file; crop only if requirements survive, otherwise repair within budget                  |
 
-For help, [open an issue](https://github.com/magichourhq/skills/issues) with your agent, skill, failed step, expected result and redacted error. Never include keys, private account data or signed URLs. To update one installed workflow, run e.g. `npx skills update magic-hour-image-editing`. `npx skills update` without names can update other installed skills too, so review its scope.
+Worked or got stuck? [Share first-video feedback](https://github.com/magichourhq/skills/issues/new?template=first-video.yml). Tell us whether you got something you would use, the failed step if any, and time or credits when known. Reports are public and optional; no media upload is required. Never include keys, private account data or signed URLs. To update one installed workflow, run e.g. `npx skills update magic-hour-image-editing`. `npx skills update` without names can update other installed skills too, so review its scope.

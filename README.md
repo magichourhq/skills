@@ -6,6 +6,8 @@ Animate your photo. Put yourself in a scene. Give your character a performance. 
 
 [See actual outputs and reproducible examples](docs/evidence.md) · [Explore advanced recipes](#go-further) · [Get your first result](docs/quickstart.md)
 
+**New comparison:** [One portrait, direct animation versus an edited start frame](examples/first-video). Includes both outputs, 530 total credits, a failed ending and a zero-generation-cost second edit.
+
 [Find your use case: photo animation, face/body swaps, music, performance, editing and finishing →](docs/use-cases.md)
 
 [![Animate a portrait, change its face, or replace the performer with a fox conductor](examples/midnight-remix/preview.gif)](examples/midnight-remix)
@@ -16,19 +18,19 @@ One scene, three treatments: [animate the photo](examples/midnight-remix/remix.m
 
 **New to skills? Paste this into Codex or Claude Code:**
 
-> Set up the official Magic Hour skills from https://github.com/magichourhq/skills for this project and connect the Magic Hour creation MCP. Reuse any existing connection. Handle the installation and configuration you can access; guide me through only the sign-in or secure credential step that needs me. Never ask me to paste a key into chat. Verify the connection with an authenticated account read. Then help me make one useful asset from my brief; use my existing budget or ask for a spending limit before generating.
+> Install the magic-hour-image-to-video skill from https://github.com/magichourhq/skills for this project and connect the Magic Hour creation MCP. Reuse any existing connection. Handle the installation and configuration you can access; guide me through only the sign-in or secure credential step that needs me. Never ask me to paste a key into chat. Verify the connection with an authenticated account read. Then help me make one useful asset from my brief; use my existing budget or ask for a spending limit before generating.
 
 Your agent needs permission to run local commands. You need a [Magic Hour account and API key](https://magichour.ai/developer?tab=api-keys&utm_source=agent_skills&utm_medium=referral&utm_id=skills_repo); no code writing, server hosting or repository clone is required. Skills are free to install; generation uses credits. [Step-by-step setup and supported clients →](docs/quickstart.md)
 
 **Prefer the install command?**
 
 ```sh
-npx skills add magichourhq/skills
+npx skills add magichourhq/skills --skill magic-hour-image-to-video
 ```
 
 Want one broad video entry point? `npx skills add magichourhq/skills --skill ai-video-generation`. Browse the highest-use routes directly on Skills.sh: [Image-to-Video](https://skills.sh/magichourhq/skills/magic-hour-image-to-video), [Video Face Swap](https://skills.sh/magichourhq/skills/magic-hour-face-swap), [Text-to-Video](https://skills.sh/magichourhq/skills/magic-hour-text-to-video), [AI Image Editor](https://skills.sh/magichourhq/skills/magic-hour-image-editing), and [Talking Photo](https://skills.sh/magichourhq/skills/magic-hour-talking-video).
 
-Choose your agent and desired skills. Already connected and installed? Attach a photo and ask: **“Turn this into a short scene where something impossible happens around me. Keep me recognizable. You choose the direction, work within my budget and show me the finished video.”** No model names or API parameters needed. For one broad video entry point, install `ai-video-generation`. For mixed image, video and audio work, install `magic-hour-media`.
+Choose your agent; this installs the photo-to-video workflow. Use the cookbook below for other starting points. Already connected and installed? Attach a photo and ask: **“Turn this into a short scene where something impossible happens around me. Keep me recognizable. You choose the direction, work within my budget and show me the finished video.”** No model names or API parameters needed. For one broad video entry point, install `ai-video-generation`. For mixed image, video and audio work, install `magic-hour-media`.
 
 ## Choose your workflow
 
