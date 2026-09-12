@@ -1,8 +1,10 @@
 # Magic Hour skills: output evidence and reproducible examples
 
-Maintained by Magic Hour. Last updated: **2026-09-11 UTC**. This page separates completed output cases from instructions that still need published quality validation. Installing a skill, authenticating an account and completing a job are different from producing an accepted asset.
+Maintained by Magic Hour. Last updated: **2026-09-12 UTC**. This page separates completed output cases from instructions that still need published quality validation. Installing a skill, authenticating an account and completing a job are different from producing an accepted asset.
 
 ## What has actually been generated and inspected?
+
+The [first-video comparison](../examples/first-video) uses the same fictional portrait, brief, video model and per-workflow budget ceiling. Editing the still first establishes the requested setting, but the guided video introduces an ending fade. It records all 530 charged credits, observed availability times, timeout recovery and a zero-generation-cost shorter edit. Both original outputs have misses; this is not a blind preference study or a full quality pass.
 
 The [scene-remix case](../examples/scene-remixes) extends coverage to selective photo face replacement, body placement and repair, Character Replace animate mode, Animation and Audio-to-Video, Video-to-Video with a Video Editor repair, plus a finished music cut from accepted footage. Eleven generation jobs charged 1,890 credits. It records actual outputs and specific limitations; auditory review remains outstanding. See the [complete use-case map](use-cases.md) for all creation and finishing routes, including explicit web handoffs.
 

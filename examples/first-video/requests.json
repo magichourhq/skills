@@ -1,0 +1,95 @@
+{
+  "run_date_utc": "2026-09-12",
+  "source": "../midnight-remix/portrait.png",
+  "brief": {
+    "text": "Make a five-second vertical video of this woman on a midnight railway platform with one luminous golden fish floating beside her shoulder. Keep her recognizable and in the same amber coat. The fish gently swishes its tail as she notices it with a small smile. Keep her face and the fish separate, camera locked, no cuts, no text and no audio.",
+    "per_arm_credit_ceiling": 300,
+    "criteria": [
+      "Recognizable face and amber coat",
+      "Midnight platform and floating fish visible separately from face",
+      "Small reaction and gentle fish movement without a cut"
+    ],
+    "video_settings": {
+      "model": "ltx-2.3",
+      "resolution": "720p",
+      "end_seconds": 5,
+      "audio": false
+    },
+    "design": "One direct image-to-video call versus image edit then motion; same source, brief, video model and budget ceiling; not independent agent or blind review."
+  },
+  "notes": "MCP calls made by the same supervising agent; one sample per workflow, not a blind agent benchmark. File-ready times are observations including polling gaps. Setup and active editing occurred between calls. No seeds or retries. Uploaded paths and signed URLs replaced by local source references; upload bytes and use returned file_path values to reproduce.",
+  "jobs": [
+    {
+      "tool": "ai_image_editor_create_image",
+      "project_id": "cmty0ajs90128hu01k2rky2b0",
+      "created_at": "2026-09-12T06:30:40.041Z",
+      "status": "complete",
+      "credits_charged": 50,
+      "observed_submit_to_file_seconds": 58.3,
+      "inputs": {
+        "model": "nano-banana-2-lite",
+        "resolution": "1k",
+        "aspect_ratio": "9:16",
+        "image_count": 1,
+        "assets": {
+          "image_file_paths": ["<uploaded:../midnight-remix/portrait.png>"]
+        },
+        "style": {
+          "prompt": "Keep this same fictional adult woman, exact face, dark bob and amber raincoat. Place her on a midnight railway platform with a single luminous golden koi floating in the air beside her right shoulder, separate from her face. Show the complete fish and her face clearly. Wet tiles, deep teal shadows and warm reflected golden light. She faces the camera with a small curious smile, hands relaxed. Vertical composition. No other people, lettering or signs."
+        }
+      },
+      "output": "guided-still.png"
+    },
+    {
+      "tool": "image_to_video_create_video",
+      "project_id": "cmty0c66h02ing401c8f0hlw4",
+      "created_at": "2026-09-12T06:31:55.721Z",
+      "status": "complete",
+      "credits_charged": 240,
+      "observed_submit_to_file_seconds": 34.3,
+      "inputs": {
+        "model": "ltx-2.3",
+        "resolution": "720p",
+        "end_seconds": 5,
+        "audio": false,
+        "assets": {
+          "image_file_path": "<uploaded:../midnight-remix/portrait.png>"
+        },
+        "style": {
+          "prompt": "Make a five-second vertical video of this woman on a midnight railway platform with one luminous golden fish floating beside her shoulder. Keep her recognizable and in the same amber coat. The fish gently swishes its tail as she notices it with a small smile. Keep her face and the fish separate, camera locked, no cuts, no text and no audio."
+        }
+      },
+      "output": "direct.mp4"
+    },
+    {
+      "tool": "image_to_video_create_video",
+      "project_id": "cmty0c6qi02ipg401s5688b58",
+      "created_at": "2026-09-12T06:31:56.442Z",
+      "status": "complete",
+      "credits_charged": 240,
+      "observed_submit_to_file_seconds": 85.0,
+      "inputs": {
+        "model": "ltx-2.3",
+        "resolution": "720p",
+        "end_seconds": 5,
+        "audio": false,
+        "assets": {
+          "image_file_path": "<uploaded:guided-still.png>"
+        },
+        "style": {
+          "prompt": "Single uninterrupted locked-camera shot from this approved frame. The floating golden fish gently swishes its tail beside her shoulder and stays separate from her face. She notices it with a small smile, head mostly still. Preserve her identity, dark bob, amber coat and midnight station. Keep both subjects clearly visible throughout. No new objects, cuts, text or sound."
+        }
+      },
+      "output": "guided.mp4"
+    }
+  ],
+  "total_credits_charged": 530,
+  "guided_first_submit_to_file_observed_seconds": 162.3,
+  "local_second_edit": {
+    "source": "guided.mp4",
+    "output": "guided-short.mp4",
+    "additional_generation_credits": 0,
+    "command": "ffmpeg -i guided.mp4 -t 3 -vf \"crop=720:1280:0:8\" -an -c:v libx264 -threads 1 -crf 18 -pix_fmt yuv420p -movflags +faststart guided-short.mp4",
+    "limitation": "A three-second alternative, not fulfillment of the original five-second duration."
+  }
+}

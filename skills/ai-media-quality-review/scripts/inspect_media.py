@@ -41,6 +41,8 @@ def main() -> None:
 
     output_dir = args.output_dir.expanduser().resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
+    # A failed rerun must not leave an earlier success report behind.
+    (output_dir / "review.json").unlink(missing_ok=True)
     probe = json.loads(
         run(
             [
@@ -102,11 +104,12 @@ def main() -> None:
         review["artifacts"].append(str(preview))
 
     if video and duration:
-        diagnostics = subprocess.run(
+        diagnostics = run(
             [
                 "ffmpeg",
                 "-v",
                 "info",
+                "-xerror",
                 "-i",
                 str(source),
                 "-vf",
@@ -115,9 +118,7 @@ def main() -> None:
                 "-f",
                 "null",
                 "-",
-            ],
-            capture_output=True,
-            text=True,
+            ]
         ).stderr
         review["black_segments"] = [
             {"start": float(start), "end": float(end), "duration": float(length)}
@@ -128,11 +129,12 @@ def main() -> None:
         ]
 
     if audio:
-        diagnostics = subprocess.run(
+        diagnostics = run(
             [
                 "ffmpeg",
                 "-v",
                 "info",
+                "-xerror",
                 "-i",
                 str(source),
                 "-af",
@@ -141,9 +143,7 @@ def main() -> None:
                 "-f",
                 "null",
                 "-",
-            ],
-            capture_output=True,
-            text=True,
+            ]
         ).stderr
         starts = [float(value) for value in re.findall(r"silence_start: ([0-9.]+)", diagnostics)]
         ends = [

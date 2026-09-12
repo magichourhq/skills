@@ -1,0 +1,40 @@
+name: First-video feedback
+description: Tell us what worked or where you got stuck so we can improve the workflow.
+title: "First video: "
+body:
+  - type: markdown
+    attributes:
+      value: "This report is public. Share only what you want published. Do not include API keys, account details, private project IDs, signed URLs or other people's media."
+  - type: input
+    id: setup
+    attributes:
+      label: Agent and skill
+      description: Include the client and skill version if known; unknown is fine.
+      placeholder: "Codex, magic-hour-image-to-video 1.5.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: outcome
+    attributes:
+      label: How far did you get?
+      options:
+        - Could not install
+        - Installed but could not connect
+        - Connected but generation failed
+        - Got a file but would not use it
+        - Got a video I would use
+        - Returned to make another video or edit
+    validations:
+      required: true
+  - type: textarea
+    id: experience
+    attributes:
+      label: What were you trying to make, and what happened?
+      description: Describe the missing result or the part that helped. If you have a usual workflow, explain which result you preferred and why. No media upload is required.
+    validations:
+      required: true
+  - type: input
+    id: effort
+    attributes:
+      label: Time and credits, if known
+      description: Include setup time, time until the file was ready, attempts and total charged credits. Leave unknown values blank.
