@@ -1,11 +1,13 @@
 {
   "name": "magic-hour",
-  "version": "1.4.0",
+  "displayName": "Magic Hour",
+  "version": "1.5.0",
   "description": "Create and finish AI media with reusable Magic Hour workflows and inspectable output examples.",
   "author": { "name": "Magic Hour" },
   "homepage": "https://github.com/magichourhq/skills",
   "repository": "https://github.com/magichourhq/skills",
   "license": "MIT",
+  "logo": "assets/logo.svg",
   "keywords": [
     "ai-media",
     "image-generation",
@@ -13,5 +15,16 @@
     "creator-video",
     "mcp"
   ],
-  "skills": "./skills/"
+  "skills": "./skills/",
+  "variables": {
+    "type": "object",
+    "properties": {
+      "MAGIC_HOUR_API_KEY": {
+        "type": "string",
+        "title": "Magic Hour API key",
+        "description": "Create an API key at https://magichour.ai/developer?tab=api-keys. Cursor stores this value in the plugin configuration."
+      }
+    },
+    "required": ["MAGIC_HOUR_API_KEY"]
+  }
 }

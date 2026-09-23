@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "magic-hour": {
+      "url": "https://mcp.magichour.ai/",
+      "headers": {
+        "Authorization": "Bearer ${MAGIC_HOUR_API_KEY}"
+      }
+    }
+  }
+}
