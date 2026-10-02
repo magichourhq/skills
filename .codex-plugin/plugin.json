@@ -16,6 +16,7 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Magic Hour",
+    "composerIcon": "./assets/logo.svg",
     "shortDescription": "Remix photos, performances and ideas into videos",
     "longDescription": "Choose a media workflow, reuse approved references, inspect real outputs and finish editable assets with Magic Hour's MCP or API. Skills are free to install; generation requires a connected account and credits.",
     "developerName": "Magic Hour",
