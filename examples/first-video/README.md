@@ -38,6 +38,16 @@ Times include polling gaps and other work between calls. They are upper-bound ob
 
 The guided wait initially timed out. Resuming the same project returned the completed file without another creation request or charge. Technical inspection decoded both videos successfully and found no black segments. Reviewing sampled frames and the final frame still revealed the fade: black detection is not a creative acceptance check.
 
+### Review artifacts from the existing take
+
+On October 12, 2026, the bundled quality inspector was rerun on the existing `guided.mp4`, without generating new media. It now retains the first and final decoded video frames alongside the contact sheet:
+
+| First decoded frame | Final decoded frame |
+| --- | --- |
+| ![Opening frame with visible face and fish](review/first-frame.jpg) | ![Final frame showing the unwanted ending fade](review/last-frame.jpg) |
+
+[Contact sheet](review/contact-sheet.jpg) samples the clip but does not replace endpoint inspection. Both retained endpoint JPEGs matched separate extractions of source frames 0 and 120 byte for byte with the same scale and JPEG settings. Black detection still returned no segments; the ending fade remains a failed creative criterion. This verifies the inspection artifacts, not full-speed playback, audio, a repaired generation or customer acceptance.
+
 The local second edit retains only the first three seconds and removes eight rows from each vertical edge to produce exact 720 × 1280 framing. The face and fish remain inside that crop in inspected frames. It costs zero additional generation credits and leaves the clean original intact:
 
 ```sh
