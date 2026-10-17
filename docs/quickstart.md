@@ -1,6 +1,6 @@
 # Install Magic Hour skills and make your first useful asset
 
-You need an agent that supports skills and a [Magic Hour account with an API key](https://magichour.ai/developer?tab=api-keys&utm_source=agent_skills&utm_medium=referral&utm_id=skills_quickstart). Installation is free; media generation uses credits. No server hosting, code writing or repository clone is required.
+You need an agent that supports skills and a [Magic Hour account](https://magichour.ai/developer?tab=api-keys&utm_source=agent_skills&utm_medium=referral&utm_id=skills_quickstart). Installation is free; media generation uses credits. No server hosting, code writing or repository clone is required.
 
 ## Let your agent handle setup
 
@@ -28,7 +28,7 @@ For another supported agent, run `npx skills add magichourhq/skills` and select 
 
 Already using the Magic Hour creation MCP? Keep that connection and skip to the first-result prompt. The creation endpoint is `https://mcp.magichour.ai/`. The docs endpoint, `https://docs.magichour.ai/mcp`, only searches documentation.
 
-Get your key from [Magic Hour Developer](https://magichour.ai/developer?tab=api-keys&utm_source=agent_skills&utm_medium=referral&utm_id=skills_quickstart). Keep it out of chat and committed files. Set `MAGIC_HOUR_API_KEY` securely in the environment that launches your agent. A terminal variable is not automatically available to an already-running desktop app.
+For the Codex CLI and Claude Code bearer-token setup below, get your key from [Magic Hour Developer](https://magichour.ai/developer?tab=api-keys&utm_source=agent_skills&utm_medium=referral&utm_id=skills_quickstart). Keep it out of chat and committed files. Set `MAGIC_HOUR_API_KEY` securely in the environment that launches your agent. A terminal variable is not automatically available to an already-running desktop app.
 
 **Codex CLI**, from that same environment:
 
@@ -44,7 +44,7 @@ claude mcp add --transport http --scope user magic-hour https://mcp.magichour.ai
 
 The single quotes retain a variable reference rather than placing the key in the command. Claude Code supports [environment expansion in MCP headers](https://code.claude.com/docs/en/mcp#environment-variable-expansion-in-mcpjson). If you already have a server named `magic-hour`, inspect it rather than adding a second connection.
 
-For **Claude's custom connector**, use the [maintained connection guide](https://github.com/magichourhq/magic-hour-mcp/blob/main/user.md#connect-with-claude), including OAuth client ID `magic-hour-mcp`. Connector setup and skill installation are separate; use your client's supported skill installation flow. For an existing API integration, keep the official [Python](https://github.com/magichourhq/magic-hour-python) or [Node](https://github.com/magichourhq/magic-hour-node) SDK and the [API quick start](https://docs.magichour.ai/get-started/quick-start).
+For **Claude's custom connector**, use the [maintained connection guide](https://github.com/magichourhq/magic-hour-mcp/blob/main/user.md#connect-with-claude): add the creation endpoint, select **Connect**, sign in to Magic Hour and select **Allow**. This flow creates the connector's API key automatically; do not paste a key into the authorization screen. Verify access with `account_retrieve`. Connector setup and skill installation are separate; use your client's supported skill installation flow. For an existing API integration, keep the official [Python](https://github.com/magichourhq/magic-hour-python) or [Node](https://github.com/magichourhq/magic-hour-node) SDK and the [API quick start](https://docs.magichour.ai/get-started/quick-start).
 
 ## Make one useful result
 
