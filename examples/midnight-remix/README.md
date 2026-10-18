@@ -16,6 +16,8 @@ Attach your portrait to a connected agent with the [Image-to-Video skill](../../
 
 Then attach another face or character: “Use this face in the accepted clip,” or “Make this character perform that action.” Reuse the performance rather than buying a new scene. [Install and connect →](../../docs/quickstart.md)
 
+[Run four current MCP recipes: portrait animation, face swap, talking character and dialogue remix →](recipes.md). Each uses these existing assets, includes a reuse edit and separates current request guidance from the historical results below.
+
 ## Inputs and all generation outputs
 
 | Step                                     | Files                                          | Model or mode                                        | Final credits |
