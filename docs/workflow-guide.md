@@ -20,7 +20,7 @@ Those dedicated video endpoints are absent from the public schema as checked Sep
 
 ## How do I keep a product or character consistent in AI video?
 
-Start with an authorized reference. Use AI Image Editor to change setting or composition while preserving identity. Inspect the still, then feed that exact approved image into image-to-video. For additional shots, return to the same identity anchor and review each still. Describe motion separately from appearance. See [image to video](../skills/magic-hour-image-to-video) and [character consistency](../skills/magic-hour-character-consistency).
+Start with an authorized reference. If the supplied image already meets the brief, feed it directly into image-to-video. Use AI Image Editor only when the requested setting or composition must change, or a source problem prevents the shot; inspect the edited still before motion. For additional shots, return to the same identity anchor and review each still. Describe motion separately from appearance. See [image to video](../skills/magic-hour-image-to-video) and [character consistency](../skills/magic-hour-character-consistency).
 
 ## Should I use text-to-video or image-to-video?
 
@@ -36,7 +36,7 @@ Read the downloaded dimensions. Crop only if the complete subject and required c
 
 ## How do I make a talking video without cutting off the speech?
 
-Finish the script and audio first. Listen to pronunciation and the final word, measure duration, then choose the supported talking-photo or lip-sync interval. Add captions after the final picture cut. Keep the clean master and approved audio. Our [Talking Photo and Lip Sync outputs](../examples/midnight-remix) include full-duration audio streams, but metadata cannot prove pronunciation or synchronization; their listening review remains outstanding. See [talking video](../skills/magic-hour-talking-video).
+Use Talking Photo for a still portrait plus an existing audio file, or Lip Sync for existing video plus replacement audio. Neither tool synthesizes speech from text. Finish any required speech preparation first, listen to pronunciation and the final word, measure duration, then choose the supported interval. Add captions after the final picture cut. Keep the clean master and approved audio. Our [Talking Photo and Lip Sync outputs](../examples/midnight-remix) include full-duration audio streams, but metadata cannot prove pronunciation or synchronization; their listening review remains outstanding. See [talking video](../skills/magic-hour-talking-video).
 
 ## When should I avoid another AI generation?
 
