@@ -19,7 +19,7 @@ Describe the finished result and attach the media you already have. The agent sh
 | Change one face in a photo                         | Source identity and destination photo         | [Photo Face Swap](../skills/magic-hour-face-swap)                                                             | Correct source/target fields and detected face mapping; preserve other people                          |
 | Make a clip longer                                 | Accepted clip and intended ending             | [Extend a video](../skills/magic-hour-video-editing/references/extend-upscale.md#extend-the-action)           | Current web handoff; inspect continuation and audio at the join                                        |
 | Turn footage into a stylized animation             | Source video and desired style                | [Video-to-Video](../skills/magic-hour-video-editing/references/restyle.md)                                    | Select prompt mode and frame rate deliberately; check temporal/identity drift                          |
-| Improve final video resolution                     | Accepted final cut and target size            | [Video Upscaler](../skills/magic-hour-video-editing/references/extend-upscale.md#improve-final-delivery-size) | Current web handoff; verify actual detail, cadence and sound                                           |
+| Improve final video resolution                     | Accepted final cut and target size            | [Video Upscaler](../skills/magic-hour-video-editing/references/extend-upscale.md#improve-final-delivery-size) | MCP/API upscale with paid-plan and budget checks; inspect detail, cadence and sound                    |
 
 ## Start with the result, not a parameter form
 
@@ -34,6 +34,6 @@ Reuse the current budget. If none exists, the agent should ask for a limit befor
 
 ## What is supported and proven?
 
-The routing above was checked against the [public OpenAPI](https://docs.magichour.ai/api-reference/openapi.json) and connected creation tools on **September 11, 2026**. Music Video Generator's full web workflow, Video Extender and Video Upscaler do not have equivalent dedicated endpoints in that schema. The skills prepare an honest handoff and continue from the result instead of inventing API calls. Recheck live support before treating this dated observation as permanent.
+The original routing review used the [public OpenAPI](https://docs.magichour.ai/api-reference/openapi.json) and connected creation tools on **September 11, 2026**. **October 25, 2026 UTC update:** Video Upscaler is now exposed in the hosted MCP and its [synced OpenAPI](https://github.com/magichourhq/magic-hour-mcp/blob/main/docs/openapi.json); see the finishing guide for the current request and eligibility checks. This update verifies discovery and the schema, not generated output quality. Music Video Generator's full web scene-assembly workflow and Video Extender require separate live support checks. When no compatible route is available, prepare an honest web handoff rather than inventing API calls.
 
 [Published output evidence](evidence.md) distinguishes actual files, visual checks, known misses and outstanding listening/comparison work. A recipe is not a quality guarantee; a completed generation is not automatically an accepted result.
