@@ -1,0 +1,22 @@
+{
+  "name": "magic-hour",
+  "version": "1.6.0",
+  "description": "Create and finish images and video with Magic Hour's media workflows.",
+  "mcpServers": {
+    "magic-hour": {
+      "url": "https://mcp.magichour.ai/",
+      "type": "http",
+      "headers": {
+        "Authorization": "Bearer ${MAGIC_HOUR_API_KEY}"
+      }
+    }
+  },
+  "settings": [
+    {
+      "name": "Magic Hour API key",
+      "description": "Create an API key at https://magichour.ai/developer?tab=api-keys. Media generation uses account credits.",
+      "envVar": "MAGIC_HOUR_API_KEY",
+      "sensitive": true
+    }
+  ]
+}
