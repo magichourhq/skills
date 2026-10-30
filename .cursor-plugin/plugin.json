@@ -1,7 +1,7 @@
 {
   "name": "magic-hour",
   "displayName": "Magic Hour",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Create and finish AI media with reusable Magic Hour workflows and inspectable output examples.",
   "author": { "name": "Magic Hour" },
   "homepage": "https://github.com/magichourhq/skills",
