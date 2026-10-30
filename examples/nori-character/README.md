@@ -31,7 +31,7 @@ For this illustrated sequence, keep `greenhouse-baseline.png` and `garden-guided
 
 ## Reproduce the prompts
 
-Upload `anchor.png` through `video_assets_generate_presigned_url`, PUT its bytes to the returned upload URL, and use the returned `file_path` for every edit. The shared model/settings above and exact prompts below record the submitted requests. Seeds and runtime internals are not exposed; identical requests may yield different outputs.
+Upload `anchor.png` through `get_upload_urls`, PUT its bytes to the returned upload URL, and use the returned `file_path` for every edit. The shared model/settings above and exact prompts below record the submitted requests. Seeds and runtime internals are not exposed; identical requests may yield different outputs.
 
 ### Anchor
 

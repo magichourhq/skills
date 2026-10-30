@@ -16,7 +16,7 @@ Use [Body Swap](../skills/magic-hour-body-swap) with a person reference and dest
 
 ## Can the MCP extend or upscale my video?
 
-Video Upscaler is exposed as `ai_video_upscaler_create_video` by the hosted MCP and `POST /v1/ai-video-upscaler` by its synced OpenAPI as checked October 25, 2026 UTC. It requires a source video, end time, target resolution and paid-plan eligibility. The [finishing guide](../skills/magic-hour-video-editing/references/extend-upscale.md) covers account/budget checks, accepted-job recovery, web fallback and inspection. This contract check is not a completed-output benchmark. Video extension still needs a separate live support check; a held frame is not new motion, and ordinary resizing is not AI video enhancement.
+Video Upscaler uses `upscale_video` in the renamed MCP tool catalog. Its underlying `POST /v1/ai-video-upscaler` API contract was checked October 25, 2026 UTC. It requires a source video, end time, target resolution and paid-plan eligibility. The [finishing guide](../skills/magic-hour-video-editing/references/extend-upscale.md) covers account/budget checks, accepted-job recovery, web fallback and inspection. This contract check is not a completed-output benchmark. Video extension still needs a separate live support check; a held frame is not new motion, and ordinary resizing is not AI video enhancement.
 
 ## How do I keep a product or character consistent in AI video?
 

@@ -71,7 +71,7 @@ The source WAV is 3.920042 seconds. Both speech-video requests use that measured
 
 ## Reproduce or finish a variation
 
-Use the live tool schemas before spending: model availability and prices can change. Upload the bundled input files with `video_assets_generate_presigned_url`, PUT raw bytes to the returned upload URL without the API bearer token, and substitute each returned `file_path` for the corresponding `<uploaded:filename>` placeholder in [requests.json](requests.json). These placeholders are explanatory, not valid paths. Cosmetic job names and expiring URLs are omitted. No seed was supplied; regeneration will vary.
+Use the live tool schemas before spending: model availability and prices can change. Upload the bundled input files with `get_upload_urls`, PUT raw bytes to the returned upload URL without the API bearer token, and substitute each returned `file_path` for the corresponding `<uploaded:filename>` placeholder in [requests.json](requests.json). These placeholders are explanatory, not valid paths. Cosmetic job names and expiring URLs are omitted. No seed was supplied; regeneration will vary.
 
 Submit the chosen operation once, save its ID and use the matching wait/retrieve tool. A wait timeout does not require another paid creation. Every created job in this case is included above. To try only recasting, upload the included performance and chosen identity; the other generation steps are unnecessary.
 

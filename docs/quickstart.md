@@ -44,7 +44,7 @@ claude mcp add --transport http --scope user magic-hour https://mcp.magichour.ai
 
 The single quotes retain a variable reference rather than placing the key in the command. Claude Code supports [environment expansion in MCP headers](https://code.claude.com/docs/en/mcp#environment-variable-expansion-in-mcpjson). If you already have a server named `magic-hour`, inspect it rather than adding a second connection.
 
-For **Claude's custom connector**, use the [maintained connection guide](https://github.com/magichourhq/magic-hour-mcp/blob/main/user.md#connect-with-claude): add the creation endpoint, select **Connect**, sign in to Magic Hour and select **Allow**. This flow creates the connector's API key automatically; do not paste a key into the authorization screen. Verify access with `account_retrieve`. Connector setup and skill installation are separate; use your client's supported skill installation flow. For an existing API integration, keep the official [Python](https://github.com/magichourhq/magic-hour-python) or [Node](https://github.com/magichourhq/magic-hour-node) SDK and the [API quick start](https://docs.magichour.ai/get-started/quick-start).
+For **Claude's custom connector**, use the [maintained connection guide](https://github.com/magichourhq/magic-hour-mcp/blob/main/user.md#connect-with-claude): add the creation endpoint, select **Connect**, sign in to Magic Hour and select **Allow**. This flow creates the connector's API key automatically; do not paste a key into the authorization screen. Verify access with `get_account_info`. Connector setup and skill installation are separate; use your client's supported skill installation flow. For an existing API integration, keep the official [Python](https://github.com/magichourhq/magic-hour-python) or [Node](https://github.com/magichourhq/magic-hour-node) SDK and the [API quick start](https://docs.magichour.ai/get-started/quick-start).
 
 ## Make one useful result
 
@@ -58,7 +58,7 @@ No photo? Use this instead:
 
 > Make a short vertical video of an elevator opening onto the moon. No specific identity is needed. Choose the direction and settings, leave time to see the reveal, inspect and save the video. Use my existing spending limit; if I haven't set one, ask before generating.
 
-The agent should check `account_retrieve` before the first paid job. Tool discovery and even a successful `ping` can work with an invalid key; the account read checks actual API authorization. You are ready when you receive a usable file, not just an installation message or project ID. The agent should inspect the result and repair a specific failure within your authorized budget; it should stop and explain if further spending is not covered.
+The agent should check `get_account_info` before the first paid job. Tool discovery and even a successful `ping` can work with an invalid key; the account read checks actual API authorization. You are ready when you receive a usable file, not just an installation message or project ID. The agent should inspect the result and repair a specific failure within your authorized budget; it should stop and explain if further spending is not covered.
 
 For example, **“Up to 300 credits for this job, including repairs; choose the creative details”** establishes a ceiling, not an instruction to spend it all. Use a limit appropriate to your account and requested media. If you want to approve each draft, say so; otherwise the agent should perform the creative checks you delegated and continue.
 
