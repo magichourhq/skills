@@ -46,7 +46,7 @@ Manifest availability does not mean the plugin has been accepted into Cursor Mar
 
 ## Gemini CLI
 
-The repository includes a Gemini CLI extension package for native review. It reuses the existing `skills/` directory and connects to Magic Hour's hosted creation MCP without a local server or additional adapter. Native installation, discovery of all 20 bundled skills, sensitive-setting storage and reload, authenticated account access and saved-image recovery were verified with Gemini CLI 0.66.0 on Linux ARM64. Gallery listing is a separate release step.
+The repository includes a Gemini CLI extension package for native review. It reuses the existing `skills/` directory and connects to Magic Hour's hosted creation MCP without a local server or additional adapter. At reviewed revision `51ffdb322f5cd8f159506573427edef1e8892887`, native installation, discovery of 20 bundled skills, sensitive-setting storage and reload, authenticated account access and saved-image recovery were verified with Gemini CLI 0.66.0 on Linux ARM64. Gallery listing is a separate release step.
 
 Review an exact commit before installing it:
 
