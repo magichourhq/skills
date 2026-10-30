@@ -40,12 +40,12 @@ Until the plugin is accepted into Cursor Marketplace, install the individual ski
 npx skills add magichourhq/skills --agent cursor
 ```
 
-The repository also includes a Cursor plugin package for local review and marketplace submission. Follow [Cursor's local plugin instructions](https://cursor.com/docs/plugins) to place the repository at `~/.cursor/plugins/local/magic-hour` and reload Cursor. Open **Plugins → Configure**, then enter the key in **Magic Hour API key**. Cursor stores the value in plugin configuration and passes it as a bearer token to `https://mcp.magichour.ai/`; the key is not stored in this repository. Verify the connection with `account_retrieve` before spending credits.
+The repository also includes a Cursor plugin package for local review and marketplace submission. Follow [Cursor's local plugin instructions](https://cursor.com/docs/plugins) to place the repository at `~/.cursor/plugins/local/magic-hour` and reload Cursor. Open **Plugins → Configure**, then enter the key in **Magic Hour API key**. Cursor stores the value in plugin configuration and passes it as a bearer token to `https://mcp.magichour.ai/`; the key is not stored in this repository. Verify the connection with `get_account_info` before spending credits.
 
 Manifest availability does not mean the plugin has been accepted into Cursor Marketplace. Native loading still needs a client-level check before submission.
 
 ## Connect once, then create
 
-Installation makes instructions available; generation still needs an authenticated Magic Hour MCP or API connection. Cursor plugin users configure the included hosted connection as described above. In other clients, follow [connect once](quickstart.md#connect-once), reuse an existing connection and verify `account_retrieve` before spending credits. Do not paste an API key into a public issue or commit it to a project. The plugin contains no credentials, install scripts or automatic generation jobs.
+Installation makes instructions available; generation still needs an authenticated Magic Hour MCP or API connection. Cursor plugin users configure the included hosted connection as described above. In other clients, follow [connect once](quickstart.md#connect-once), reuse an existing connection and verify `get_account_info` before spending credits. Do not paste an API key into a public issue or commit it to a project. The plugin contains no credentials, install scripts or automatic generation jobs.
 
 To update, use your client's plugin update/marketplace upgrade controls. If you installed individual skills, use the skills installer's update command instead. Keep the same installation method and retain your project's accepted references and editable source files.
