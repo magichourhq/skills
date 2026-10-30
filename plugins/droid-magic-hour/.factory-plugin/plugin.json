@@ -1,0 +1,17 @@
+{
+  "name": "magic-hour",
+  "version": "0.1.0",
+  "description": "Create, edit and recover media through Magic Hour MCP.",
+  "author": {
+    "name": "Magic Hour"
+  },
+  "homepage": "https://magichour.ai/mcp",
+  "repository": "https://github.com/magichourhq/skills",
+  "license": "MIT",
+  "keywords": [
+    "media",
+    "image",
+    "video",
+    "mcp"
+  ]
+}

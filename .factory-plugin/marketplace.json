@@ -1,0 +1,14 @@
+{
+  "name": "magic-hour-droid",
+  "description": "Magic Hour media workflows for Factory Droid.",
+  "owner": {
+    "name": "Magic Hour"
+  },
+  "plugins": [
+    {
+      "name": "magic-hour",
+      "description": "Create, edit and recover media through Magic Hour MCP.",
+      "source": "./plugins/droid-magic-hour"
+    }
+  ]
+}
