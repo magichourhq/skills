@@ -46,7 +46,7 @@ Manifest availability does not mean the plugin has been accepted into Cursor Mar
 
 ## Gemini CLI
 
-The repository includes a Gemini CLI extension package for native review. It reuses the existing `skills/` directory and connects to Magic Hour's hosted creation MCP without a local server or additional adapter. Native installation, sensitive-setting storage, tool discovery and authenticated execution still need verification; gallery listing is not claimed.
+The repository includes a Gemini CLI extension package for native review. It reuses the existing `skills/` directory and connects to Magic Hour's hosted creation MCP without a local server or additional adapter. Native installation, all 20 bundled skills, sensitive-setting storage and reload, authenticated account access and saved-image recovery were verified with Gemini CLI 0.66.0 on Linux ARM64. Gallery listing is a separate release step.
 
 Review an exact commit before installing it:
 
@@ -56,7 +56,7 @@ gemini extensions install https://github.com/magichourhq/skills --ref <reviewed-
 
 Replace `<reviewed-commit>` with the commit being reviewed. Follow Gemini CLI's normal extension and MCP consent prompts. Enter your key only in the **Magic Hour API key** sensitive-setting prompt, never in chat or a command argument. The manifest declares `MAGIC_HOUR_API_KEY` so Gemini CLI can pass it to the hosted connection. A working Gemini CLI model sign-in is separate from your Magic Hour API key.
 
-Start a new session, inspect `/extensions list` and `/mcp`, then ask for `account_retrieve` to verify API access without generating media. Next, retrieve a saved project by its existing ID before trying a paid workflow. Keep normal tool confirmations enabled. If a connection named `magic-hour` already exists in your Gemini settings, that configuration takes precedence; reuse the working connection rather than registering a duplicate.
+Start a new session, inspect `/extensions list` and `/mcp`, then ask for `get_account_info` to verify API access without generating media. Next, retrieve a saved project by its existing ID before trying a paid workflow. Keep normal tool confirmations enabled. If a connection named `magic-hour` already exists in your Gemini settings, that configuration takes precedence; reuse the working connection rather than registering a duplicate.
 
 To replace the stored setting, use `gemini extensions config magic-hour`. See the official [extension reference](https://geminicli.com/docs/extensions/reference/) and [publishing guide](https://geminicli.com/docs/extensions/releasing/). Direct installation and gallery acceptance are separate release steps.
 
@@ -65,3 +65,4 @@ To replace the stored setting, use `gemini extensions config magic-hour`. See th
 Installation makes instructions available; generation still needs an authenticated Magic Hour MCP or API connection. Cursor plugin users configure the included hosted connection as described above. In other clients, follow [connect once](quickstart.md#connect-once), reuse an existing connection and verify `account_retrieve` before spending credits. Do not paste an API key into a public issue or commit it to a project. The plugin contains no credentials, install scripts or automatic generation jobs.
 
 To update, use your client's plugin update/marketplace upgrade controls. If you installed individual skills, use the skills installer's update command instead. Keep the same installation method and retain your project's accepted references and editable source files.
+
