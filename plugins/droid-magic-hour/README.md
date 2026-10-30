@@ -1,6 +1,6 @@
 # Magic Hour for Factory Droid
 
-Draft plugin source for creating, editing and recovering media through the hosted Magic Hour MCP server. Native installation, OAuth, skill discovery and protected tool execution have not been verified. This is not a Factory-managed connector or an official Factory catalog listing.
+Draft plugin source for creating, editing and recovering media through the hosted Magic Hour MCP server. Native catalog registration, user-scope installation and enablement have been verified with Droid 1.0.0 on Linux ARM64. Skill activation, OAuth and protected tool execution remain unverified. This is not a Factory-managed connector or an official Factory catalog listing.
 
 The repository's `.factory-plugin/marketplace.json` points to this self-contained folder. Its MCP entry uses Droid's `http` transport and normal client-managed OAuth. It contains no API key, authorization header, OAuth override, command, hook or dependency installer. Existing Claude Code, Cursor, Gemini and Kiro configuration is separate.
 
