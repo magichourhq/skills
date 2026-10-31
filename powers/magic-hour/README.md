@@ -9,7 +9,7 @@ Create and edit images and video using Magic Hour's hosted MCP, with guidance fo
 1. Check out the exact commit under review. In Kiro's Powers panel, choose **Add Custom Power**, then **Import power from a folder** and select this `powers/magic-hour` folder.
 2. Confirm that Magic Hour and its media skill are discovered. Try a request such as “Use Magic Hour to retrieve my existing image project's result.”
 3. Complete Kiro's normal authorization flow when requested. Kiro Web documents **Agent Config > Powers & MCP > Authorize**. Follow the actual consent screen and keep normal tool confirmations enabled.
-4. Verify `account_retrieve`, then retrieve an existing project by its saved ID. These checks do not require a new generation. Record the client version and actual results before calling this a working integration.
+4. Verify `get_account_info`, then retrieve an existing project by its saved ID. These checks do not require a new generation. Record the client version and actual results before calling this a working integration.
 
 The portable `mcp.json` declares only the HTTPS Streamable HTTP endpoint. OAuth discovery, consent and credential storage belong to the client. It contains no bearer token, API-key placeholder or custom OAuth configuration. Do not add secrets to the package or paste them into chat.
 

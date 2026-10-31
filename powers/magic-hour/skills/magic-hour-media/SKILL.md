@@ -5,9 +5,9 @@ description: Create or edit images and video through Magic Hour, or retrieve an 
 
 # Create and recover Magic Hour media
 
-Use the tools exposed by the connected Magic Hour MCP server. Inspect their current schemas and use `workflow_guide_retrieve` for the relevant media workflow before choosing an operation.
+Use the tools exposed by the connected Magic Hour MCP server. Inspect their current schemas and use `get_workflow_guide` for the relevant media workflow before choosing an operation.
 
-If the connection needs authorization, direct the user to Kiro's normal Power authorization flow. Keep account credentials and OAuth tokens out of chat, project files and tool arguments. Verify actual API access with `account_retrieve`; public discovery alone does not establish authorization.
+If the connection needs authorization, direct the user to Kiro's normal Power authorization flow. Keep account credentials and OAuth tokens out of chat, project files and tool arguments. Verify actual API access with `get_account_info`; public discovery alone does not establish authorization.
 
 Reuse the user's supplied media, accepted references and existing budget. Before a charged creation, check current settings and cost against that budget. If the budget or input rights are unclear, resolve the missing detail before spending. Installing this Power does not authorize paid media generation.
 
