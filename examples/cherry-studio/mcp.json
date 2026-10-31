@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "Magic Hour": {
+      "type": "streamableHttp",
+      "url": "https://mcp.magichour.ai/"
+    }
+  }
+}
