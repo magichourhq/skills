@@ -17,7 +17,7 @@ Read the registered marketplace name from that output. Factory derives it from t
 
 Open `/plugins` to confirm the plugin is installed and enabled. In `/mcp`, find its Magic Hour server, follow browser sign-in and consent, and inspect the available tools. Preserve normal trust and tool confirmations. Droid stores OAuth state in its system keyring or supported fallback; do not copy credential files or paste tokens into chat.
 
-First verify `account_retrieve`, returning only tier and available credits. Then request recovery of one existing completed image or video using its actual project ID. Check returned status and output; discovery or a Connected badge alone is insufficient. This read-only verification does not authorize generation, upload or deletion. Real creation remains subject to the user's explicit request, budget and input rights.
+First verify `get_account_info`, returning only tier and available credits. Then request recovery of one existing completed image or video using its actual project ID. Check returned status and output; discovery or a Connected badge alone is insufficient. This read-only verification does not authorize generation, upload or deletion. Real creation remains subject to the user's explicit request, budget and input rights.
 
 A passing release needs clean-checkout installation, skill activation, OAuth, account access, same-project recovery and usable output in the native client. Until those are verified, keep this draft and do not claim a supported native release or submit it to another catalog.
 
