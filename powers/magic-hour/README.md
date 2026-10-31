@@ -15,6 +15,18 @@ The portable `mcp.json` declares only the HTTPS Streamable HTTP endpoint. OAuth 
 
 After authorization, ask for an image or video workflow within your existing Magic Hour credit budget. Installation is free; media generation uses account credits. A timeout or expired output link requires checking the existing project, not blindly repeating a paid creation.
 
+### Kiro CLI
+
+Kiro also supports installing a local Power without opening the IDE. From the root of the exact checkout under review, run:
+
+```sh
+kiro-cli powers install ./powers/magic-hour
+```
+
+Use Kiro's V3 agent harness for Power activation, for example `kiro-cli chat --v3`. V3 refers to the agent harness, not the CLI's version number. See Kiro's [CLI 2.25.0 release notes](https://kiro.dev/changelog/cli/2-25/) for local Power installation and its [CLI reference](https://kiro.dev/docs/reference/cli-commands/) for `--v3`.
+
+Then perform the authorization and existing-project checks above. Magic Hour's native CLI import, activation, OAuth and authenticated retrieval remain unverified.
+
 ## Package
 
 - `plugin.json`: Agent Plugins 1.0 metadata and activation keywords.
