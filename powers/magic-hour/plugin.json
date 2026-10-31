@@ -1,0 +1,22 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "magic-hour",
+  "version": "1.0.0",
+  "description": "Create and edit images and video, then recover and download Magic Hour projects.",
+  "author": {
+    "name": "Magic Hour",
+    "url": "https://magichour.ai",
+    "email": "support@magichour.ai"
+  },
+  "keywords": [
+    "magic-hour",
+    "image-generation",
+    "image-editing",
+    "video-generation",
+    "face-swap",
+    "lip-sync"
+  ],
+  "homepage": "https://magichour.ai/mcp",
+  "repository": "https://github.com/magichourhq/skills",
+  "license": "MIT"
+}
