@@ -1,0 +1,23 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "servers": {
+      "magic-hour": {
+        "type": "remote",
+        "url": "https://mcp.magichour.ai/",
+        "oauth": false,
+        "headers": {
+          "Authorization": "Bearer {env:MAGIC_HOUR_API_KEY}"
+        },
+        "codemode": false
+      }
+    }
+  },
+  "permissions": [
+    {
+      "action": "magic-hour_*",
+      "resource": "*",
+      "effect": "ask"
+    }
+  ]
+}

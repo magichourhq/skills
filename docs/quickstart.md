@@ -22,6 +22,8 @@ npx skills add magichourhq/skills --skill magic-hour-image-to-video --agent code
 npx skills add magichourhq/skills --skill magic-hour-image-to-video --agent claude-code
 ```
 
+For OpenCode 2, use the [version-specific connection and skill setup](opencode.md).
+
 For another supported agent, run `npx skills add magichourhq/skills` and select it. These commands install only the photo-to-video workflow. For a different job, replace `magic-hour-image-to-video` with its exact skill name from the [cookbook](../README.md#choose-your-workflow). Install the full collection only when wanted with `--skill '*'`. Start a new agent session after installation.
 
 ## Connect once
