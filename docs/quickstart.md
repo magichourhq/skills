@@ -28,6 +28,8 @@ For another supported agent, run `npx skills add magichourhq/skills` and select 
 
 Already using the Magic Hour creation MCP? Keep that connection and skip to the first-result prompt. The creation endpoint is `https://mcp.magichour.ai/`. The docs endpoint, `https://docs.magichour.ai/mcp`, only searches documentation.
 
+For **ChatGPT**, open the [published Magic Hour AI plugin](https://chatgpt.com/plugins/plugin_asdk_app_6abd6b5b6494819188475d7f1ff8204c), add it, and sign in to Magic Hour when prompted. See [Magic Hour MCP setup](https://magichour.ai/mcp) for the current steps. Verify the connection with `get_account_info`.
+
 For the Codex CLI and Claude Code bearer-token setup below, get your key from [Magic Hour Developer](https://magichour.ai/developer?tab=api-keys&utm_source=agent_skills&utm_medium=referral&utm_id=skills_quickstart). Keep it out of chat and committed files. Set `MAGIC_HOUR_API_KEY` securely in the environment that launches your agent. A terminal variable is not automatically available to an already-running desktop app.
 
 **Codex CLI**, from that same environment:

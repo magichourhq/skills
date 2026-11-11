@@ -4,6 +4,8 @@ An original portrait becomes a train platform full of floating koi, then a movin
 
 **Run date:** September 11, 2026 UTC. **Method:** authenticated Magic Hour creation MCP. **12 jobs, 1,750 credits charged in total**, including all source images, speech and outputs below. No paid retries or discarded generations. Charges were checked after completion; Face Swap settled at 120 credits after an initial 150-credit estimate. This is a demonstration of the routes, not a controlled comparison against generic MCP use or another service.
 
+**Model availability:** The LTX-2.3 jobs below are historical. See the [LTX-2.5 examples](../current-video) for settings that are supported today.
+
 ## Watch and try it
 
 [![Three generated clips: original performance on the left, changed face in the middle, fox conductor on the right](preview.gif)](remix.mp4)
