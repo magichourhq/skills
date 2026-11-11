@@ -2,6 +2,8 @@
 
 Run September 12, 2026 UTC through the authenticated Magic Hour creation MCP. One fictional subject, one attempt per workflow, no paid retries. This is a supervised workflow comparison, not an independent agent benchmark or a Higgsfield comparison.
 
+**Model availability:** These LTX-2.3 runs are historical. See the [LTX-2.5 examples](../current-video) for a current model and recorded output.
+
 **Observed result:** editing the start frame produced the requested midnight platform; direct animation retained the original gray wall. The guided video also introduced an unwanted ending fade. Neither original meets every requirement. The shorter export demonstrates reusing a take without paying for another generation; it does not satisfy the original five-second duration.
 
 | Source                                                         | Edited start frame                                                                              |
