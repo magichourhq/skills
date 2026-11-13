@@ -16,6 +16,8 @@ Reuse an existing Magic Hour chat connection before adding another.
 
 Lovable also documents bearer-token and API-key authentication. This guide's OAuth setup needs no key in a URL, chat message, source file or published frontend. Keep any separately configured credential in the platform's supported authentication flow.
 
+If your workspace already uses the [official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers), open its card, search for `io.github.magichourhq/magic-hour`, and choose **Connect**. The server URL should be `https://mcp.magichour.ai/`. Continue with the same personal OAuth steps. A workspace owner or admin manages registries. [Lovable’s registry guide](https://docs.lovable.dev/integrations/mcp-registries) explains that setup.
+
 ## Verify reads before spending
 
 First ask:
