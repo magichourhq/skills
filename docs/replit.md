@@ -12,11 +12,11 @@ Reuse an existing Magic Hour connection before adding another.
 
 This link contains only the display name `Magic Hour` and endpoint `https://mcp.magichour.ai/`. It contains no credentials. Review the endpoint and complete Replit's normal connection and Magic Hour authorization prompts.
 
-To configure it manually:
+To add Magic Hour for your own use, follow these steps. Custom MCP options depend on your Replit account and workspace permissions.
 
-1. Open Replit's **MCP Servers** settings pane and choose **+ Add MCP server**.
+1. Open **Settings → Integrations → Your integrations** and choose **Add custom → Add personal MCP server**.
 2. Set the display name to `Magic Hour` and the HTTPS URL to `https://mcp.magichour.ai/`.
-3. Leave custom headers empty for this OAuth setup, then select **Test & save**. Complete the authorization flow if prompted and review the requested access.
+3. Leave custom headers empty for this OAuth setup, then select **Test & save**. If Replit offers a Magic Hour sign-in, review the requested access before approving it.
 4. Check the saved connection's status and tools. Keep normal tool confirmations enabled. If authentication or Replit's security scanner rejects the connection or a tool, stop at that step rather than bypassing it.
 
 Replit also supports custom authentication headers through **Advanced settings**. Do not put credentials in an install link, chat message or committed configuration. This guide uses the normal OAuth path rather than supplying a bearer key.
